@@ -195,8 +195,8 @@ img {
   box-shadow:
     0 20px 60px var(--shadow);
 
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
 }
 
 /* --------------------------------------------------
