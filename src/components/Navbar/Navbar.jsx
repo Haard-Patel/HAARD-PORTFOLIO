@@ -32,7 +32,9 @@ function Navbar() {
   }, [menuOpen]);
 
   const toggleTheme = () => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
+    setTheme((current) =>
+      current === "dark" ? "light" : "dark"
+    );
   };
 
   const closeMenu = () => {
@@ -80,22 +82,42 @@ function Navbar() {
               theme === "dark" ? "light" : "dark"
             } mode`}
           >
-            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+            {theme === "dark" ? (
+              <Sun size={15} />
+            ) : (
+              <Moon size={15} />
+            )}
           </button>
 
           <button
             className="mobile-menu-button"
-            onClick={() => setMenuOpen((current) => !current)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() =>
+              setMenuOpen((current) => !current)
+            }
+            aria-label={
+              menuOpen ? "Close menu" : "Open menu"
+            }
             aria-expanded={menuOpen}
           >
-            {menuOpen ? <X size={19} /> : <Menu size={19} />}
+            {menuOpen ? (
+              <X size={19} />
+            ) : (
+              <Menu size={19} />
+            )}
           </button>
         </div>
       </div>
 
       {menuOpen && (
         <div className="mobile-navigation">
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
+
+          <a href="#projects" onClick={closeMenu}>
+            Work
+          </a>
+
           <a href="#skills" onClick={closeMenu}>
             Skills
           </a>
@@ -104,12 +126,8 @@ function Navbar() {
             Contact
           </a>
 
-          <a href="#experience" onClick={closeMenu}>
+          <a href="/experience" onClick={closeMenu}>
             Experience
-          </a>
-
-          <a href="#projects" onClick={closeMenu}>
-            Work
           </a>
         </div>
       )}

@@ -10,8 +10,8 @@ function Hero() {
         </div>
 
         <nav className="hero-navigation" aria-label="Main navigation">
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a href="#projects">Skills</a>
         </nav>
 
         <div className="hero-focus">
@@ -55,7 +55,7 @@ function Hero() {
               View work <span>↓</span>
             </a>
 
-            <a href="#experience" className="hero-link">
+            <a href="/experience" className="hero-link">
               Experience <span>→</span>
             </a>
           </div>

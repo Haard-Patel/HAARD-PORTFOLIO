@@ -1,0 +1,490 @@
+.footer {
+    position: relative;
+  
+    width: 100%;
+  
+    padding: 110px 0 28px;
+  
+    background: var(--background-secondary);
+  
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer-container {
+    width: min(
+      calc(100% - 48px),
+      var(--max-width)
+    );
+  
+    margin: 0 auto;
+  }
+  
+  /* =========================================================
+     MAIN FOOTER
+     ========================================================= */
+  
+  .footer-main {
+    display: grid;
+  
+    grid-template-columns: 1fr 1fr;
+  
+    gap: 80px;
+  
+    padding-bottom: 90px;
+  }
+  
+  .footer-identity {
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: flex-start;
+  }
+  
+  .footer-name {
+    color: var(--text-primary);
+  
+    font-family: "Space Grotesk", sans-serif;
+  
+    font-size: clamp(2.2rem, 4vw, 4rem);
+  
+    font-weight: 500;
+  
+    letter-spacing: -0.06em;
+  
+    line-height: 0.95;
+  }
+  
+  .footer-name span {
+    color: var(--accent);
+  }
+  
+  .footer-location {
+    margin-top: 22px;
+  
+    color: var(--text-secondary);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.7rem;
+  
+    letter-spacing: 0.04em;
+  }
+  
+  .footer-focus {
+    margin-top: 5px;
+  
+    color: var(--text-muted);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.66rem;
+  }
+  
+  /* =========================================================
+     LABEL
+     ========================================================= */
+  
+  .footer-label {
+    display: block;
+  
+    color: var(--text-muted);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.62rem;
+  
+    font-weight: 500;
+  
+    letter-spacing: 0.12em;
+  
+    text-transform: uppercase;
+  }
+  
+  /* =========================================================
+     SOCIALS
+     ========================================================= */
+  
+  .footer-socials {
+    justify-self: end;
+  
+    width: min(100%, 330px);
+  }
+  
+  .footer-social-links {
+    display: flex;
+  
+    flex-direction: column;
+  
+    margin-top: 22px;
+  }
+  
+  .footer-social-links a {
+    display: grid;
+  
+    grid-template-columns: 22px 1fr auto;
+  
+    align-items: center;
+  
+    gap: 10px;
+  
+    padding: 11px 0;
+  
+    color: var(--text-secondary);
+  
+    border-bottom: 1px solid var(--border);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.68rem;
+  
+    transition:
+      color 0.25s ease,
+      padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease;
+  }
+  
+  .footer-social-links a:first-child {
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer-social-links a svg:last-child {
+    color: var(--text-muted);
+  
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .footer-social-links a:hover {
+    padding-left: 5px;
+  
+    color: var(--text-primary);
+  
+    border-color: var(--border-hover);
+  }
+  
+  .footer-social-links a:hover svg:last-child {
+    color: var(--accent);
+  
+    transform: translate(2px, -2px);
+  }
+  
+  /* =========================================================
+     INDEX
+     ========================================================= */
+  
+  .footer-index {
+    padding: 34px 0 70px;
+  
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer-index-heading {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 20px;
+  }
+  
+  .footer-index-line {
+    width: 100%;
+  
+    height: 1px;
+  
+    background: var(--border);
+  }
+  
+  .footer-index-links {
+    display: grid;
+  
+    grid-template-columns: repeat(4, 1fr);
+  
+    gap: 18px;
+  
+    margin-top: 28px;
+  }
+  
+  .footer-index-links a {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 14px;
+  
+    color: var(--text-secondary);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.7rem;
+  
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .footer-index-links a span {
+    color: var(--text-muted);
+  
+    font-size: 0.58rem;
+  }
+  
+  .footer-index-links a:hover {
+    color: var(--text-primary);
+  
+    transform: translateX(4px);
+  }
+  
+  /* =========================================================
+     COLOPHON
+     ========================================================= */
+  
+  .footer-colophon {
+    display: grid;
+  
+    grid-template-columns: 1fr auto;
+  
+    gap: 50px;
+  
+    padding: 34px 0;
+  
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer-colophon-copy {
+    max-width: 430px;
+  }
+  
+  .footer-colophon-copy p {
+    margin-top: 14px;
+  
+    color: var(--text-secondary);
+  
+    font-size: 0.78rem;
+  
+    line-height: 1.7;
+  }
+  
+  .footer-time {
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: flex-end;
+  
+    gap: 6px;
+  
+    color: var(--text-muted);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.62rem;
+  
+    text-align: right;
+  }
+  
+  /* =========================================================
+     BOTTOM
+     ========================================================= */
+  
+  .footer-bottom {
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: space-between;
+  
+    gap: 20px;
+  
+    padding-top: 24px;
+  
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer-copyright {
+    color: var(--text-muted);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.58rem;
+  
+    letter-spacing: 0.08em;
+  }
+  
+  .footer-back-top {
+    display: inline-flex;
+  
+    align-items: center;
+  
+    gap: 8px;
+  
+    color: var(--text-secondary);
+  
+    font-family: "JetBrains Mono", monospace;
+  
+    font-size: 0.64rem;
+  
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .footer-back-top span {
+    display: inline-flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    width: 26px;
+    height: 26px;
+  
+    border: 1px solid var(--border);
+  
+    border-radius: 50%;
+  
+    transition:
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .footer-back-top:hover {
+    color: var(--text-primary);
+  
+    transform: translateY(-2px);
+  }
+  
+  .footer-back-top:hover span {
+    border-color: var(--border-hover);
+  
+    transform: translateY(-2px);
+  }
+  
+  /* =========================================================
+     TABLET
+     ========================================================= */
+  
+  @media (max-width: 900px) {
+    .footer {
+      padding-top: 90px;
+    }
+  
+    .footer-main {
+      gap: 50px;
+  
+      padding-bottom: 70px;
+    }
+  
+    .footer-index-links {
+      grid-template-columns: repeat(2, 1fr);
+  
+      row-gap: 24px;
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 640px) {
+    .footer {
+      padding: 78px 0 24px;
+    }
+  
+    .footer-container {
+      width: min(
+        calc(100% - 32px),
+        var(--max-width)
+      );
+    }
+  
+    .footer-main {
+      display: flex;
+  
+      flex-direction: column;
+  
+      gap: 55px;
+  
+      padding-bottom: 60px;
+    }
+  
+    .footer-name {
+      font-size: clamp(2.3rem, 12vw, 3.6rem);
+    }
+  
+    .footer-socials {
+      width: 100%;
+  
+      justify-self: auto;
+    }
+  
+    .footer-index {
+      padding: 28px 0 58px;
+    }
+  
+    .footer-index-links {
+      grid-template-columns: 1fr 1fr;
+  
+      margin-top: 24px;
+    }
+  
+    .footer-colophon {
+      display: flex;
+  
+      flex-direction: column;
+  
+      gap: 28px;
+  
+      padding: 28px 0;
+    }
+  
+    .footer-time {
+      align-items: flex-start;
+  
+      text-align: left;
+    }
+  
+    .footer-bottom {
+      align-items: flex-start;
+  
+      flex-direction: column;
+  
+      gap: 18px;
+    }
+  }
+  
+  /* =========================================================
+     SMALL MOBILE
+     ========================================================= */
+  
+  @media (max-width: 430px) {
+    .footer-container {
+      width: min(
+        calc(100% - 28px),
+        var(--max-width)
+      );
+    }
+  
+    .footer-index-links {
+      grid-template-columns: 1fr;
+    }
+  
+    .footer-social-links a {
+      padding: 12px 0;
+    }
+
+    .footer-social-text-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        color: var(--text-secondary);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        text-transform: lowercase;
+      }
+  }
