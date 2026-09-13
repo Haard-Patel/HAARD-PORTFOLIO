@@ -22,10 +22,6 @@
     margin: 0 auto;
   }
   
-  /* =========================
-     SECTION HEADING
-     ========================= */
-  
   .projects-heading {
     display: grid;
   
@@ -95,10 +91,6 @@
     color: var(--accent);
   }
   
-  /* =========================
-     PROJECT LIST
-     ========================= */
-  
   .projects-list {
     border-top: 1px solid var(--border);
   }
@@ -121,10 +113,6 @@
     background: var(--surface);
   }
   
-  /* =========================
-     PROJECT INDEX
-     ========================= */
-  
   .project-index {
     display: flex;
   
@@ -141,10 +129,6 @@
   .project-item:hover .project-index {
     color: var(--accent);
   }
-  
-  /* =========================
-     PROJECT CONTENT
-     ========================= */
   
   .project-main {
     display: flex;
@@ -204,10 +188,6 @@
     color: var(--text-secondary);
   }
   
-  /* =========================
-     PROJECT ARROW / DEMO
-     ========================= */
-  
   .project-arrow {
     display: flex;
   
@@ -248,9 +228,9 @@
     transform: translate(3px, -3px);
   }
   
-  /* =========================
-     DESCRIPTION
-     ========================= */
+  .project-arrow-static {
+    cursor: default;
+  }
   
   .project-description {
     max-width: 650px;
@@ -263,10 +243,6 @@
   
     line-height: 1.75;
   }
-  
-  /* =========================
-     BOTTOM INFORMATION
-     ========================= */
   
   .project-bottom {
     display: flex;
@@ -314,10 +290,6 @@
     border-color: var(--border-hover);
   }
   
-  /* =========================
-     STATUS
-     ========================= */
-  
   .project-status {
     display: flex;
   
@@ -355,14 +327,11 @@
     background: var(--accent);
   }
   
-  /* =========================
-     PROJECT LINKS
-     ========================= */
-  
   .project-links {
     display: flex;
   
     align-items: center;
+    justify-content: space-between;
   
     gap: 28px;
   
@@ -373,6 +342,19 @@
     border-top: 1px solid var(--border);
   }
   
+  .project-arrow-static {
+    cursor: default;
+  }
+
+  .project-primary-links {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 25px;
+  }
+  
+  .project-primary-links a,
   .project-links > a {
     display: inline-flex;
   
@@ -397,15 +379,12 @@
       transform 0.25s ease;
   }
   
+  .project-primary-links a:hover,
   .project-links > a:hover {
     color: var(--accent);
   
     transform: translateX(2px);
   }
-  
-  /* =========================
-     DEMO LOGIN
-     ========================= */
   
   .project-demo-login {
     display: flex;
@@ -443,10 +422,6 @@
     font-weight: 500;
   }
   
-  /* =========================
-     FOOTER
-     ========================= */
-  
   .projects-footer {
     display: flex;
   
@@ -474,10 +449,6 @@
   
     background: var(--border);
   }
-  
-  /* =========================
-     TABLET
-     ========================= */
   
   @media (max-width: 1000px) {
     .project-demo-login {
@@ -512,10 +483,6 @@
       max-width: 600px;
     }
   }
-  
-  /* =========================
-     MOBILE
-     ========================= */
   
   @media (max-width: 760px) {
     .projects-section {
@@ -609,16 +576,18 @@
       gap: 18px;
     }
   
+    .project-primary-links {
+      flex-wrap: wrap;
+  
+      gap: 18px 25px;
+    }
+  
     .project-demo-login {
       flex-wrap: wrap;
   
       gap: 12px 18px;
     }
   }
-  
-  /* =========================
-     SMALL MOBILE
-     ========================= */
   
   @media (max-width: 430px) {
     .projects-container {
@@ -669,4 +638,8 @@
     .project-demo-login > span:first-child {
       grid-column: 1 / -1;
     }
+
+    .project-arrow-static {
+        cursor: default;
+      }
   }
