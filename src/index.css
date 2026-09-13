@@ -5,8 +5,11 @@
 :root {
   --background: #0b0f14;
   --background-secondary: #10161f;
+
   --surface: rgba(17, 24, 33, 0.72);
   --surface-solid: #111821;
+
+  --nav-background: rgba(11, 15, 20, 0.78);
 
   --border: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(91, 140, 255, 0.35);
@@ -18,7 +21,31 @@
   --accent: #5b8cff;
   --accent-secondary: #8b7cff;
 
+  --shadow: rgba(0, 0, 0, 0.2);
+
   --max-width: 1200px;
+}
+
+[data-theme="light"] {
+  --background: #f5f7fb;
+  --background-secondary: #edf1f7;
+
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-solid: #ffffff;
+
+  --nav-background: rgba(245, 247, 251, 0.82);
+
+  --border: rgba(23, 32, 51, 0.09);
+  --border-hover: rgba(73, 111, 210, 0.32);
+
+  --text-primary: #172033;
+  --text-secondary: #5d6878;
+  --text-muted: #8993a3;
+
+  --accent: #416fe0;
+  --accent-secondary: #7463df;
+
+  --shadow: rgba(23, 32, 51, 0.08);
 }
 
 * {
@@ -39,12 +66,12 @@ body {
   background:
     radial-gradient(
       circle at 15% 10%,
-      rgba(91, 140, 255, 0.08),
+      color-mix(in srgb, var(--accent) 8%, transparent),
       transparent 28%
     ),
     radial-gradient(
       circle at 85% 35%,
-      rgba(139, 124, 255, 0.06),
+      color-mix(in srgb, var(--accent-secondary) 6%, transparent),
       transparent 28%
     ),
     var(--background);
@@ -55,6 +82,10 @@ body {
   line-height: 1.6;
 
   overflow-x: hidden;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
