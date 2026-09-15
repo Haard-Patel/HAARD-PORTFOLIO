@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import "./Navbar.css";
 
+
 function getInitialTheme() {
   const savedTheme = localStorage.getItem("portfolio-theme");
 
@@ -18,7 +19,7 @@ function Navbar() {
   const [theme, setTheme] = useState(getInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Live date and time
+  // Added: live local date and time
   const [currentDateTime, setCurrentDateTime] = useState(
     () => new Date()
   );
@@ -36,16 +37,11 @@ function Navbar() {
     };
   }, [menuOpen]);
 
-  // Update the clock every second.
-  // The browser automatically uses the visitor's local timezone.
+  // Added: update time every second using the visitor's local timezone
   useEffect(() => {
-    const updateClock = () => {
+    const interval = window.setInterval(() => {
       setCurrentDateTime(new Date());
-    };
-
-    updateClock();
-
-    const interval = window.setInterval(updateClock, 1000);
+    }, 1000);
 
     return () => {
       window.clearInterval(interval);
@@ -91,11 +87,8 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-top">
 
-        {/* Live local time and date */}
-        <div
-          className="navbar-datetime"
-          aria-label={`Local time ${time}, ${date}`}
-        >
+        {/* Added: live time and date */}
+        <div className="navbar-datetime">
           <span
             className="navbar-status-dot"
             aria-hidden="true"
@@ -117,7 +110,8 @@ function Navbar() {
           </time>
         </div>
 
-        {/* Existing HP logo — unchanged */}
+        <div className="navbar-left-spacer" />
+
         <a
           href="#top"
           className="navbar-logo"
@@ -135,7 +129,6 @@ function Navbar() {
           </span>
         </a>
 
-        {/* Existing theme + mobile menu controls */}
         <div className="navbar-meta">
           <button
             className="theme-toggle"
