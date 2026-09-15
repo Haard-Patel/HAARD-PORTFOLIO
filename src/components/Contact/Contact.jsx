@@ -65,11 +65,12 @@ function Contact() {
 
             <p className="contact-description">
               Open to conversations about{" "}
-              <strong>software, data, and technology</strong>.
-              If you are building something interesting,
-              solving a difficult problem, or looking for
-              someone curious enough to learn with you,
-              I&apos;d like to hear about it.
+              <strong>turn what I’ve learned into real-world experience.</strong>.
+              open to opportunities across software, data, and technology, 
+              and always interested in meeting people, exchanging ideas, 
+              and learning from the work others are doing. 
+              If you’re building something, solving a problem, or simply want to connect, 
+              <em>let’s talk.</em>
             </p>
 
             <div className="contact-email-block">
@@ -158,7 +159,7 @@ function Contact() {
         <div className="contact-social-row">
 
           <a
-            href="https://github.com/Hhaard20"
+            href="https://github.com/Haard-Patel"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"

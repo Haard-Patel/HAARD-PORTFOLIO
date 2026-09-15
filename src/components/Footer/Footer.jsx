@@ -115,7 +115,7 @@ function Footer() {
             <div className="footer-socials">
 
               <a
-                href="https://github.com/HaardPatel"
+                href="https://github.com/Haard-Patel"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
