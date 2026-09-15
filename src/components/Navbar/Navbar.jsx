@@ -19,9 +19,7 @@ function Navbar() {
   const [theme, setTheme] = useState(getInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [currentDateTime, setCurrentDateTime] = useState(
-    () => new Date()
-  );
+  const [currentDateTime, setCurrentDateTime] = useState(() => new Date());
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -65,47 +63,30 @@ function Navbar() {
     });
   };
 
-  const time = new Intl.DateTimeFormat(undefined, {
-    hour: "numeric",
+  const time = currentDateTime.toLocaleTimeString([], {
+    hour: "2-digit",
     minute: "2-digit",
+    second: "2-digit",
     hour12: true,
-  }).format(currentDateTime);
+  });
 
-  const date = new Intl.DateTimeFormat(undefined, {
+  const date = currentDateTime.toLocaleDateString([], {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  })
-    .format(currentDateTime)
-    .toUpperCase();
+  }).toUpperCase();
 
   return (
     <header className="navbar">
       <div className="navbar-top">
-
-        <div className="navbar-datetime">
-          <span
-            className="navbar-status-dot"
-            aria-hidden="true"
-          />
-
-          <time className="navbar-time">
-            {time}
-          </time>
-
-          <span
-            className="navbar-date-separator"
-            aria-hidden="true"
-          >
-            /
-          </span>
-
-          <time className="navbar-date">
-            {date}
-          </time>
+        <div className="navbar-left-spacer">
+          <div className="navbar-datetime">
+            <span className="navbar-status-dot" />
+            <span>{time}</span>
+            <span>/</span>
+            <span>{date}</span>
+          </div>
         </div>
-
-        <div className="navbar-left-spacer" />
 
         <a
           href="#top"
