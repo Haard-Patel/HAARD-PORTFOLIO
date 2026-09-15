@@ -19,11 +19,6 @@ function Navbar() {
   const [theme, setTheme] = useState(getInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Added: live local date and time
-  const [currentDateTime, setCurrentDateTime] = useState(
-    () => new Date()
-  );
-
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("portfolio-theme", theme);
@@ -36,31 +31,6 @@ function Navbar() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
-
-  // Added: update time every second using the visitor's local timezone
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setCurrentDateTime(new Date());
-    }, 1000);
-
-    return () => {
-      window.clearInterval(interval);
-    };
-  }, []);
-
-  const time = new Intl.DateTimeFormat(undefined, {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  }).format(currentDateTime);
-
-  const date = new Intl.DateTimeFormat(undefined, {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  })
-    .format(currentDateTime)
-    .toUpperCase();
 
   const toggleTheme = () => {
     setTheme((current) =>
@@ -86,30 +56,6 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-top">
-
-        {/* Added: live time and date */}
-        <div className="navbar-datetime">
-          <span
-            className="navbar-status-dot"
-            aria-hidden="true"
-          />
-
-          <time className="navbar-time">
-            {time}
-          </time>
-
-          <span
-            className="navbar-date-separator"
-            aria-hidden="true"
-          >
-            /
-          </span>
-
-          <time className="navbar-date">
-            {date}
-          </time>
-        </div>
-
         <div className="navbar-left-spacer" />
 
         <a
