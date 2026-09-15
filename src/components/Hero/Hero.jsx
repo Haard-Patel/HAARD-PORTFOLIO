@@ -16,13 +16,13 @@ function Hero() {
 
         <div className="hero-focus">
           <span className="hero-label">Focus</span>
-          <span>Software · Data · AI</span>
+          <span>Software · Data · AI · Technology</span>
         </div>
       </div>
 
       <div className="hero-main">
         <p className="hero-intro">
-          CS Honours · Software Development
+          CS Graduate + Software Development + Tech Enthusiast + Application + Backend
         </p>
 
         <h1>

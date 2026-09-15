@@ -3,8 +3,8 @@ import "./About.css";
 const locations = [
   {
     country: "India",
-    city: "Ahmedabad",
-    coordinates: "23°N · 72°E",
+    city: "Varanasi",
+    coordinates: "29°N · 78°E",
     image: "/images/ahm.jpeg",
     alt: "Ahmedabad, India",
   },
@@ -17,8 +17,8 @@ const locations = [
   },
   {
     country: "Canada",
-    city: "Saskatoon",
-    coordinates: "52°N · 106°W",
+    city: "Toronto",
+    coordinates: "52°N · 79°W",
     image: null,
     alt: "",
   },
@@ -184,11 +184,12 @@ function About() {
 
         {/* FOCUS TAGS */}
         <div className="about-focus">
-          <span>SOFTWARE</span>
-          <span>DATA</span>
-          <span>AI</span>
+          <span>MUSIC</span>
+          <span>FITNESS</span>
           <span>MATHEMATICS</span>
-          <span>STATISTICS</span>
+          <span>READING</span>
+          <span>ADVENTURE</span>
+          <span>SPORTS</span>
         </div>
 
       </div>
