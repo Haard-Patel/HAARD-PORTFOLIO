@@ -1,9 +1,4 @@
-import {
-  ArrowUp,
-  Github,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { ArrowUp, Github, Mail } from "lucide-react";
 import "./Footer.css";
 
 const footerLinks = [
@@ -36,15 +31,16 @@ function Footer() {
         <div className="footer-top-line" />
 
         <div className="footer-grid">
+          {/* Identity */}
           <div className="footer-identity">
             <div className="footer-name">
-              Haard Patel
+              Haard Patel<span>.</span>
             </div>
 
             <div className="footer-meta">
-              REGINA, SK
-              <span>/</span>
-              SOFTWARE · DATA · AI
+              <span>REGINA, SK</span>
+              <span className="footer-meta-divider">/</span>
+              <span>SOFTWARE · DATA · AI</span>
             </div>
 
             <div className="footer-socials">
@@ -54,10 +50,8 @@ function Footer() {
                 rel="noreferrer"
                 aria-label="GitHub"
               >
-                <Github
-                  size={17}
-                  strokeWidth={1.35}
-                />
+                <Github size={16} strokeWidth={1.4} />
+                <span>GitHub</span>
               </a>
 
               <a
@@ -66,60 +60,72 @@ function Footer() {
                 rel="noreferrer"
                 aria-label="LinkedIn"
               >
-                <Linkedin
-                  size={17}
-                  strokeWidth={1.35}
-                />
+                <span className="footer-linkedin-icon">in</span>
+                <span>LinkedIn</span>
               </a>
 
               <a
                 href="mailto:haardp9@gmail.com"
                 aria-label="Email"
               >
-                <Mail
-                  size={17}
-                  strokeWidth={1.35}
-                />
+                <Mail size={16} strokeWidth={1.4} />
+                <span>Email</span>
               </a>
             </div>
           </div>
 
+          {/* Index */}
           <div className="footer-index">
-            <span className="footer-heading">
-              INDEX
-            </span>
+            <span className="footer-heading">INDEX</span>
 
             <nav aria-label="Footer navigation">
-              {footerLinks.map((link) => (
+              {footerLinks.map((link, index) => (
                 <a key={link.label} href={link.href}>
-                  {link.label}
+                  <span className="footer-link-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span>{link.label}</span>
+
+                  <span className="footer-link-arrow">↗</span>
                 </a>
               ))}
             </nav>
           </div>
 
+          {/* Colophon */}
           <div className="footer-colophon">
-            <span className="footer-heading">
-              COLOPHON
-            </span>
+            <span className="footer-heading">COLOPHON</span>
 
             <p>
-              Built with React, Vite, CSS, and a lot of
-              curiosity. Set in Space Grotesk, Instrument
-              Sans, JetBrains Mono, and Kalam.
+              Built with <strong>React</strong>, Vite, CSS,
+              and a lot of curiosity.
             </p>
+
+            <p>
+              Designed to be simple, useful, and a little
+              different from the usual developer portfolio.
+            </p>
+
+            <div className="footer-stack">
+              <span>REACT</span>
+              <span>VITE</span>
+              <span>CSS</span>
+              <span>FRAMER MOTION</span>
+            </div>
           </div>
         </div>
 
         <div className="footer-bottom">
           <span>© 2026 HAARD PATEL</span>
 
-          <a href="#top">
-            BACK TO TOP
-            <ArrowUp
-              size={12}
-              strokeWidth={1.5}
-            />
+          <span className="footer-bottom-center">
+            BUILT IN SASKATCHEWAN
+          </span>
+
+          <a href="#top" className="footer-back-top">
+            <span>BACK TO TOP</span>
+            <ArrowUp size={14} strokeWidth={1.4} />
           </a>
         </div>
       </div>
