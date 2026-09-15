@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  ArrowUpRight,
-  Check,
-  Copy,
-  Github,
-  Instagram,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
 import "./Contact.css";
 
 const contactLinks = [
@@ -39,6 +31,7 @@ function Contact() {
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText("haardp9@gmail.com");
+
       setCopied(true);
 
       window.setTimeout(() => {
@@ -52,16 +45,17 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
+
         <div className="contact-topline">
           <span>04 / CONTACT</span>
           <span>OPEN TO OPPORTUNITIES</span>
         </div>
 
         <div className="contact-grid">
+
           <div className="contact-main">
             <h2>
-              Say{" "}
-              <em>hello.</em>
+              Say <em>hello.</em>
             </h2>
 
             <p className="contact-description">
@@ -98,12 +92,18 @@ function Contact() {
                 >
                   {copied ? (
                     <>
-                      <Check size={12} strokeWidth={1.8} />
+                      <Check
+                        size={12}
+                        strokeWidth={1.8}
+                      />
                       <span>COPIED</span>
                     </>
                   ) : (
                     <>
-                      <Copy size={12} strokeWidth={1.5} />
+                      <Copy
+                        size={12}
+                        strokeWidth={1.5}
+                      />
                       <span>COPY</span>
                     </>
                   )}
@@ -113,11 +113,13 @@ function Contact() {
           </div>
 
           <div className="contact-side">
+
             <div className="contact-side-heading">
               ELSEWHERE
             </div>
 
             <div className="contact-links">
+
               {contactLinks.map((link) => (
                 <a
                   key={link.label}
@@ -140,6 +142,7 @@ function Contact() {
 
                   <span className="contact-link-value">
                     {link.value}
+
                     <ArrowUpRight
                       size={14}
                       strokeWidth={1.4}
@@ -147,18 +150,21 @@ function Contact() {
                   </span>
                 </a>
               ))}
+
             </div>
           </div>
+
         </div>
 
         <div className="contact-social-row">
+
           <a
             href="https://github.com/HaardPatel"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
           >
-            <Github size={16} strokeWidth={1.4} />
+            <span>GH</span>
           </a>
 
           <a
@@ -167,31 +173,28 @@ function Contact() {
             rel="noreferrer"
             aria-label="LinkedIn"
           >
-            <Linkedin size={16} strokeWidth={1.4} />
+            <span>in</span>
           </a>
 
           <a
             href="mailto:haardp9@gmail.com"
             aria-label="Email"
           >
-            <Mail size={16} strokeWidth={1.4} />
+            <span>@</span>
           </a>
 
-          <a
-            href="#contact"
-            aria-label="Contact"
-          >
-            <Instagram size={16} strokeWidth={1.4} />
-          </a>
         </div>
 
         <div className="contact-end">
+
           <div className="contact-end-line" />
 
           <div className="contact-end-content">
+
             <div className="contact-end-copy">
+
               <p>
-                End of page. Not the end of the{" "}
+                End of page. Not the end of{" "}
                 <span className="contact-handwritten">
                   work.
                 </span>
@@ -202,13 +205,17 @@ function Contact() {
                 <span>More experiments.</span>{" "}
                 <strong>More to come.</strong>
               </p>
+
             </div>
 
             <span className="contact-end-index">
               04 / END
             </span>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );
