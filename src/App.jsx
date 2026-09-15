@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import Toolkit from "./components/Toolkit/Toolkit";
 import Cursor from "./components/Cursor/Cursor";
 import Footer from "./components/Footer/Footer";
 
@@ -13,40 +14,20 @@ function App() {
       <Navbar />
 
       <main>
-        {/* HERO */}
         <Hero />
 
-        {/* 01 — ABOUT */}
         <About />
 
-        {/* 02 — SELECTED WORK */}
         <Projects />
 
-        {/* 03 — SKILLS */}
-        <section
-          id="skills"
-          className="section skills-section"
-        >
+        <Toolkit />
+
+        <section id="contact" className="section contact-section">
           <div className="container">
-            <span className="section-label">
-              03 — Skills
-            </span>
+            <span className="section-label">04 — Contact</span>
           </div>
         </section>
 
-        {/* 04 — CONTACT */}
-        <section
-          id="contact"
-          className="section contact-section"
-        >
-          <div className="container">
-            <span className="section-label">
-              04 — Contact
-            </span>
-          </div>
-        </section>
-
-        {/* PERSONAL END NOTE */}
         <section className="scroll-thanks">
           <div className="container">
             <div className="scroll-note">
@@ -61,6 +42,7 @@ function App() {
                 <p className="scroll-note-line handwritten-line">
                   <span>More ideas.</span>{" "}
                   <span>More experiments.</span>{" "}
+                  <strong>More to come.</strong>
                 </p>
               </div>
 

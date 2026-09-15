@@ -40,8 +40,8 @@ function Hero() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setStatementIndex((current) =>
-        (current + 1) % heroStatements.length
+      setStatementIndex(
+        (current) => (current + 1) % heroStatements.length
       );
     }, 10000);
 
@@ -65,7 +65,7 @@ function Hero() {
           aria-label="Main navigation"
         >
           <a href="#about">About</a>
-          <a href="#skills">Skills</a>
+          <a href="#skills">Toolkit</a>
         </nav>
 
         <div className="hero-focus">
@@ -85,7 +85,6 @@ function Hero() {
           Patel<span>.</span>
         </h1>
 
-        {/* ROTATING PERSONAL STATEMENT */}
         <div
           className="hero-statement"
           key={statementIndex}
