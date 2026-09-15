@@ -483,4 +483,35 @@
   .hero-resume:hover span {
     transform: none;
   }
+
+  .hero-meta-line {
+    position: absolute;
+    top: 176px;
+    left: 50%;
+    width: min(calc(100% - 48px), var(--max-width));
+    height: 1px;
+    background: var(--border);
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+  
+  @media (max-width: 1100px) {
+    .hero-meta-line {
+      top: 156px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .hero-meta-line {
+      top: 156px;
+      width: calc(100% - 36px);
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .hero-meta-line {
+      top: 146px;
+      width: calc(100% - 30px);
+    }
+  }
 }

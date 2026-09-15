@@ -12,6 +12,8 @@ const toolkitColumns = [
       "C++",
       "SQL",
       "HTML / CSS",
+      "TypeScript",
+      "Scala",
     ],
   },
   {
@@ -26,6 +28,8 @@ const toolkitColumns = [
       "REST APIs",
       "JWT",
       "Responsive UI",
+      "PostgreSQL",
+      "MongoDB",
     ],
   },
   {
@@ -39,6 +43,7 @@ const toolkitColumns = [
       "Data Analytics",
       "Data Management",
       "API Integration",
+      "Data Visualization",
     ],
   },
   {
@@ -53,7 +58,10 @@ const toolkitColumns = [
       "TCP/IP",
       "Jira",
       "Agile / Scrum",
-    ],
+      "Power BI",
+      "Postman",
+      "PowerShell",
+        ],
   },
 ];
 

@@ -73,6 +73,7 @@ function Hero() {
           <span>Software · Data · AI</span>
         </div>
       </div>
+      <div className="hero-meta-line" aria-hidden="true" />
 
       <div className="hero-main">
         <p className="hero-intro">
