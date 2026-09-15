@@ -576,4 +576,13 @@
   .about-photo:hover .about-image img {
     transform: none;
   }
+
+  .about-copy strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  [data-theme="light"] .about-copy strong {
+    color: var(--text-primary);
+  }
 }
