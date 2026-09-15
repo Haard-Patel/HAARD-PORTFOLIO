@@ -414,93 +414,104 @@
   }
 
 /* =========================
-   DATE / TIME STATUS
+   DATE / TIME
    ========================= */
 
    .navbar-datetime {
     display: flex;
     align-items: center;
-  
     gap: 8px;
   
     white-space: nowrap;
   
     font-family: "JetBrains Mono", monospace;
-  
     font-size: 9px;
     font-weight: 500;
-  
-    letter-spacing: 0.045em;
-  
+    letter-spacing: 0.06em;
     line-height: 1;
   
     color: var(--text-secondary);
   }
   
+  /* TIME */
   .navbar-datetime > span:nth-child(2) {
     color: var(--text-primary);
+    font-weight: 600;
   }
   
+  /* SLASH */
   .navbar-datetime > span:nth-child(3) {
-    color: var(--text-muted);
-  
-    margin: 0 1px;
+    color: var(--accent);
+    font-weight: 400;
   }
   
+  /* DATE */
   .navbar-datetime > span:nth-child(4) {
-    color: var(--text-secondary);
+    color: var(--text-muted);
+    font-weight: 500;
   }
   
-  /* Green live/status indicator */
+  
+  /* =========================
+     GREEN LIVE DOT
+     ========================= */
   
   .navbar-status-dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
   
-    flex: 0 0 5px;
+    flex: 0 0 6px;
   
     border-radius: 50%;
   
     background: #45d483;
   
     box-shadow:
-      0 0 0 1px rgba(69, 212, 131, 0.12),
-      0 0 7px rgba(69, 212, 131, 0.55);
+      0 0 5px rgba(69, 212, 131, 0.8),
+      0 0 12px rgba(69, 212, 131, 0.35);
   
-    animation: navbar-status-blink 1.8s ease-in-out infinite;
+    animation: navbar-status-blink 1.5s ease-in-out infinite;
   }
+  
+  
+  /* =========================
+     BLINKING ANIMATION
+     ========================= */
   
   @keyframes navbar-status-blink {
     0%,
     100% {
       opacity: 1;
+  
       box-shadow:
-        0 0 0 1px rgba(69, 212, 131, 0.12),
-        0 0 7px rgba(69, 212, 131, 0.55);
+        0 0 5px rgba(69, 212, 131, 0.8),
+        0 0 12px rgba(69, 212, 131, 0.35);
     }
   
     50% {
-      opacity: 0.35;
+      opacity: 0.25;
+  
       box-shadow:
-        0 0 0 1px rgba(69, 212, 131, 0.06),
-        0 0 3px rgba(69, 212, 131, 0.25);
+        0 0 2px rgba(69, 212, 131, 0.3);
     }
   }
+  
+  
+  /* =========================
+     MOBILE
+     ========================= */
   
   @media (max-width: 760px) {
     .navbar-datetime {
       gap: 6px;
-  
       font-size: 7px;
-  
-      letter-spacing: 0.025em;
+      letter-spacing: 0.035em;
     }
   
     .navbar-status-dot {
-      width: 4px;
-      height: 4px;
-  
-      flex-basis: 4px;
+      width: 5px;
+      height: 5px;
+      flex-basis: 5px;
     }
   }
   
@@ -509,5 +520,4 @@
       animation: none;
     }
   }
-  
 }

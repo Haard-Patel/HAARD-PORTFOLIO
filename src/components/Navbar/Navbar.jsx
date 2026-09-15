@@ -83,8 +83,9 @@ function Navbar() {
           <div className="navbar-datetime">
             <span className="navbar-status-dot" />
             <span>{time}</span>
-            <span>/</span>
-            <span>{date}</span>
+            <span>       /  </span>
+            <span>{date}
+            </span>
           </div>
         </div>
 
