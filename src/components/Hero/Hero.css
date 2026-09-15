@@ -1,65 +1,66 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  padding: 112px 0 64px;
+  padding: 148px 0 82px;
   background: var(--background);
   overflow: hidden;
 }
 
 .hero-main,
 .hero-meta {
-  width: min(calc(100% - 72px), var(--max-width));
+  width: min(100% - 64px, var(--max-width));
   margin: 0 auto;
 }
 
-/* =========================
-   TOP META / HEADER
-   ========================= */
-
 .hero-meta {
   position: absolute;
-  top: 34px;
+  top: 82px;
   left: 50%;
   transform: translateX(-50%);
+
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: start;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   gap: 32px;
-  padding: 0 4px;
+
+  padding: 0 2px;
+
   z-index: 5;
 }
+
+/* =========================
+   TOP META
+   ========================= */
 
 .hero-location,
 .hero-focus {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 
   color: var(--text-secondary);
+
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.6rem;
+  font-size: 0.59rem;
   font-weight: 500;
-  line-height: 1.35;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .hero-location {
-  justify-self: start;
+  align-items: flex-start;
   text-align: left;
 }
 
 .hero-focus {
-  justify-self: end;
   align-items: flex-end;
   text-align: right;
 }
 
 .hero-label {
   color: var(--text-muted);
-  font-size: 0.51rem;
-  line-height: 1;
-  letter-spacing: 0.11em;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -67,18 +68,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 38px;
+  gap: 42px;
 }
 
 .hero-navigation a {
   position: relative;
 
   color: var(--text-secondary);
+
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.61rem;
+  font-size: 0.62rem;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+
   text-decoration: none;
   text-transform: uppercase;
 
@@ -90,7 +92,7 @@
 
   position: absolute;
   left: 0;
-  bottom: -8px;
+  bottom: -7px;
 
   width: 100%;
   height: 1px;
@@ -118,18 +120,19 @@
    ========================= */
 
 .hero-main {
-  padding-top: 30px;
+  padding-top: 32px;
 }
 
 .hero-intro {
-  margin: 0 0 22px;
+  margin: 0 0 25px;
 
   color: var(--text-muted);
+
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.6rem;
+  font-size: 0.61rem;
   font-weight: 500;
-  line-height: 1.4;
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 }
 
@@ -137,6 +140,7 @@
   margin: 0;
 
   color: var(--text-primary);
+
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(5rem, 13vw, 10.5rem);
   font-weight: 500;
@@ -154,12 +158,15 @@
 
 .hero-statement {
   min-height: 54px;
-  margin-top: 31px;
+  margin-top: 38px;
 
   display: flex;
   align-items: center;
 
-  animation: heroStatementIn 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  animation:
+    heroStatementIn
+    650ms
+    cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .hero-statement p {
@@ -167,6 +174,7 @@
   margin: 0;
 
   color: var(--text-primary);
+
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.25rem, 2.35vw, 2rem);
   font-weight: 400;
@@ -176,12 +184,14 @@
 
 .hero-statement-accent {
   color: var(--accent);
+
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
 }
 
 .hero-statement em {
   color: var(--accent-secondary);
+
   font-family: "Kalam", cursive;
   font-size: 1.18em;
   font-style: normal;
@@ -202,17 +212,18 @@
 }
 
 /* =========================
-   HERO LOWER AREA
+   HERO BOTTOM
    ========================= */
 
 .hero-bottom {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 52px;
 
-  margin-top: 31px;
-  padding-top: 23px;
+  align-items: end;
+  gap: 65px;
+
+  margin-top: 39px;
+  padding-top: 28px;
 
   border-top: 1px solid var(--border);
 }
@@ -226,10 +237,11 @@
   margin: 0;
 
   color: var(--text-secondary);
+
   font-family: "Instrument Sans", sans-serif;
-  font-size: clamp(0.97rem, 1.2vw, 1.07rem);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.68;
   letter-spacing: -0.012em;
 }
 
@@ -238,14 +250,15 @@
   align-items: center;
   gap: 8px;
 
-  margin-top: 19px;
+  margin-top: 23px;
 
   color: var(--text-muted);
+
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.57rem;
+  font-size: 0.58rem;
   font-weight: 500;
-  line-height: 1;
   letter-spacing: 0.08em;
+
   text-decoration: none;
 
   transition: color 200ms ease;
@@ -267,22 +280,22 @@
 }
 
 /* =========================
-   TABLET
+   LARGE TABLET
    ========================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .hero {
-    min-height: initial;
-    padding: 105px 0 58px;
+    min-height: auto;
+    padding: 132px 0 70px;
   }
 
   .hero-main,
   .hero-meta {
-    width: min(calc(100% - 56px), var(--max-width));
+    width: min(100% - 48px, var(--max-width));
   }
 
   .hero-meta {
-    top: 30px;
+    top: 68px;
   }
 
   .hero h1 {
@@ -290,7 +303,7 @@
   }
 
   .hero-statement {
-    margin-top: 29px;
+    margin-top: 34px;
   }
 
   .hero-statement p {
@@ -299,9 +312,8 @@
   }
 
   .hero-bottom {
-    gap: 38px;
-    margin-top: 29px;
-    padding-top: 21px;
+    gap: 40px;
+    margin-top: 35px;
   }
 }
 
@@ -311,7 +323,7 @@
 
 @media (max-width: 700px) {
   .hero {
-    padding: 88px 0 52px;
+    padding: 116px 0 60px;
   }
 
   .hero-main,
@@ -320,64 +332,51 @@
   }
 
   .hero-meta {
-    top: 22px;
+    top: 60px;
 
     grid-template-columns: 1fr auto;
-    align-items: start;
-
-    gap: 18px;
-
-    padding: 0;
+    gap: 20px;
   }
 
   .hero-location {
     display: flex;
   }
 
-  .hero-location .hero-label {
-    display: none;
+  .hero-focus {
+    align-items: flex-end;
   }
 
-  .hero-location span:last-child {
-    color: var(--text-muted);
-    font-size: 0.53rem;
+  .hero-focus span:last-child {
+    display: none;
   }
 
   .hero-navigation {
-    justify-content: flex-end;
-    gap: 24px;
-  }
-
-  .hero-navigation a {
-    font-size: 0.55rem;
-  }
-
-  .hero-focus {
-    display: none;
+    justify-content: flex-start;
+    gap: 26px;
   }
 
   .hero-main {
-    padding-top: 24px;
+    padding-top: 27px;
   }
 
   .hero-intro {
-    margin-bottom: 21px;
-    font-size: 0.54rem;
+    margin-bottom: 23px;
+    font-size: 0.55rem;
   }
 
   .hero h1 {
-    font-size: clamp(4.2rem, 19vw, 6.3rem);
+    font-size: clamp(4.25rem, 19vw, 6.5rem);
     line-height: 0.86;
   }
 
   .hero-statement {
     min-height: 0;
-    margin-top: 27px;
+    margin-top: 31px;
   }
 
   .hero-statement p {
     max-width: 100%;
-    font-size: clamp(1.16rem, 5.2vw, 1.42rem);
+    font-size: clamp(1.18rem, 5.2vw, 1.45rem);
     line-height: 1.42;
   }
 
@@ -389,10 +388,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 27px;
 
-    margin-top: 29px;
-    padding-top: 21px;
+    gap: 30px;
+
+    margin-top: 34px;
+    padding-top: 24px;
   }
 
   .hero-copy {
@@ -401,12 +401,12 @@
 
   .hero-description {
     max-width: 100%;
-    font-size: 0.94rem;
-    line-height: 1.65;
+    font-size: 0.96rem;
+    line-height: 1.68;
   }
 
   .hero-resume {
-    margin-top: 17px;
+    margin-top: 19px;
   }
 }
 
@@ -416,7 +416,7 @@
 
 @media (max-width: 420px) {
   .hero {
-    padding: 82px 0 45px;
+    padding: 108px 0 52px;
   }
 
   .hero-main,
@@ -425,41 +425,36 @@
   }
 
   .hero-meta {
-    top: 18px;
-  }
-
-  .hero-location span:last-child {
-    font-size: 0.5rem;
+    top: 52px;
   }
 
   .hero-navigation {
-    gap: 19px;
+    gap: 22px;
   }
 
   .hero-navigation a {
-    font-size: 0.52rem;
+    font-size: 0.56rem;
   }
 
   .hero h1 {
-    font-size: clamp(3.55rem, 19vw, 4.9rem);
+    font-size: clamp(3.65rem, 19vw, 5rem);
   }
 
   .hero-statement {
-    margin-top: 25px;
+    margin-top: 28px;
   }
 
   .hero-statement p {
-    font-size: 1.06rem;
-    line-height: 1.44;
+    font-size: 1.08rem;
+    line-height: 1.45;
   }
 
   .hero-bottom {
-    margin-top: 27px;
-    padding-top: 19px;
+    margin-top: 30px;
   }
 
   .hero-description {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
   }
 }
 
