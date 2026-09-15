@@ -1,4 +1,4 @@
-import { ArrowUp, Github, Mail } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import "./Footer.css";
 
 const footerLinks = [
@@ -50,7 +50,7 @@ function Footer() {
                 rel="noreferrer"
                 aria-label="GitHub"
               >
-                <Github size={16} strokeWidth={1.4} />
+                <span className="footer-social-mark">GH</span>
                 <span>GitHub</span>
               </a>
 
@@ -60,7 +60,7 @@ function Footer() {
                 rel="noreferrer"
                 aria-label="LinkedIn"
               >
-                <span className="footer-linkedin-icon">in</span>
+                <span className="footer-social-mark">in</span>
                 <span>LinkedIn</span>
               </a>
 
@@ -68,7 +68,7 @@ function Footer() {
                 href="mailto:haardp9@gmail.com"
                 aria-label="Email"
               >
-                <Mail size={16} strokeWidth={1.4} />
+                <span className="footer-social-mark">@</span>
                 <span>Email</span>
               </a>
             </div>
