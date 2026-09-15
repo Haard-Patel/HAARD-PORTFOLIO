@@ -1,34 +1,43 @@
 import { useEffect, useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import "./Navbar.css";
 
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme) {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
+}
+
 function Navbar() {
-  const [isDark, setIsDark] = useState(() => {
-    const savedTheme = localStorage.getItem("portfolio-theme");
+  const [theme, setTheme] = useState(getInitialTheme);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    if (savedTheme) {
-      return savedTheme === "dark";
-    }
-
-    return true;
-  });
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const [currentDateTime, setCurrentDateTime] = useState(() => new Date());
+  // Live date and time
+  const [currentDateTime, setCurrentDateTime] = useState(
+    () => new Date()
+  );
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      isDark ? "dark" : "light"
-    );
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
 
-    localStorage.setItem(
-      "portfolio-theme",
-      isDark ? "dark" : "light"
-    );
-  }, [isDark]);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
 
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Update the clock every second.
+  // The browser automatically uses the visitor's local timezone.
   useEffect(() => {
     const updateClock = () => {
       setCurrentDateTime(new Date());
@@ -42,32 +51,6 @@ function Navbar() {
       window.clearInterval(interval);
     };
   }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 900) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add("nav-menu-open");
-    } else {
-      document.body.classList.remove("nav-menu-open");
-    }
-
-    return () => {
-      document.body.classList.remove("nav-menu-open");
-    };
-  }, [isMenuOpen]);
 
   const time = new Intl.DateTimeFormat(undefined, {
     hour: "numeric",
@@ -84,147 +67,133 @@ function Navbar() {
     .toUpperCase();
 
   const toggleTheme = () => {
-    setIsDark((current) => !current);
+    setTheme((current) =>
+      current === "dark" ? "light" : "dark"
+    );
   };
 
   const closeMenu = () => {
-    setIsMenuOpen(false);
+    setMenuOpen(false);
+  };
+
+  const scrollToTop = (event) => {
+    event.preventDefault();
+
+    closeMenu();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <>
-      <header className="navbar">
-        <div className="navbar-inner">
-          {/* Left: Local Time + Date */}
-          <div className="navbar-datetime" aria-label="Current local date and time">
-            <span className="navbar-status-dot" aria-hidden="true" />
+    <header className="navbar">
+      <div className="navbar-top">
 
-            <time className="navbar-time">
-              {time}
-            </time>
+        {/* Live local time and date */}
+        <div
+          className="navbar-datetime"
+          aria-label={`Local time ${time}, ${date}`}
+        >
+          <span
+            className="navbar-status-dot"
+            aria-hidden="true"
+          />
 
-            <span className="navbar-date-separator" aria-hidden="true">
-              /
-            </span>
+          <time className="navbar-time">
+            {time}
+          </time>
 
-            <time className="navbar-date">
-              {date}
-            </time>
-          </div>
-
-          {/* Center / Desktop Navigation */}
-          <nav className="navbar-links" aria-label="Primary navigation">
-            <a href="/#about">About</a>
-            <a href="/#projects">Work</a>
-            <a href="/#skills">Toolkit</a>
-            <a href="/#contact">Contact</a>
-            <a href="/experience">Experience</a>
-          </nav>
-
-          {/* Right: Brand + Theme + Mobile Menu */}
-          <div className="navbar-right">
-            <a
-              href="/#top"
-              className="navbar-brand"
-              aria-label="Haard Patel — Home"
-            >
-              HP<span>©26</span>
-            </a>
-
-            <button
-              type="button"
-              className="navbar-theme-toggle"
-              onClick={toggleTheme}
-              aria-label={
-                isDark
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
-              }
-              title={
-                isDark
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
-              }
-            >
-              {isDark ? (
-                <Sun size={17} strokeWidth={1.6} />
-              ) : (
-                <Moon size={17} strokeWidth={1.6} />
-              )}
-            </button>
-
-            <button
-              type="button"
-              className="navbar-menu-toggle"
-              onClick={() => setIsMenuOpen((current) => !current)}
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMenuOpen}
-            >
-              {isMenuOpen ? (
-                <X size={21} strokeWidth={1.6} />
-              ) : (
-                <Menu size={21} strokeWidth={1.6} />
-              )}
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Navigation */}
-      <div
-        className={`navbar-mobile-menu ${
-          isMenuOpen ? "is-open" : ""
-        }`}
-        aria-hidden={!isMenuOpen}
-      >
-        <nav aria-label="Mobile navigation">
-          <a
-            href="/#about"
-            onClick={closeMenu}
-            tabIndex={isMenuOpen ? 0 : -1}
+          <span
+            className="navbar-date-separator"
+            aria-hidden="true"
           >
-            <span>01</span>
+            /
+          </span>
+
+          <time className="navbar-date">
+            {date}
+          </time>
+        </div>
+
+        {/* Existing HP logo — unchanged */}
+        <a
+          href="#top"
+          className="navbar-logo"
+          onClick={scrollToTop}
+          aria-label="Back to top"
+        >
+          <span className="hp-mark">
+            <span className="hp-h">H</span>
+            <span className="hp-p">P</span>
+
+            <span className="hp-year">
+              <span>©</span>
+              <span>26</span>
+            </span>
+          </span>
+        </a>
+
+        {/* Existing theme + mobile menu controls */}
+        <div className="navbar-meta">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${
+              theme === "dark" ? "light" : "dark"
+            } mode`}
+          >
+            {theme === "dark" ? (
+              <Sun size={15} />
+            ) : (
+              <Moon size={15} />
+            )}
+          </button>
+
+          <button
+            className="mobile-menu-button"
+            onClick={() =>
+              setMenuOpen((current) => !current)
+            }
+            aria-label={
+              menuOpen ? "Close menu" : "Open menu"
+            }
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <X size={19} />
+            ) : (
+              <Menu size={19} />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div className="mobile-navigation">
+          <a href="#about" onClick={closeMenu}>
             About
           </a>
 
-          <a
-            href="/#projects"
-            onClick={closeMenu}
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            <span>02</span>
+          <a href="#projects" onClick={closeMenu}>
             Work
           </a>
 
-          <a
-            href="/#skills"
-            onClick={closeMenu}
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            <span>03</span>
-            Toolkit
+          <a href="#skills" onClick={closeMenu}>
+            Skills
           </a>
 
-          <a
-            href="/#contact"
-            onClick={closeMenu}
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            <span>04</span>
+          <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
 
-          <a
-            href="/experience"
-            onClick={closeMenu}
-            tabIndex={isMenuOpen ? 0 : -1}
-          >
-            <span>05</span>
+          <a href="/experience" onClick={closeMenu}>
             Experience
           </a>
-        </nav>
-      </div>
-    </>
+        </div>
+      )}
+    </header>
   );
 }
 
