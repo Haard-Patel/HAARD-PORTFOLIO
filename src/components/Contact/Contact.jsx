@@ -14,6 +14,11 @@ const contactLinks = [
     href: "https://www.linkedin.com/in/haard-patel2010/",
   },
   {
+    label: "INSTAGRAM",
+    value: "haard20_",
+    href: "https://www.instagram.com/haard20_/",
+  },
+  {
     label: "EMAIL",
     value: "haardp9@gmail.com",
     href: "mailto:haardp9@gmail.com",
@@ -92,18 +97,12 @@ function Contact() {
                 >
                   {copied ? (
                     <>
-                      <Check
-                        size={12}
-                        strokeWidth={1.8}
-                      />
+                      <Check size={12} strokeWidth={1.8} />
                       <span>COPIED</span>
                     </>
                   ) : (
                     <>
-                      <Copy
-                        size={12}
-                        strokeWidth={1.5}
-                      />
+                      <Copy size={12} strokeWidth={1.5} />
                       <span>COPY</span>
                     </>
                   )}
@@ -159,12 +158,11 @@ function Contact() {
         <div className="contact-social-row">
 
           <a
-            href="https://github.com/HaardPatel"
+            href="https://github.com/Hhaard20"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
           >
-            <span>GH</span>
           </a>
 
           <a
@@ -173,14 +171,20 @@ function Contact() {
             rel="noreferrer"
             aria-label="LinkedIn"
           >
-            <span>in</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/haard20_/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+          >
           </a>
 
           <a
             href="mailto:haardp9@gmail.com"
             aria-label="Email"
           >
-            <span>@</span>
           </a>
 
         </div>

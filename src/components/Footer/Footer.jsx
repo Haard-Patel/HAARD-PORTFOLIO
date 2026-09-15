@@ -121,7 +121,6 @@ function Footer() {
                 aria-label="GitHub"
               >
                 <GithubMark />
-                <span>GitHub</span>
               </a>
 
               <a
@@ -131,7 +130,6 @@ function Footer() {
                 aria-label="LinkedIn"
               >
                 <LinkedinMark />
-                <span>LinkedIn</span>
               </a>
 
               <a
@@ -141,7 +139,6 @@ function Footer() {
                 <span className="footer-email-mark">
                   @
                 </span>
-                <span>Email</span>
               </a>
 
               {/* Add your real Instagram URL here */}
@@ -150,7 +147,6 @@ function Footer() {
                 aria-label="Instagram"
               >
                 <InstagramMark />
-                <span>Instagram</span>
               </a>
 
             </div>
@@ -197,8 +193,7 @@ function Footer() {
             </span>
 
             <p>
-              Built with <strong>React</strong>, Vite,
-              CSS, and a lot of curiosity.
+              Built with <strong>React, Vite, Tailwind CSS</strong>.
             </p>
 
             <p>
@@ -209,8 +204,7 @@ function Footer() {
             <div className="footer-stack">
               <span>REACT</span>
               <span>VITE</span>
-              <span>CSS</span>
-              <span>FRAMER MOTION</span>
+              <span>TAILWIND CSS</span>
             </div>
 
           </div>
@@ -221,30 +215,6 @@ function Footer() {
         <div className="footer-end-note">
 
           <div className="footer-end-line" />
-
-          <div className="footer-end-content">
-
-            <div className="footer-end-copy">
-
-              <p className="footer-end-primary">
-                End of page. Not the end of{" "}
-                <span>work.</span>
-              </p>
-
-              <p className="footer-end-secondary">
-                <span>More ideas.</span>{" "}
-                <span>More experiments.</span>{" "}
-                <strong>More to come.</strong>
-              </p>
-
-            </div>
-
-            <span className="footer-end-index">
-              04 / END
-            </span>
-
-          </div>
-
         </div>
 
         {/* Bottom */}
