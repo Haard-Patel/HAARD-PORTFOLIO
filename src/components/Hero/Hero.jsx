@@ -83,7 +83,7 @@ function Hero() {
 
       <div className="hero-main">
         <p className="hero-intro">
-          CS Honours · Software Development
+          CS Gradute · Software Development · Application · Technology
         </p>
 
         <h1>
