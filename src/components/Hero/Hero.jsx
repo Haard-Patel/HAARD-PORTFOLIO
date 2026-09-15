@@ -1,4 +1,5 @@
 import "./Hero.css";
+import "./HeroActions.css";
 
 function Hero() {
   return (
@@ -9,20 +10,23 @@ function Hero() {
           <span>Regina, SK</span>
         </div>
 
-        <nav className="hero-navigation" aria-label="Main navigation">
+        <nav
+          className="hero-navigation"
+          aria-label="Main navigation"
+        >
           <a href="#about">About</a>
-          <a href="#projects">Skills</a>
+          <a href="#skills">Skills</a>
         </nav>
 
         <div className="hero-focus">
           <span className="hero-label">Focus</span>
-          <span>Software · Data · AI · Technology</span>
+          <span>Software · Data · AI</span>
         </div>
       </div>
 
       <div className="hero-main">
         <p className="hero-intro">
-          CS Graduate + Software Development + Tech Enthusiast + Application + Backend
+          CS Honours · Software Development
         </p>
 
         <h1>
@@ -34,9 +38,10 @@ function Hero() {
         <div className="hero-bottom">
           <div className="hero-copy">
             <p className="hero-description">
-              Software developer and technology enthusiast focused on
-              building practical software, solving technical problems,
-              and exploring the intersection of software, data, and AI.
+              Software developer and technology enthusiast
+              focused on building practical software, solving
+              technical problems, and exploring the
+              intersection of software, data, and AI.
             </p>
 
             <a
@@ -51,12 +56,36 @@ function Hero() {
           </div>
 
           <div className="hero-actions">
-            <a href="#projects" className="hero-link primary">
-              View work <span>↓</span>
+            <a
+              href="#projects"
+              className="hero-link primary"
+            >
+              <span className="hero-link-label">
+                View work
+              </span>
+
+              <span
+                className="hero-link-arrow"
+                aria-hidden="true"
+              >
+                ↓
+              </span>
             </a>
 
-            <a href="/experience" className="hero-link">
-              Experience <span>→</span>
+            <a
+              href="/experience"
+              className="hero-link"
+            >
+              <span className="hero-link-label">
+                Experience
+              </span>
+
+              <span
+                className="hero-link-arrow"
+                aria-hidden="true"
+              >
+                →
+              </span>
             </a>
           </div>
         </div>

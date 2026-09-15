@@ -3,21 +3,21 @@ import "./About.css";
 const locations = [
   {
     country: "India",
-    city: "Varanasi",
+    city: "FIG.01/ Varanasi",
     coordinates: "29°N · 78°E",
     image: "/images/ahm.jpeg",
     alt: "Ahmedabad, India",
   },
   {
     country: "Canada",
-    city: "Saskatoon",
+    city: "FIG.02/ Saskatoon",
     coordinates: "52°N · 106°W",
     image: "/images/sask.jpeg",
     alt: "Haard skating in Saskatoon, Canada",
   },
   {
     country: "Canada",
-    city: "Toronto",
+    city: "FIG.03/ Toronto",
     coordinates: "52°N · 79°W",
     image: null,
     alt: "",
@@ -142,7 +142,7 @@ function About() {
         <div className="about-copy">
           <div className="about-copy-primary">
             <p>
-              I&apos;m a Computer Science Honours graduate from
+              I&apos;m a Computer Science Honour Graduate from
               the University of Saskatchewan, with a strong
               interest in software development, mathematics,
               statistics, and solving practical problems with
@@ -150,17 +150,8 @@ function About() {
             </p>
 
             <p>
-              My journey has taken me from Ahmedabad, India to
-              Saskatoon, Canada. Moving across countries taught
-              me to adapt quickly, become more independent, and
-              stay comfortable learning in unfamiliar situations.
-            </p>
-          </div>
-
-          <div className="about-copy-secondary">
-            <p>
               I&apos;m particularly interested in the intersection
-              of software, data, and AI. I enjoy building
+              of software and AI. I enjoy building
               full-stack applications, working with APIs and
               databases, analyzing data, and understanding how
               systems work from both a technical and analytical
@@ -174,10 +165,28 @@ function About() {
               data to make better decisions.
             </p>
 
+            
+          </div>
+
+          <div className="about-copy-secondary">
+
+          <p>
+              My journey has taken me from Ahmedabad, India to
+              Saskatoon, Canada. Moving across countries taught
+              me to adapt quickly, become more independent, and
+              stay comfortable learning in unfamiliar situations.
+            </p>
+            
             <p>
               I&apos;m always learning, experimenting, and looking
               for something new to build. That curiosity is what
               keeps me interested in technology.
+            </p>
+
+            <p>
+              I&apos;m a believer of Music connects people that makes me love music. 
+              I like to stay active and enjoy sports, fitness, and outdoor adventures.
+              Reading keeps my brain sharp and helps me learn new things.
             </p>
           </div>
         </div>

@@ -1,100 +1,65 @@
 import { useEffect, useRef, useState } from "react";
+import "./Cursor.css";
 
 function Cursor() {
-  const dotRef = useRef(null);
-  const ringRef = useRef(null);
-
-  const mouse = useRef({
-    x: -100,
-    y: -100,
-  });
-
-  const ringPosition = useRef({
+  const cursorRef = useRef(null);
+  const mousePosition = useRef({
     x: -100,
     y: -100,
   });
 
   const animationFrame = useRef(null);
 
-  const [cursorState, setCursorState] = useState({
-    visible: false,
-    hovering: false,
-    project: false,
-  });
+  const [isVisible, setIsVisible] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const isTouchDevice =
-      window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    const isTouchDevice = window.matchMedia(
+      "(hover: none), (pointer: coarse)"
+    ).matches;
 
-    const prefersReducedMotion =
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     if (isTouchDevice) {
       return undefined;
     }
 
     const handleMouseMove = (event) => {
-      mouse.current.x = event.clientX;
-      mouse.current.y = event.clientY;
+      mousePosition.current.x = event.clientX;
+      mousePosition.current.y = event.clientY;
 
-      if (!cursorState.visible) {
-        setCursorState((current) => ({
-          ...current,
-          visible: true,
-        }));
-      }
+      setIsVisible(true);
     };
 
     const handleMouseLeave = () => {
-      setCursorState((current) => ({
-        ...current,
-        visible: false,
-      }));
+      setIsVisible(false);
     };
 
     const handleMouseOver = (event) => {
-      const interactiveElement = event.target.closest(
-        "a, button, [role='button'], input, textarea, select"
-      );
+      const target = event.target;
 
-      if (!interactiveElement) {
-        setCursorState((current) => ({
-          ...current,
-          hovering: false,
-          project: false,
-        }));
-
+      if (!(target instanceof Element)) {
         return;
       }
 
-      const isProject =
-        interactiveElement.matches(".project-arrow") ||
-        interactiveElement.closest(".project-item") !== null;
+      const clickableElement = target.closest(
+        "a, button, [role='button'], input, textarea, select, summary"
+      );
 
-      setCursorState((current) => ({
-        ...current,
-        hovering: true,
-        project: isProject,
-      }));
+      setIsHovering(Boolean(clickableElement));
     };
 
     const animate = () => {
-      if (dotRef.current) {
-        dotRef.current.style.left = `${mouse.current.x}px`;
-        dotRef.current.style.top = `${mouse.current.y}px`;
-      }
+      if (cursorRef.current) {
+        const cursor = cursorRef.current;
 
-      if (ringRef.current) {
-        const easing = prefersReducedMotion ? 1 : 0.16;
-
-        ringPosition.current.x +=
-          (mouse.current.x - ringPosition.current.x) * easing;
-
-        ringPosition.current.y +=
-          (mouse.current.y - ringPosition.current.y) * easing;
-
-        ringRef.current.style.left = `${ringPosition.current.x}px`;
-        ringRef.current.style.top = `${ringPosition.current.y}px`;
+        cursor.style.transform = `translate3d(
+          ${mousePosition.current.x}px,
+          ${mousePosition.current.y}px,
+          0
+        ) translate(-50%, -50%)`;
       }
 
       animationFrame.current = requestAnimationFrame(animate);
@@ -104,41 +69,44 @@ function Cursor() {
     document.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseleave", handleMouseLeave);
 
+    if (prefersReducedMotion) {
+      if (cursorRef.current) {
+        cursorRef.current.style.transition = "none";
+      }
+    }
+
     animationFrame.current = requestAnimationFrame(animate);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseover", handleMouseOver);
-      document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener(
+        "mousemove",
+        handleMouseMove
+      );
+
+      document.removeEventListener(
+        "mouseover",
+        handleMouseOver
+      );
+
+      document.removeEventListener(
+        "mouseleave",
+        handleMouseLeave
+      );
 
       if (animationFrame.current) {
         cancelAnimationFrame(animationFrame.current);
       }
     };
-  }, [cursorState.visible]);
+  }, []);
 
   return (
-    <>
-      <span
-        ref={dotRef}
-        className={`custom-cursor ${
-          cursorState.visible ? "is-visible" : ""
-        } ${cursorState.hovering ? "is-hovering" : ""} ${
-          cursorState.project ? "is-project" : ""
-        }`}
-        aria-hidden="true"
-      />
-
-      <span
-        ref={ringRef}
-        className={`custom-cursor-ring ${
-          cursorState.visible ? "is-visible" : ""
-        } ${cursorState.hovering ? "is-hovering" : ""} ${
-          cursorState.project ? "is-project" : ""
-        }`}
-        aria-hidden="true"
-      />
-    </>
+    <span
+      ref={cursorRef}
+      className={`custom-cursor ${
+        isVisible ? "is-visible" : ""
+      } ${isHovering ? "is-hovering" : ""}`}
+      aria-hidden="true"
+    />
   );
 }
 
