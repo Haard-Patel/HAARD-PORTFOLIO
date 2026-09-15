@@ -61,7 +61,6 @@ function App() {
                 <p className="scroll-note-line handwritten-line">
                   <span>More ideas.</span>{" "}
                   <span>More experiments.</span>{" "}
-                  <strong>More to come.</strong>
                 </p>
               </div>
 

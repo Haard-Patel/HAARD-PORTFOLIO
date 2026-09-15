@@ -172,13 +172,9 @@ import {
             </div>
   
             <div className="footer-time">
-              <span>
+              <strong>
                 Regina, Saskatchewan
-              </span>
-  
-              <span>
-                © 2026 Haard Patel
-              </span>
+              </strong>
             </div>
   
           </div>

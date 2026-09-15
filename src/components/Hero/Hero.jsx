@@ -1,7 +1,57 @@
+import { useEffect, useState } from "react";
 import "./Hero.css";
 import "./HeroActions.css";
 
+const heroStatements = [
+  {
+    first: "I build the ",
+    accent: "systems",
+    middle: ", and ",
+    emphasis: "draw the rest by hand.",
+  },
+  {
+    first: "I turn ",
+    accent: "complex problems",
+    middle: " into ",
+    emphasis: "simple, working software.",
+  },
+  {
+    first: "I build with ",
+    accent: "data",
+    middle: ", think with structure, and ",
+    emphasis: "learn by experimenting.",
+  },
+  {
+    first: "I like understanding how things work, then ",
+    accent: "making them work better.",
+    middle: "",
+    emphasis: "",
+  },
+  {
+    first: "From ideas to interfaces, I build things that ",
+    accent: "people can actually use.",
+    middle: "",
+    emphasis: "",
+  },
+];
+
 function Hero() {
+  const [statementIndex, setStatementIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setStatementIndex((current) =>
+        (current + 1) % heroStatements.length
+      );
+    }, 10000);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, []);
+
+  const statement = heroStatements[statementIndex];
+
   return (
     <section className="hero">
       <div className="hero-meta">
@@ -34,6 +84,27 @@ function Hero() {
           <br />
           Patel<span>.</span>
         </h1>
+
+        {/* ROTATING PERSONAL STATEMENT */}
+        <div
+          className="hero-statement"
+          key={statementIndex}
+          aria-live="polite"
+        >
+          <p>
+            {statement.first}
+
+            <span className="hero-statement-accent">
+              {statement.accent}
+            </span>
+
+            {statement.middle}
+
+            {statement.emphasis && (
+              <em>{statement.emphasis}</em>
+            )}
+          </p>
+        </div>
 
         <div className="hero-bottom">
           <div className="hero-copy">
