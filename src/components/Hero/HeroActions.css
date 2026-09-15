@@ -5,7 +5,7 @@
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 32px;
   }
   
   /* =========================================
@@ -15,57 +15,26 @@
   .hero-link {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
+    justify-content: center;
+    gap: 13px;
+  
+    min-height: 58px;
+    padding: 0 25px;
   
     color: var(--text-secondary);
+  
+    border: 1px solid var(--border);
+    border-radius: 999px;
   
     font-family: "JetBrains Mono", monospace;
     font-size: 0.67rem;
     font-weight: 500;
     letter-spacing: 0.04em;
+    line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
   
-    transition:
-      color 200ms ease,
-      opacity 200ms ease;
-  }
-  
-  .hero-link:hover {
-    color: var(--accent);
-  }
-  
-  .hero-link.primary {
-    color: var(--text-primary);
-  }
-  
-  .hero-link.primary:hover {
-    color: var(--accent);
-  }
-  
-  /* =========================================
-     SEPARATE ARROW CIRCLE
-  ========================================= */
-  
-  .hero-link-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  
-    width: 31px;
-    height: 31px;
-  
-    flex-shrink: 0;
-  
-    border: 1px solid var(--border);
-    border-radius: 50%;
-  
-    color: var(--text-secondary);
-  
-    font-family: "Instrument Sans", sans-serif;
-    font-size: 0.88rem;
-    font-weight: 400;
-    line-height: 1;
+    white-space: nowrap;
   
     transition:
       color 220ms ease,
@@ -74,18 +43,58 @@
       transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   
-  .hero-link.primary .hero-link-arrow {
+  /* View Work */
+  .hero-link.primary {
     color: var(--text-primary);
+  
+    min-height: 66px;
+    padding: 0 30px;
+  
+    border-color: var(--border);
   }
   
-  .hero-link:hover .hero-link-arrow {
+  /* Hover */
+  .hero-link:hover {
     color: var(--accent);
   
     border-color: var(--border-hover);
   
-    background: rgba(91, 140, 255, 0.06);
+    background: rgba(91, 140, 255, 0.055);
   
-    transform: translateX(2px);
+    transform: translateY(-2px);
+  }
+  
+  .hero-link.primary:hover {
+    color: var(--accent);
+  }
+  
+  /* =========================================
+     ARROWS
+  ========================================= */
+  
+  .hero-link-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: currentColor;
+  
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1;
+  
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  
+  .hero-link:hover .hero-link-arrow {
+    transform: translateY(2px);
+  }
+  
+  /* Experience arrow moves slightly right */
+  .hero-link:not(.primary):hover .hero-link-arrow {
+    transform: translateX(3px);
   }
   
   /* =========================================
@@ -96,17 +105,23 @@
     .hero-actions {
       align-items: flex-start;
       flex-direction: column;
-      gap: 16px;
+      gap: 17px;
     }
   
     .hero-link {
-      font-size: 0.62rem;
+      min-height: 53px;
+      padding: 0 22px;
+  
+      font-size: 0.61rem;
+    }
+  
+    .hero-link.primary {
+      min-height: 59px;
+      padding: 0 26px;
     }
   
     .hero-link-arrow {
-      width: 29px;
-      height: 29px;
-      font-size: 0.82rem;
+      font-size: 0.95rem;
     }
   }
   
@@ -119,9 +134,18 @@
       gap: 14px;
     }
   
+    .hero-link {
+      min-height: 50px;
+      padding: 0 19px;
+    }
+  
+    .hero-link.primary {
+      min-height: 56px;
+      padding: 0 23px;
+    }
+  
     .hero-link-arrow {
-      width: 28px;
-      height: 28px;
+      font-size: 0.9rem;
     }
   }
   
@@ -135,7 +159,12 @@
       transition: none;
     }
   
-    .hero-link:hover .hero-link-arrow {
+    .hero-link:hover {
+      transform: none;
+    }
+  
+    .hero-link:hover .hero-link-arrow,
+    .hero-link:not(.primary):hover .hero-link-arrow {
       transform: none;
     }
   }

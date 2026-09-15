@@ -6,7 +6,7 @@ const locations = [
     city: "FIG.01/ Varanasi",
     coordinates: "29°N · 78°E",
     image: "/images/ahm.jpeg",
-    alt: "Ahmedabad, India",
+    alt: "Ganga Ghat, India",
   },
   {
     country: "Canada",
@@ -19,7 +19,7 @@ const locations = [
     country: "Canada",
     city: "FIG.03/ Toronto",
     coordinates: "52°N · 79°W",
-    image: null,
+    image: "images/toronto.jpeg",
     alt: "",
   },
 ];
