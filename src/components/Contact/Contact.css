@@ -1,0 +1,477 @@
+.contact-section {
+    position: relative;
+    padding: 108px 0 0;
+    background: var(--background-secondary);
+    border-top: 1px solid var(--border);
+  }
+  
+  .contact-container {
+    width: min(100% - 48px, var(--max-width));
+    margin: 0 auto;
+  }
+  
+  /* --------------------------------------------------
+     TOP LINE
+  -------------------------------------------------- */
+  
+  .contact-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 13px;
+    border-top: 1px solid var(--border);
+    padding-top: 13px;
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  
+  /* --------------------------------------------------
+     MAIN CONTACT AREA
+  -------------------------------------------------- */
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+    gap: 105px;
+    padding: 62px 0 110px;
+  }
+  
+  .contact-main {
+    min-width: 0;
+  }
+  
+  .contact-main h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(4.2rem, 7vw, 6.8rem);
+    font-weight: 500;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+  }
+  
+  .contact-main h2 em {
+    color: var(--accent);
+    font-family: "Kalam", cursive;
+    font-size: 0.92em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+  }
+  
+  .contact-description {
+    max-width: 620px;
+    margin: 30px 0 0;
+    color: var(--text-secondary);
+    font-family: "Instrument Sans", sans-serif;
+    font-size: clamp(1rem, 1.35vw, 1.22rem);
+    line-height: 1.65;
+  }
+  
+  .contact-description strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  
+  /* --------------------------------------------------
+     EMAIL
+  -------------------------------------------------- */
+  
+  .contact-email-block {
+    margin-top: 62px;
+  }
+  
+  .contact-small-label,
+  .contact-side-heading {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  
+  .contact-email-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .contact-email {
+    color: var(--text-primary);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.45rem, 2.5vw, 2.3rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.1;
+    text-decoration: none;
+    word-break: break-word;
+    transition: color 200ms ease;
+  }
+  
+  .contact-email:hover {
+    color: var(--accent);
+  }
+  
+  .contact-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 60px;
+    min-height: 38px;
+    padding: 0 12px;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    cursor: pointer;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease;
+  }
+  
+  .contact-copy:hover {
+    color: var(--accent);
+    border-color: var(--border-hover);
+    background: rgba(91, 140, 255, 0.05);
+  }
+  
+  /* --------------------------------------------------
+     ELSEWHERE
+  -------------------------------------------------- */
+  
+  .contact-side {
+    min-width: 0;
+    padding-top: 7px;
+  }
+  
+  .contact-side-heading {
+    margin: 0;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .contact-links {
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 66px;
+    padding: 0;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition:
+      color 180ms ease,
+      padding 180ms ease;
+  }
+  
+  .contact-link:last-child {
+    border-bottom: 0;
+  }
+  
+  .contact-link:hover {
+    color: var(--text-primary);
+    padding-left: 5px;
+  }
+  
+  .contact-link-label {
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+  }
+  
+  .contact-link-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--text-secondary);
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 450;
+    text-align: right;
+  }
+  
+  .contact-link-value svg {
+    color: var(--text-muted);
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+  
+  .contact-link:hover .contact-link-value svg {
+    color: var(--accent);
+    transform: translate(2px, -2px);
+  }
+  
+  /* --------------------------------------------------
+     SOCIAL ICONS
+  -------------------------------------------------- */
+  
+  .contact-social-row {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    padding: 0 0 34px;
+  }
+  
+  .contact-social-row a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+  
+  .contact-social-row a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+  
+  /* --------------------------------------------------
+     END NOTE
+  -------------------------------------------------- */
+  
+  .contact-end {
+    padding-bottom: 0;
+  }
+  
+  .contact-end-line {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+  }
+  
+  .contact-end-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 145px;
+  }
+  
+  .contact-end-copy p {
+    margin: 0;
+    color: var(--text-primary);
+    font-family: "Instrument Sans", sans-serif;
+    font-size: clamp(1.15rem, 1.65vw, 1.5rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+  
+  .contact-handwritten {
+    color: var(--accent-secondary);
+    font-family: "Kalam", cursive;
+    font-size: 1.08em;
+    font-weight: 400;
+  }
+  
+  .contact-end-secondary {
+    margin-top: 8px !important;
+    color: var(--text-muted) !important;
+    font-size: 0.7rem !important;
+    font-family: "JetBrains Mono", monospace !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase;
+  }
+  
+  .contact-end-secondary span:nth-child(1) {
+    color: var(--text-secondary);
+  }
+  
+  .contact-end-secondary span:nth-child(2) {
+    color: var(--accent);
+  }
+  
+  .contact-end-secondary strong {
+    color: var(--accent-secondary);
+    font-weight: 500;
+  }
+  
+  .contact-end-index {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.14em;
+  }
+  
+  /* --------------------------------------------------
+     LIGHT MODE
+  -------------------------------------------------- */
+  
+  [data-theme="light"] .contact-section {
+    background: #f0f3f8;
+  }
+  
+  /* --------------------------------------------------
+     TABLET
+  -------------------------------------------------- */
+  
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 72px;
+      padding-top: 55px;
+    }
+  
+    .contact-side {
+      max-width: 100%;
+    }
+  
+    .contact-email {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+    }
+  }
+  
+  /* --------------------------------------------------
+     MOBILE
+  -------------------------------------------------- */
+  
+  @media (max-width: 700px) {
+    .contact-section {
+      padding-top: 82px;
+    }
+  
+    .contact-container {
+      width: min(100% - 36px, var(--max-width));
+    }
+  
+    .contact-topline {
+      font-size: 0.53rem;
+    }
+  
+    .contact-grid {
+      gap: 58px;
+      padding: 52px 0 70px;
+    }
+  
+    .contact-main h2 {
+      font-size: clamp(4rem, 17vw, 5.8rem);
+    }
+  
+    .contact-description {
+      margin-top: 27px;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+  
+    .contact-email-block {
+      margin-top: 48px;
+    }
+  
+    .contact-email-row {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 17px;
+    }
+  
+    .contact-email {
+      font-size: clamp(1.35rem, 7vw, 2rem);
+    }
+  
+    .contact-copy {
+      min-height: 36px;
+    }
+  
+    .contact-link {
+      min-height: 62px;
+    }
+  
+    .contact-link-value {
+      font-size: 0.7rem;
+    }
+  
+    .contact-social-row {
+      padding-bottom: 30px;
+    }
+  
+    .contact-end-content {
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      gap: 17px;
+      min-height: 145px;
+    }
+  
+    .contact-end-index {
+      align-self: flex-end;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .contact-container {
+      width: min(100% - 30px, var(--max-width));
+    }
+  
+    .contact-topline {
+      letter-spacing: 0.1em;
+    }
+  
+    .contact-link {
+      gap: 15px;
+    }
+  
+    .contact-link-label {
+      font-size: 0.53rem;
+    }
+  
+    .contact-link-value {
+      max-width: 58%;
+      font-size: 0.64rem;
+    }
+  
+    .contact-end-secondary {
+      font-size: 0.57rem !important;
+      line-height: 1.7;
+    }
+  }
+  
+  /* --------------------------------------------------
+     REDUCED MOTION
+  -------------------------------------------------- */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .contact-email,
+    .contact-copy,
+    .contact-link,
+    .contact-link-value svg,
+    .contact-social-row a {
+      transition: none;
+    }
+  
+    .contact-link:hover {
+      padding-left: 0;
+    }
+  
+    .contact-link:hover .contact-link-value svg {
+      transform: none;
+    }
+  
+    .contact-social-row a:hover {
+      transform: none;
+    }
+  }

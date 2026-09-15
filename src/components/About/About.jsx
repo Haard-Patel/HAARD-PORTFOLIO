@@ -184,7 +184,7 @@ function About() {
             </p>
 
             <p>
-              I&apos;m a believer of Music connects people that makes me love music. 
+              I&apos;m a believer of "Music connects people.." that makes me love music. 
               I like to stay active and enjoy sports, fitness, and outdoor adventures.
               Reading keeps my brain sharp and helps me learn new things.
             </p>
