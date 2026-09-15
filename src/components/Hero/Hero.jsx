@@ -4,10 +4,10 @@ import "./HeroActions.css";
 
 const heroStatements = [
   {
-    first: "I like understanding ",
-    accent: "how things work",
-    middle: ", then ",
-    emphasis: "making them work better.",
+    first: "I build the ",
+    accent: "systems",
+    middle: ", and ",
+    emphasis: "draw the rest by hand.",
   },
   {
     first: "I turn ",
@@ -16,23 +16,29 @@ const heroStatements = [
     emphasis: "simple, working software.",
   },
   {
-    first: "I build things that ",
-    accent: "people can actually use",
-    middle: ", ",
-    emphasis: "not just things that look good.",
-  },
-  {
     first: "I learn by ",
     accent: "building",
     middle: ", ",
     emphasis: "breaking, and trying again.",
   },
   {
-    first: "Curious by nature, ",
-    accent: "technical by habit",
-    middle: ", and ",
-    emphasis: "always learning.",
+    first: "I like understanding how things work, then ",
+    accent: "making them work better.",
+    middle: "",
+    emphasis: "",
   },
+  {
+    first: "From ideas to interfaces, I build things that ",
+    accent: "people can actually use.",
+    middle: "",
+    emphasis: "",
+  },
+    {
+      first: "Curious by nature, ",
+      accent: "technical by skill",
+      middle: ", and ",
+      emphasis: "learner by habit.",
+    },
 ];
 
 function Hero() {
@@ -73,7 +79,6 @@ function Hero() {
           <span>Software · Data · AI</span>
         </div>
       </div>
-
       <div className="hero-meta-line" aria-hidden="true" />
 
       <div className="hero-main">
