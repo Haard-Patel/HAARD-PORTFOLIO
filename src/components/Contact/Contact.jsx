@@ -6,7 +6,7 @@ const contactLinks = [
   {
     label: "GITHUB",
     value: "HaardPatel",
-    href: "https://github.com/HaardPatel",
+    href: "https://github.com/Haard-Patel",
   },
   {
     label: "LINKEDIN",
@@ -65,12 +65,12 @@ function Contact() {
 
             <p className="contact-description">
               Open to conversations about{" "}
-              <strong>turn what I’ve learned into real-world experience.</strong>.
-              open to opportunities across software, data, and technology, 
+              <strong>turn what I’ve learned into real-world experience.</strong>
+              Open to opportunities across <strong>Technological support, Software, Application, Analysis  </strong> 
               and always interested in meeting people, exchanging ideas, 
               and learning from the work others are doing. 
               If you’re building something, solving a problem, or simply want to connect, 
-              <em>let’s talk.</em>
+              <strong>let’s talk.</strong>
             </p>
 
             <div className="contact-email-block">
