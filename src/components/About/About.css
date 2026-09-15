@@ -1,35 +1,35 @@
 .about-section {
-  min-height: initial;
-  padding: 105px 0 100px;
-
+  padding: 150px 0;
   background: var(--background-secondary);
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .about-container {
-  width: min(calc(100% - 72px), var(--max-width));
+  width: min(100% - 48px, var(--max-width));
   margin: 0 auto;
 }
 
-/* =========================
+/* =========================================
    HEADING
-   ========================= */
+========================================= */
 
 .about-heading {
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  align-items: start;
+  grid-template-columns: 140px minmax(0, 1fr);
   gap: 60px;
+  align-items: start;
 }
 
 .about-label {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  padding-top: 9px;
 
   color: var(--text-muted);
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -41,47 +41,50 @@
 
 .about-route {
   display: grid;
-  grid-template-columns: auto minmax(80px, 1fr) auto;
+  grid-template-columns: auto minmax(100px, 1fr) auto;
   align-items: center;
-  gap: 17px;
+  gap: 28px;
+  min-width: 0;
 }
 
 .about-route-location {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-}
-
-.about-route-location.canada {
-  text-align: right;
-  align-items: flex-end;
+  gap: 4px;
 }
 
 .about-route-country {
-  color: var(--text-muted);
+  color: var(--accent);
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.5rem;
-  letter-spacing: 0.1em;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
 }
 
 .about-route-city {
   color: var(--text-primary);
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 500;
+  letter-spacing: -0.04em;
 }
 
 .about-route-coordinates {
   color: var(--text-muted);
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.48rem;
+  font-size: 0.58rem;
   letter-spacing: 0.04em;
+}
+
+.about-route-location.canada {
+  text-align: right;
 }
 
 .about-route-path {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
+  min-width: 100px;
 }
 
 .about-route-line {
@@ -91,25 +94,25 @@
 }
 
 .about-plane {
-  color: var(--accent);
-  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
   line-height: 1;
-  transform: rotate(4deg);
+  transform: rotate(0deg);
 }
 
-/* =========================
-   PHOTO GRID
-   ========================= */
+/* =========================================
+   GALLERY
+========================================= */
 
 .about-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 17px;
-
-  margin-top: 52px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 72px;
 }
 
 .about-photo {
+  min-width: 0;
   margin: 0;
 }
 
@@ -117,45 +120,45 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
-
   overflow: hidden;
-
   background: var(--surface-solid);
   border: 1px solid var(--border);
 }
 
 .about-image img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  filter: saturate(0.9);
-
+  object-position: center;
   transition:
-    transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
     filter 500ms ease;
 }
 
 .about-photo:hover .about-image img {
   transform: scale(1.025);
-  filter: saturate(1);
+  filter: saturate(1.04);
 }
 
 .about-photo-number {
   position: absolute;
-  top: 12px;
-  left: 13px;
+  top: 14px;
+  left: 14px;
   z-index: 2;
 
-  color: rgba(255, 255, 255, 0.72);
-
+  color: rgba(255, 255, 255, 0.75);
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.48rem;
-  letter-spacing: 0.06em;
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
+
+/* =========================================
+   THIRD PHOTO PLACEHOLDER
+========================================= */
 
 .about-image-placeholder {
   display: flex;
@@ -164,32 +167,55 @@
 
   background:
     linear-gradient(
+      180deg,
+      rgba(30, 42, 60, 0.85),
+      rgba(11, 15, 20, 0.98)
+    );
+}
+
+.about-image-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
       135deg,
-      rgba(91, 140, 255, 0.04),
-      rgba(139, 124, 255, 0.035)
+      transparent 0%,
+      rgba(91, 140, 255, 0.05) 50%,
+      transparent 100%
     );
 }
 
 .about-coming-soon {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 
   color: var(--text-muted);
-
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.48rem;
-  letter-spacing: 0.08em;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-align: center;
 }
 
 .about-coming-line {
   width: 34px;
   height: 1px;
-  margin-top: 5px;
-  background: var(--border);
+  margin-top: 12px;
+
+  background: var(--text-muted);
+  opacity: 0.55;
 }
+
+/* =========================================
+   IMAGE CAPTIONS
+========================================= */
 
 .about-photo-caption {
   display: flex;
@@ -197,50 +223,61 @@
   justify-content: space-between;
   gap: 15px;
 
-  padding-top: 11px;
-
-  font-family: "JetBrains Mono", monospace;
+  padding-top: 12px;
 }
 
 .about-photo-caption > div {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .about-photo-city {
   color: var(--text-primary);
-  font-size: 0.57rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.82rem;
   font-weight: 500;
 }
 
-.about-photo-country,
-.about-photo-coordinates {
+.about-photo-country {
   color: var(--text-muted);
-  font-size: 0.47rem;
-  letter-spacing: 0.04em;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* =========================
+.about-photo-coordinates {
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.53rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* =========================================
    ABOUT COPY
-   ========================= */
+========================================= */
 
 .about-copy {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 75px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 80px;
 
-  margin-top: 82px;
-  padding-top: 25px;
-
-  border-top: 1px solid var(--border);
+  width: min(100%, 1080px);
+  margin-top: 118px;
 }
 
 .about-copy-primary,
 .about-copy-secondary {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 26px;
+}
+
+.about-copy-primary {
+  padding-right: 30px;
+  border-right: 1px solid var(--border);
 }
 
 .about-copy p {
@@ -248,209 +285,288 @@
 
   color: var(--text-secondary);
   font-family: "Instrument Sans", sans-serif;
-  font-size: 1rem;
-  line-height: 1.72;
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.7;
   letter-spacing: -0.012em;
 }
 
 .about-copy-primary p:first-child {
   color: var(--text-primary);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  line-height: 1.45;
+  font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+  line-height: 1.58;
   letter-spacing: -0.025em;
 }
 
-.about-copy-secondary p {
-  font-size: 0.91rem;
-  line-height: 1.7;
-}
-
-/* =========================
+/* =========================================
    FOCUS TAGS
-   ========================= */
+========================================= */
 
 .about-focus {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 9px 18px;
 
-  margin-top: 47px;
-  padding-top: 19px;
+  width: min(100%, 1080px);
+  margin-top: 56px;
+  padding-top: 20px;
 
   border-top: 1px solid var(--border);
 }
 
 .about-focus span {
-  padding: 7px 10px;
-
   color: var(--text-muted);
-  border: 1px solid var(--border);
-
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.48rem;
-  letter-spacing: 0.07em;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
 }
 
-/* =========================
-   TABLET
-   ========================= */
+.about-focus span:not(:last-child)::after {
+  content: "·";
+  margin-left: 18px;
+  color: var(--accent);
+}
 
-@media (max-width: 900px) {
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1440px) {
   .about-section {
-    padding: 88px 0 82px;
+    padding: 175px 0;
   }
 
   .about-container {
-    width: min(calc(100% - 56px), var(--max-width));
-  }
-
-  .about-heading {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .about-route {
-    max-width: 650px;
+    width: min(100% - 80px, 1320px);
   }
 
   .about-gallery {
-    margin-top: 43px;
+    gap: 22px;
+    margin-top: 82px;
+  }
+
+  .about-copy {
+    margin-top: 135px;
+  }
+}
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+  .about-section {
+    padding: 115px 0;
+  }
+
+  .about-container {
+    width: min(100% - 40px, var(--max-width));
+  }
+
+  .about-heading {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .about-route {
+    gap: 18px;
+  }
+
+  .about-gallery {
+    gap: 14px;
+    margin-top: 58px;
   }
 
   .about-copy {
     gap: 50px;
-    margin-top: 68px;
+    margin-top: 90px;
+  }
+
+  .about-copy-primary {
+    padding-right: 25px;
   }
 }
 
-/* =========================
+/* =========================================
    MOBILE
-   ========================= */
+========================================= */
 
 @media (max-width: 700px) {
   .about-section {
-    padding: 68px 0 68px;
+    padding: 90px 0;
   }
 
   .about-container {
-    width: calc(100% - 32px);
+    width: min(100% - 32px, var(--max-width));
   }
 
+  /* Heading becomes vertical */
   .about-heading {
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 
   .about-label {
-    font-size: 0.55rem;
+    padding-top: 0;
   }
 
+  /* Route becomes vertical */
   .about-route {
-    grid-template-columns: auto minmax(35px, 1fr) auto;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-route-location {
+    gap: 5px;
+  }
+
+  .about-route-location.canada {
+    text-align: left;
   }
 
   .about-route-city {
-    font-size: 0.78rem;
+    font-size: clamp(1.55rem, 7vw, 2rem);
   }
 
   .about-route-coordinates {
-    font-size: 0.43rem;
+    font-size: 0.55rem;
   }
 
+  .about-route-path {
+    width: 100%;
+    min-width: 0;
+    height: 54px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 7px;
+    padding-left: 4px;
+  }
+
+  .about-route-line {
+    width: 1px;
+    height: 15px;
+    flex: none;
+  }
+
+  .about-plane {
+    margin-left: -5px;
+    transform: rotate(90deg);
+    font-size: 0.95rem;
+  }
+
+  /* Gallery becomes vertical */
   .about-gallery {
     grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 37px;
+    gap: 38px;
+    margin-top: 52px;
   }
 
   .about-image {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 4 / 5;
   }
 
+  .about-photo-caption {
+    padding-top: 10px;
+  }
+
+  /* Copy becomes vertical */
   .about-copy {
-    grid-template-columns: 1fr;
-    gap: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
-    margin-top: 57px;
-    padding-top: 21px;
+    width: 100%;
+    margin-top: 78px;
   }
 
-  .about-copy-primary p:first-child {
-    font-size: 1.2rem;
+  .about-copy-primary,
+  .about-copy-secondary {
+    gap: 24px;
+  }
+
+  .about-copy-primary {
+    padding-right: 0;
+    padding-bottom: 32px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
   }
 
   .about-copy p {
-    font-size: 0.93rem;
+    font-size: 0.98rem;
+    line-height: 1.68;
   }
 
-  .about-copy-secondary p {
-    font-size: 0.88rem;
+  .about-copy-primary p:first-child {
+    font-size: 1.08rem;
+    line-height: 1.58;
   }
 
   .about-focus {
-    margin-top: 36px;
-    padding-top: 17px;
+    width: 100%;
+    margin-top: 42px;
+    gap: 8px 14px;
+  }
+
+  .about-focus span {
+    font-size: 0.53rem;
+  }
+
+  .about-focus span:not(:last-child)::after {
+    margin-left: 14px;
   }
 }
 
-/* =========================
-   SMALL MOBILE
-   ========================= */
+/* =========================================
+   SMALL PHONES
+========================================= */
 
 @media (max-width: 420px) {
   .about-section {
-    padding: 59px 0 60px;
+    padding: 78px 0;
   }
 
   .about-container {
     width: calc(100% - 26px);
   }
 
-  .about-route {
-    gap: 8px;
-  }
-
-  .about-route-country {
-    font-size: 0.44rem;
-  }
-
-  .about-route-city {
-    font-size: 0.72rem;
-  }
-
-  .about-route-coordinates {
-    font-size: 0.39rem;
-  }
-
   .about-gallery {
-    margin-top: 32px;
+    gap: 32px;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-photo-caption {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .about-photo-caption > div {
+    gap: 7px;
   }
 
   .about-copy {
-    margin-top: 49px;
+    margin-top: 68px;
+  }
+
+  .about-copy p {
+    font-size: 0.94rem;
   }
 
   .about-copy-primary p:first-child {
-    font-size: 1.1rem;
+    font-size: 1.03rem;
   }
 }
 
-/* =========================
-   LIGHT MODE
-   ========================= */
-
-[data-theme="light"] .about-image-placeholder {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(65, 111, 224, 0.04),
-      rgba(116, 99, 223, 0.035)
-    );
-}
-
-[data-theme="light"] .about-photo-number {
-  color: rgba(23, 32, 51, 0.62);
-}
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .about-image img {
