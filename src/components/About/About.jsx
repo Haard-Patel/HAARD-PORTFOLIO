@@ -193,6 +193,14 @@ function About() {
 
         {/* FOCUS TAGS */}
         <div className="about-focus">
+        tags: [
+      "MUSIC",
+      "FITNESS",
+      "MATHEMATICS",
+      "READING",
+      "ADVENTURE",
+      "SPORTS",
+    ],
           <span>MUSIC</span>
           <span>FITNESS</span>
           <span>MATHEMATICS</span>
