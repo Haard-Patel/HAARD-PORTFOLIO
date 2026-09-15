@@ -5,19 +5,22 @@ const locations = [
     country: "India",
     city: "Ahmedabad",
     coordinates: "23°N · 72°E",
-    imageClass: "about-image-placeholder ahmedabad",
+    image: "/images/ahm.jpeg",
+    alt: "Ahmedabad, India",
   },
   {
     country: "Canada",
     city: "Saskatoon",
     coordinates: "52°N · 106°W",
-    imageClass: "about-image-placeholder saskatoon-one",
+    image: "/images/sask.jpeg",
+    alt: "Haard skating in Saskatoon, Canada",
   },
   {
     country: "Canada",
     city: "Saskatoon",
     coordinates: "52°N · 106°W",
-    imageClass: "about-image-placeholder saskatoon-two",
+    image: null,
+    alt: "",
   },
 ];
 
@@ -26,6 +29,7 @@ function About() {
     <section id="about" className="about-section">
       <div className="about-container">
 
+        {/* SECTION HEADING */}
         <div className="about-heading">
           <div className="about-label">
             <span>01</span>
@@ -76,20 +80,43 @@ function About() {
           </div>
         </div>
 
+        {/* PHOTO GALLERY */}
         <div className="about-gallery">
           {locations.map((location, index) => (
             <figure
               className="about-photo"
               key={`${location.city}-${index}`}
             >
-              <div className={location.imageClass}>
+              <div
+                className={`about-image ${
+                  !location.image
+                    ? "about-image-placeholder"
+                    : ""
+                }`}
+              >
                 <span className="about-photo-number">
                   0{index + 1}
                 </span>
 
-                <span className="about-photo-placeholder">
-                  Photo
-                </span>
+                {location.image ? (
+                  <img
+                    src={location.image}
+                    alt={location.alt}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                ) : (
+                  <div className="about-coming-soon">
+                    <span>
+                      THIRD PHOTO
+                    </span>
+
+                    <span>
+                      COMING SOON
+                    </span>
+
+                    <span className="about-coming-line" />
+                  </div>
+                )}
               </div>
 
               <figcaption className="about-photo-caption">
@@ -111,37 +138,57 @@ function About() {
           ))}
         </div>
 
+        {/* ABOUT COPY */}
         <div className="about-copy">
-          <p>
-            I&apos;m a Computer Science Honours graduate from
-            the University of Saskatchewan, with a strong
-            interest in software development, mathematics,
-            statistics, and solving practical problems with
-            technology.
-          </p>
+          <div className="about-copy-primary">
+            <p>
+              I&apos;m a Computer Science Honours graduate from
+              the University of Saskatchewan, with a strong
+              interest in software development, mathematics,
+              statistics, and solving practical problems with
+              technology.
+            </p>
 
-          <p>
-            My journey has taken me from Ahmedabad, India to
-            Saskatoon, Canada. Moving across countries taught
-            me to adapt quickly, become more independent, and
-            stay comfortable learning in unfamiliar situations.
-            I&apos;m always learning, experimenting, and looking
-            for something new to build. That curiosity is what
-            keeps me interested in technology.
-          </p>
+            <p>
+              My journey has taken me from Ahmedabad, India to
+              Saskatoon, Canada. Moving across countries taught
+              me to adapt quickly, become more independent, and
+              stay comfortable learning in unfamiliar situations.
+            </p>
+          </div>
 
-          <p>
-            I&apos;m particularly interested in the intersection
-            of software, data, and AI. I enjoy building
-            full-stack applications, working with APIs and
-            databases, analyzing data, and understanding how
-            systems work from both a technical and analytical
-            perspective.
-            Mathematics and statistics are another important
-            part of how I approach problems. I enjoy finding
-            patterns, breaking complex problems down, and using
-            data to make better decisions.
-          </p>
+          <div className="about-copy-secondary">
+            <p>
+              I&apos;m particularly interested in the intersection
+              of software, data, and AI. I enjoy building
+              full-stack applications, working with APIs and
+              databases, analyzing data, and understanding how
+              systems work from both a technical and analytical
+              perspective.
+            </p>
+
+            <p>
+              Mathematics and statistics are another important
+              part of how I approach problems. I enjoy finding
+              patterns, breaking complex problems down, and using
+              data to make better decisions.
+            </p>
+
+            <p>
+              I&apos;m always learning, experimenting, and looking
+              for something new to build. That curiosity is what
+              keeps me interested in technology.
+            </p>
+          </div>
+        </div>
+
+        {/* FOCUS TAGS */}
+        <div className="about-focus">
+          <span>SOFTWARE</span>
+          <span>DATA</span>
+          <span>AI</span>
+          <span>MATHEMATICS</span>
+          <span>STATISTICS</span>
         </div>
 
       </div>

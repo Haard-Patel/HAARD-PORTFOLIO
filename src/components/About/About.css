@@ -1,501 +1,579 @@
 .about-section {
-    position: relative;
-    width: 100%;
-    padding: 150px 0;
-    background: var(--background-secondary);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .about-container {
-    width: min(
-      calc(100% - 48px),
-      var(--max-width)
+  padding: 150px 0;
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-container {
+  width: min(100% - 48px, var(--max-width));
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.about-heading {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+
+.about-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 9px;
+
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-label span:first-child {
+  color: var(--accent);
+}
+
+.about-route {
+  display: grid;
+  grid-template-columns: auto minmax(100px, 1fr) auto;
+  align-items: center;
+  gap: 28px;
+  min-width: 0;
+}
+
+.about-route-location {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-route-country {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+}
+
+.about-route-city {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.about-route-coordinates {
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
+.about-route-location.canada {
+  text-align: right;
+}
+
+.about-route-path {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 100px;
+}
+
+.about-route-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.about-plane {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: rotate(0deg);
+}
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 72px;
+}
+
+.about-photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.about-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition:
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 500ms ease;
+}
+
+.about-photo:hover .about-image img {
+  transform: scale(1.025);
+  filter: saturate(1.04);
+}
+
+.about-photo-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   THIRD PHOTO PLACEHOLDER
+========================================= */
+
+.about-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(30, 42, 60, 0.85),
+      rgba(11, 15, 20, 0.98)
     );
-    margin: 0 auto;
+}
+
+.about-image-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(91, 140, 255, 0.05) 50%,
+      transparent 100%
+    );
+}
+
+.about-coming-soon {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+.about-coming-line {
+  width: 34px;
+  height: 1px;
+  margin-top: 12px;
+
+  background: var(--text-muted);
+  opacity: 0.55;
+}
+
+/* =========================================
+   IMAGE CAPTIONS
+========================================= */
+
+.about-photo-caption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding-top: 12px;
+}
+
+.about-photo-caption > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.about-photo-city {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.about-photo-country {
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-photo-coordinates {
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.53rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* =========================================
+   ABOUT COPY
+========================================= */
+
+.about-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 80px;
+
+  width: min(100%, 1080px);
+  margin-top: 118px;
+}
+
+.about-copy-primary,
+.about-copy-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.about-copy-primary {
+  padding-right: 30px;
+  border-right: 1px solid var(--border);
+}
+
+.about-copy p {
+  margin: 0;
+
+  color: var(--text-secondary);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.012em;
+}
+
+.about-copy-primary p:first-child {
+  color: var(--text-primary);
+  font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+  line-height: 1.58;
+  letter-spacing: -0.025em;
+}
+
+/* =========================================
+   FOCUS TAGS
+========================================= */
+
+.about-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 18px;
+
+  width: min(100%, 1080px);
+  margin-top: 56px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+.about-focus span {
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.about-focus span:not(:last-child)::after {
+  content: "·";
+  margin-left: 18px;
+  color: var(--accent);
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1440px) {
+  .about-section {
+    padding: 175px 0;
   }
-  
-  /* --------------------------------
-     Heading / Journey
-  -------------------------------- */
-  
+
+  .about-container {
+    width: min(100% - 80px, 1320px);
+  }
+
+  .about-gallery {
+    gap: 22px;
+    margin-top: 82px;
+  }
+
+  .about-copy {
+    margin-top: 135px;
+  }
+}
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+  .about-section {
+    padding: 115px 0;
+  }
+
+  .about-container {
+    width: min(100% - 40px, var(--max-width));
+  }
+
   .about-heading {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 60px;
-    align-items: start;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 35px;
   }
-  
-  .about-label {
+
+  .about-route {
+    gap: 18px;
+  }
+
+  .about-gallery {
+    gap: 14px;
+    margin-top: 58px;
+  }
+
+  .about-copy {
+    gap: 50px;
+    margin-top: 90px;
+  }
+
+  .about-copy-primary {
+    padding-right: 25px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .about-section {
+    padding: 90px 0;
+  }
+
+  .about-container {
+    width: min(100% - 32px, var(--max-width));
+  }
+
+  /* Heading becomes vertical */
+  .about-heading {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    color: var(--text-muted);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    gap: 32px;
   }
-  
-  .about-label span:first-child {
-    color: var(--accent);
+
+  .about-label {
+    padding-top: 0;
   }
-  
-  /* --------------------------------
-     India → Canada
-  -------------------------------- */
-  
+
+  /* Route becomes vertical */
   .about-route {
     display: grid;
-    grid-template-columns: auto minmax(100px, 1fr) auto;
-    align-items: center;
-    gap: 28px;
-    max-width: 760px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-  
+
   .about-route-location {
-    display: flex;
-    flex-direction: column;
-    min-width: 115px;
+    gap: 5px;
   }
-  
+
   .about-route-location.canada {
-    text-align: right;
-    align-items: flex-end;
+    text-align: left;
   }
-  
-  .about-route-country {
-    color: var(--text-primary);
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-  }
-  
+
   .about-route-city {
-    margin-top: 5px;
-    color: var(--text-secondary);
-    font-family: "Inter", sans-serif;
-    font-size: 0.8rem;
+    font-size: clamp(1.55rem, 7vw, 2rem);
   }
-  
+
   .about-route-coordinates {
-    margin-top: 7px;
-    color: var(--text-muted);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.05em;
+    font-size: 0.55rem;
   }
-  
+
   .about-route-path {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 120px;
-  }
-  
-  .about-route-line {
     width: 100%;
-    height: 1px;
-    background: var(--border-strong);
-  }
-  
-  .about-plane {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin: 0 12px;
-    color: var(--accent);
-    font-size: 1rem;
-    transform: rotate(5deg);
-  }
-  
-  /* --------------------------------
-     Gallery
-  -------------------------------- */
-  
-  .about-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 75px;
-  }
-  
-  .about-photo {
     min-width: 0;
-  }
-  
-  .about-image-placeholder {
-    position: relative;
-    display: flex;
-    align-items: center;
+    height: 54px;
+
+    flex-direction: column;
     justify-content: center;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    background:
-      linear-gradient(
-        145deg,
-        var(--surface-solid),
-        var(--background)
-      );
-    border: 1px solid var(--border);
-  }
-  
-  .about-image-placeholder::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border: 1px solid var(--border);
-    pointer-events: none;
-  }
-  
-  .about-image-placeholder::after {
-    content: "";
-    position: absolute;
-    width: 55%;
-    height: 55%;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    opacity: 0.55;
-  }
-  
-  .about-image-placeholder.ahmedabad {
-    background:
-      radial-gradient(
-        circle at 30% 30%,
-        color-mix(in srgb, var(--accent) 12%, transparent),
-        transparent 42%
-      ),
-      linear-gradient(
-        145deg,
-        var(--surface-solid),
-        var(--background)
-      );
-  }
-  
-  .about-image-placeholder.saskatoon-one {
-    background:
-      radial-gradient(
-        circle at 70% 35%,
-        color-mix(in srgb, var(--accent-secondary) 10%, transparent),
-        transparent 42%
-      ),
-      linear-gradient(
-        145deg,
-        var(--surface-solid),
-        var(--background)
-      );
-  }
-  
-  .about-image-placeholder.saskatoon-two {
-    background:
-      radial-gradient(
-        circle at 45% 65%,
-        color-mix(in srgb, var(--accent) 8%, transparent),
-        transparent 42%
-      ),
-      linear-gradient(
-        145deg,
-        var(--surface-solid),
-        var(--background)
-      );
-  }
-  
-  .about-photo-number {
-    position: absolute;
-    top: 22px;
-    left: 22px;
-    z-index: 2;
-    color: var(--text-muted);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.08em;
-  }
-  
-  .about-photo-placeholder {
-    position: relative;
-    z-index: 2;
-    color: var(--text-muted);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  
-  .about-photo-caption {
-    display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border);
+    gap: 7px;
+    padding-left: 4px;
   }
-  
-  .about-photo-caption > div {
+
+  .about-route-line {
+    width: 1px;
+    height: 15px;
+    flex: none;
+  }
+
+  .about-plane {
+    margin-left: -5px;
+    transform: rotate(90deg);
+    font-size: 0.95rem;
+  }
+
+  /* Gallery becomes vertical */
+  .about-gallery {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    margin-top: 52px;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-photo-caption {
+    padding-top: 10px;
+  }
+
+  /* Copy becomes vertical */
+  .about-copy {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-  }
-  
-  .about-photo-city {
-    color: var(--text-primary);
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-  
-  .about-photo-country {
-    color: var(--text-muted);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.57rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
-  
-  .about-photo-coordinates {
-    color: var(--text-muted);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.57rem;
-    white-space: nowrap;
-  }
-  
-  /* --------------------------------
-     Biography
-  -------------------------------- */
-  
-  .about-copy {
+    gap: 32px;
+
     width: 100%;
-    max-width: 1080px;
-    margin-top: 125px;
+    margin-top: 78px;
   }
-  
+
+  .about-copy-primary,
+  .about-copy-secondary {
+    gap: 24px;
+  }
+
+  .about-copy-primary {
+    padding-right: 0;
+    padding-bottom: 32px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
   .about-copy p {
-    color: var(--text-secondary);
-    font-family: "Inter", sans-serif;
-    font-size: clamp(1.05rem, 1.65vw, 1.35rem);
-    line-height: 1.85;
-    letter-spacing: -0.01em;
+    font-size: 0.98rem;
+    line-height: 1.68;
   }
-  
-  .about-copy p + p {
-    margin-top: 34px;
+
+  .about-copy-primary p:first-child {
+    font-size: 1.08rem;
+    line-height: 1.58;
   }
-  
-  .about-copy p:first-child {
-    color: var(--text-primary);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    line-height: 1.65;
+
+  .about-focus {
+    width: 100%;
+    margin-top: 42px;
+    gap: 8px 14px;
   }
-  
-  /* --------------------------------
-     Tablet
-  -------------------------------- */
-  
-  @media (max-width: 1000px) {
-    .about-heading {
-      grid-template-columns: 100px 1fr;
-      gap: 40px;
-    }
-  
-    .about-copy {
-      max-width: 900px;
-    }
-  
-    .about-copy p {
-      font-size: 1.08rem;
-    }
-  
-    .about-copy p:first-child {
-      font-size: 1.35rem;
-    }
+
+  .about-focus span {
+    font-size: 0.53rem;
   }
-  
-  /* --------------------------------
-     Mobile
-  -------------------------------- */
-  
-  @media (max-width: 760px) {
-    .about-section {
-      padding: 100px 0;
-    }
-  
-    .about-container {
-      width: min(
-        calc(100% - 32px),
-        var(--max-width)
-      );
-    }
-  
-    .about-heading {
-      display: block;
-    }
-  
-    .about-label {
-      margin-bottom: 38px;
-    }
-  
-    /*
-      Mobile journey:
-      India
-        ↓
-      flight
-        ↓
-      Canada
-  
-      Nothing is squeezed horizontally.
-    */
-  
-    .about-route {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-      max-width: none;
-    }
-  
-    .about-route-location,
-    .about-route-location.canada {
-      min-width: 0;
-      align-items: flex-start;
-      text-align: left;
-    }
-  
-    .about-route-country {
-      font-size: 0.9rem;
-    }
-  
-    .about-route-city {
-      margin-top: 5px;
-    }
-  
-    .about-route-path {
-      display: flex;
-      width: 100%;
-      min-width: 0;
-      min-height: 78px;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      position: relative;
-      padding-left: 5px;
-    }
-  
-    .about-route-line {
-      width: 1px;
-      height: 24px;
-    }
-  
-    .about-plane {
-      margin: 5px 0;
-      font-size: 0.95rem;
-      transform: rotate(90deg);
-    }
-  
-    .about-gallery {
-      grid-template-columns: 1fr;
-      gap: 42px;
-      margin-top: 70px;
-    }
-  
-    .about-image-placeholder {
-      aspect-ratio: 16 / 10;
-    }
-  
-    .about-image-placeholder::before {
-      inset: 10px;
-    }
-  
-    .about-photo-caption {
-      padding-top: 13px;
-    }
-  
-    .about-copy {
-      max-width: none;
-      margin-top: 90px;
-    }
-  
-    .about-copy p {
-      font-size: 1rem;
-      line-height: 1.82;
-    }
-  
-    .about-copy p:first-child {
-      font-size: 1.2rem;
-      line-height: 1.7;
-    }
-  
-    .about-copy p + p {
-      margin-top: 28px;
-    }
+
+  .about-focus span:not(:last-child)::after {
+    margin-left: 14px;
   }
-  
-  /* --------------------------------
-     Small phones
-  -------------------------------- */
-  
-  @media (max-width: 430px) {
-    .about-section {
-      padding: 82px 0;
-    }
-  
-    .about-container {
-      width: min(
-        calc(100% - 28px),
-        var(--max-width)
-      );
-    }
-  
-    .about-label {
-      font-size: 0.62rem;
-      margin-bottom: 32px;
-    }
-  
-    .about-route-country {
-      font-size: 0.84rem;
-    }
-  
-    .about-route-city {
-      font-size: 0.76rem;
-    }
-  
-    .about-route-coordinates {
-      font-size: 0.54rem;
-    }
-  
-    .about-route-path {
-      min-height: 68px;
-    }
-  
-    .about-gallery {
-      gap: 35px;
-      margin-top: 58px;
-    }
-  
-    .about-image-placeholder {
-      aspect-ratio: 4 / 3;
-    }
-  
-    .about-photo-caption {
-      flex-direction: column;
-      gap: 7px;
-    }
-  
-    .about-photo-coordinates {
-      font-size: 0.54rem;
-    }
-  
-    .about-copy {
-      margin-top: 76px;
-    }
-  
-    .about-copy p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-  
-    .about-copy p:first-child {
-      font-size: 1.12rem;
-    }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+  .about-section {
+    padding: 78px 0;
   }
+
+  .about-container {
+    width: calc(100% - 26px);
+  }
+
+  .about-gallery {
+    gap: 32px;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-photo-caption {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .about-photo-caption > div {
+    gap: 7px;
+  }
+
+  .about-copy {
+    margin-top: 68px;
+  }
+
+  .about-copy p {
+    font-size: 0.94rem;
+  }
+
+  .about-copy-primary p:first-child {
+    font-size: 1.03rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-image img {
+    transition: none;
+  }
+
+  .about-photo:hover .about-image img {
+    transform: none;
+  }
+}
