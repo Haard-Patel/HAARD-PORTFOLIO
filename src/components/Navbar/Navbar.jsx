@@ -3,7 +3,6 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import "./Navbar.css";
 
-
 function getInitialTheme() {
   const savedTheme = localStorage.getItem("portfolio-theme");
 
@@ -19,10 +18,13 @@ function getInitialTheme() {
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+
   const [theme, setTheme] = useState(getInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [currentDateTime, setCurrentDateTime] = useState(() => new Date());
+  const [currentDateTime, setCurrentDateTime] = useState(
+    () => new Date()
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -55,21 +57,68 @@ function Navbar() {
     setMenuOpen(false);
   };
 
+  /* =========================================================
+     LOGO
+     Homepage → scroll to top
+     Any other page → homepage top
+  ========================================================= */
+
   const handleLogoClick = (event) => {
     event.preventDefault();
-  
+
     closeMenu();
-  
+
     if (location.pathname === "/") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
+
       return;
     }
-  
-    navigate("/", { state: { scrollToTop: true } });
+
+    navigate("/", {
+      state: {
+        scrollToTop: true,
+      },
+    });
   };
+
+  /* =========================================================
+     HOMEPAGE SECTION NAVIGATION
+     Works from EVERY page.
+     
+     If already on homepage:
+       → scroll directly to section
+
+     If on another page:
+       → navigate to homepage
+       → HomePage scrolls to the requested section
+  ========================================================= */
+
+  const handleSectionNavigation = (sectionId) => {
+    closeMenu();
+
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    navigate("/", {
+      state: {
+        scrollTo: sectionId,
+      },
+    });
+  };
+
   const time = currentDateTime.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
@@ -77,11 +126,13 @@ function Navbar() {
     hour12: true,
   });
 
-  const date = currentDateTime.toLocaleDateString([], {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  }).toUpperCase();
+  const date = currentDateTime
+    .toLocaleDateString([], {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    })
+    .toUpperCase();
 
   return (
     <header className="navbar">
@@ -89,19 +140,21 @@ function Navbar() {
         <div className="navbar-left-spacer">
           <div className="navbar-datetime">
             <span className="navbar-status-dot" />
+
             <span>{time}</span>
-            <span>       /  </span>
-            <span>{date}
-            </span>
+
+            <span> / </span>
+
+            <span>{date}</span>
           </div>
         </div>
 
         <a
-  href="/"
-  className="navbar-logo"
-  onClick={handleLogoClick}
-  aria-label="Back to top"
->
+          href="/"
+          className="navbar-logo"
+          onClick={handleLogoClick}
+          aria-label="Back to top"
+        >
           <span className="hp-mark">
             <span className="hp-h">H</span>
             <span className="hp-p">P</span>
@@ -149,25 +202,61 @@ function Navbar() {
 
       {menuOpen && (
         <div className="mobile-navigation">
-          <a href="#about" onClick={closeMenu}>
+          {/* ABOUT */}
+          <button
+            type="button"
+            onClick={() =>
+              handleSectionNavigation("about")
+            }
+          >
             About
-          </a>
+          </button>
 
-          <a href="#projects" onClick={closeMenu}>
+          {/* WORK */}
+          <button
+            type="button"
+            onClick={() =>
+              handleSectionNavigation("projects")
+            }
+          >
             Work
-          </a>
+          </button>
 
-          <a href="#skills" onClick={closeMenu}>
+          {/* SKILLS */}
+          <button
+            type="button"
+            onClick={() =>
+              handleSectionNavigation("skills")
+            }
+          >
             Skills
-          </a>
+          </button>
 
-          <a href="#contact" onClick={closeMenu}>
+          {/* CONTACT */}
+          <button
+            type="button"
+            onClick={() =>
+              handleSectionNavigation("contact")
+            }
+          >
             Contact
-          </a>
+          </button>
 
-          <Link to="/experience" onClick={closeMenu}>
-  Experience
-</Link>
+          {/* EXPERIENCE */}
+          <Link
+            to="/experience"
+            onClick={closeMenu}
+          >
+            Experience
+          </Link>
+
+          {/* ADD-ONS */}
+          <Link
+            to="/Add-ons"
+            onClick={closeMenu}
+          >
+            Add-ons
+          </Link>
         </div>
       )}
     </header>

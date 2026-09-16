@@ -17,6 +17,7 @@ import Footer from "./components/Footer/Footer";
 import ExperiencePage from "./Pages/ExperiencePage";
 import EcommerceAnalyticsPage from "./Pages/EcommerceAnalyticsPage";
 import ITServiceManagementPage from "./Pages/ITServiceManagementPage";
+import NutriTrackerPage from "./Pages/NutriTrackerPage";
 
 function HomePage() {
   const location = useLocation();
@@ -87,7 +88,15 @@ function App() {
         path="/projects/it-service-management"
         element={<ITServiceManagementPage />}
       />
+
+      <Route
+        path="/projects/nutritracker"
+        element={<NutriTrackerPage />}
+      />
+
     </Routes>
+
+
   );
 }
 

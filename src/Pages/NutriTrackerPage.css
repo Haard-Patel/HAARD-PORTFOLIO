@@ -1,0 +1,829 @@
+/* =========================================================
+   NUTRITRACKER — DETAIL PAGE
+========================================================= */
+
+.nutritracker-detail-page {
+    --nt-bg: var(--background);
+    --nt-text: var(--text-primary);
+    --nt-secondary: var(--text-secondary);
+    --nt-muted: var(--text-muted);
+    --nt-border: var(--border);
+    --nt-surface: var(--surface);
+  
+    width: 100%;
+    min-height: 100vh;
+  
+    background: var(--nt-bg);
+    color: var(--nt-text);
+  }
+  
+  /* =========================================================
+     MAIN
+  ========================================================= */
+  
+  .nutritracker-detail-main {
+    width: 100%;
+    padding-top: 115px;
+  }
+  
+  .nutritracker-detail-container {
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
+  }
+  
+  /* =========================================================
+     BACK LINK
+  ========================================================= */
+  
+  .nutritracker-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  
+    margin-top: 28px;
+  
+    color: var(--nt-secondary);
+    text-decoration: none;
+  
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  
+    transition:
+      color 0.25s ease,
+      gap 0.25s ease;
+  }
+  
+  .nutritracker-detail-back:hover {
+    color: var(--nt-text);
+    gap: 11px;
+  }
+  
+  /* =========================================================
+     HERO
+  ========================================================= */
+  
+  .nutritracker-detail-hero {
+    padding: 72px 0 110px;
+  }
+  
+  .nutritracker-detail-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding-bottom: 22px;
+  
+    border-bottom: 1px solid var(--nt-border);
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-title-area {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  
+    padding-top: 45px;
+  }
+  
+  .nutritracker-detail-eyebrow {
+    margin: 0 0 20px;
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-title-area h1 {
+    margin: 0;
+  
+    color: var(--nt-text);
+  
+    font-size: clamp(3.2rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+  }
+  
+  .nutritracker-detail-title-area h1 span {
+    color: var(--nt-secondary);
+  }
+  
+  .nutritracker-detail-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  
+    flex-shrink: 0;
+  
+    padding-bottom: 7px;
+  
+    color: var(--nt-secondary);
+  
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-status-dot {
+    width: 7px;
+    height: 7px;
+  
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  
+  .nutritracker-detail-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 80px;
+  
+    margin-top: 65px;
+    padding-top: 30px;
+  
+    border-top: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-intro > p {
+    max-width: 720px;
+    margin: 0;
+  
+    color: var(--nt-secondary);
+  
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .nutritracker-detail-creator {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-creator strong {
+    color: var(--nt-text);
+  
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+  
+  /* =========================================================
+     SECTIONS
+  ========================================================= */
+  
+  .nutritracker-detail-section {
+    padding: 110px 0;
+  
+    border-top: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-section-alt {
+    background: var(--nt-surface);
+    color: var(--nt-text);
+  }
+  
+  .nutritracker-detail-section-grid {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 70px;
+  }
+  
+  .nutritracker-detail-section-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.62rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-section-label span:first-child {
+    color: var(--nt-text);
+  }
+  
+  .nutritracker-detail-content {
+    min-width: 0;
+  }
+  
+  .nutritracker-detail-content h2 {
+    margin: 0 0 40px;
+  
+    color: var(--nt-text);
+  
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+  
+  .nutritracker-detail-content h2 span {
+    color: var(--nt-secondary);
+  }
+  
+  .nutritracker-detail-content > p {
+    max-width: 720px;
+    margin: 0 0 24px;
+  
+    color: var(--nt-secondary);
+  
+    font-size: 0.95rem;
+    line-height: 1.85;
+  }
+  
+  .nutritracker-detail-content > p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* =========================================================
+     FEATURES
+  ========================================================= */
+  
+  .nutritracker-detail-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+    border-top: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-feature {
+    padding: 30px 35px 35px 0;
+  
+    border-bottom: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-feature:nth-child(odd) {
+    border-right: 1px solid var(--nt-border);
+    padding-right: 35px;
+  }
+  
+  .nutritracker-detail-feature:nth-child(even) {
+    padding-left: 35px;
+  }
+  
+  .nutritracker-detail-feature > span {
+    display: block;
+  
+    margin-bottom: 45px;
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+  
+  .nutritracker-detail-feature h3 {
+    margin: 0 0 13px;
+  
+    color: var(--nt-text);
+  
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .nutritracker-detail-feature p {
+    max-width: 400px;
+    margin: 0;
+  
+    color: var(--nt-secondary);
+  
+    font-size: 0.82rem;
+    line-height: 1.75;
+  }
+  
+  /* =========================================================
+     STACK
+  ========================================================= */
+  
+  .nutritracker-detail-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .nutritracker-detail-stack span {
+    display: inline-flex;
+    align-items: center;
+  
+    min-height: 38px;
+    padding: 0 15px;
+  
+    border: 1px solid var(--nt-border);
+  
+    color: var(--nt-secondary);
+  
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  
+    transition:
+      border-color 0.25s ease,
+      color 0.25s ease;
+  }
+  
+  .nutritracker-detail-stack span:hover {
+    border-color: var(--border-hover);
+    color: var(--nt-text);
+  }
+  
+  /* =========================================================
+     SNAPSHOT
+  ========================================================= */
+  
+  .nutritracker-detail-preview-section {
+    padding-bottom: 125px;
+  }
+  
+  .nutritracker-snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+    gap: 28px;
+  
+    width: 125%;
+  }
+  
+  .nutritracker-snapshot-item {
+    min-width: 0;
+    margin: 0;
+  }
+  
+  .nutritracker-snapshot-button {
+    display: block;
+  
+    width: 100%;
+    padding: 0;
+  
+    border: 0;
+    background: transparent;
+    color: inherit;
+  
+    text-align: left;
+  
+    cursor: zoom-in;
+  }
+  
+  .nutritracker-snapshot-image {
+    width: 100%;
+    overflow: hidden;
+  
+    border: 1px solid var(--nt-border);
+  
+    background: var(--nt-surface);
+  }
+  
+  .nutritracker-snapshot-image img {
+    display: block;
+  
+    width: 100%;
+    height: auto;
+  
+    object-fit: contain;
+    object-position: center;
+  
+    transition: transform 0.4s ease;
+  }
+  
+  .nutritracker-snapshot-button:hover img {
+    transform: scale(1.015);
+  }
+  
+  .nutritracker-snapshot-item figcaption {
+    margin-top: 11px;
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  /* =========================================================
+     PROJECT LINKS
+  ========================================================= */
+  
+  .nutritracker-detail-links-section {
+    padding: 80px 0;
+  
+    border-top: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-links {
+    display: grid;
+  
+    border-top: 1px solid var(--nt-border);
+    border-bottom: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-links a {
+    display: block;
+  
+    padding: 28px 30px;
+  
+    color: inherit;
+    text-decoration: none;
+  
+    transition: background 0.25s ease;
+  }
+  
+  .nutritracker-detail-links a:hover {
+    background: var(--nt-surface);
+  }
+  
+  .nutritracker-detail-links a div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .nutritracker-detail-links a span {
+    color: var(--nt-muted);
+  
+    font-size: 0.57rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-links a strong {
+    color: var(--nt-text);
+  
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+  
+  /* =========================================================
+     PREVIOUS / NEXT
+  ========================================================= */
+  
+  .nutritracker-detail-navigation {
+    border-top: 1px solid var(--nt-border);
+  }
+  
+  .nutritracker-detail-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .nutritracker-detail-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  
+    padding: 55px 0 65px;
+  
+    color: inherit;
+    text-decoration: none;
+  
+    transition: opacity 0.25s ease;
+  }
+  
+  .nutritracker-detail-nav-link:hover {
+    opacity: 0.65;
+  }
+  
+  .nutritracker-detail-nav-link.next {
+    align-items: flex-end;
+    text-align: right;
+  }
+  
+  .nutritracker-detail-nav-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  
+    color: var(--nt-muted);
+  
+    font-size: 0.58rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  
+  .nutritracker-detail-nav-link strong {
+    color: var(--nt-text);
+  
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  /* =========================================================
+     IMAGE LIGHTBOX
+  ========================================================= */
+  
+  .nutritracker-lightbox {
+    position: fixed;
+    inset: 0;
+  
+    z-index: 9999;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 40px;
+  
+    background: rgba(0, 0, 0, 0.9);
+  
+    cursor: zoom-out;
+  }
+  
+  .nutritracker-lightbox-content {
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    width: min(1400px, 94vw);
+    max-height: 92vh;
+  }
+  
+  .nutritracker-lightbox-content img {
+    display: block;
+  
+    width: auto;
+    max-width: 100%;
+    max-height: 84vh;
+    height: auto;
+  
+    object-fit: contain;
+  
+    cursor: default;
+  }
+  
+  .nutritracker-lightbox-caption {
+    margin-top: 12px;
+  
+    color: #ffffff;
+  
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  
+    opacity: 0.65;
+  }
+  
+  .nutritracker-lightbox-close {
+    position: absolute;
+  
+    top: 25px;
+    right: 28px;
+  
+    z-index: 2;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+  
+    background: transparent;
+    color: #ffffff;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease;
+  }
+  
+  .nutritracker-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+  
+  /* =========================================================
+     TABLET
+  ========================================================= */
+  
+  @media (max-width: 760px) {
+    .nutritracker-detail-container {
+      width: min(100% - 40px, 620px);
+    }
+  
+    .nutritracker-detail-main {
+      padding-top: 100px;
+    }
+  
+    .nutritracker-detail-hero {
+      padding: 55px 0 80px;
+    }
+  
+    .nutritracker-detail-title-area {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+  
+      padding-top: 35px;
+    }
+  
+    .nutritracker-detail-title-area h1 {
+      font-size: clamp(2.8rem, 12vw, 5rem);
+    }
+  
+    .nutritracker-detail-intro {
+      grid-template-columns: 1fr;
+      gap: 35px;
+  
+      margin-top: 50px;
+    }
+  
+    .nutritracker-detail-section {
+      padding: 80px 0;
+    }
+  
+    .nutritracker-detail-section-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  
+    .nutritracker-detail-section-label {
+      flex-direction: row;
+      gap: 12px;
+    }
+  
+    .nutritracker-detail-content h2 {
+      margin-bottom: 32px;
+  
+      font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+  
+    .nutritracker-detail-feature-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .nutritracker-detail-feature {
+      padding: 28px 0 !important;
+  
+      border-right: 0 !important;
+    }
+  
+    /*
+      IMPORTANT:
+      Keep the screenshot grid 2 x 2.
+    */
+    .nutritracker-snapshot-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+  
+    .nutritracker-detail-nav-link {
+      padding: 40px 0 50px;
+    }
+  
+    /* Lightbox */
+  
+    .nutritracker-lightbox {
+      padding: 20px;
+    }
+  
+    .nutritracker-lightbox-content {
+      width: 96vw;
+      max-height: 90vh;
+    }
+  
+    .nutritracker-lightbox-content img {
+      max-width: 96vw;
+      max-height: 82vh;
+    }
+  
+    .nutritracker-lightbox-close {
+      top: 16px;
+      right: 16px;
+  
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+  
+  @media (max-width: 430px) {
+    .nutritracker-detail-container {
+      width: calc(100% - 28px);
+    }
+  
+    .nutritracker-detail-main {
+      padding-top: 92px;
+    }
+  
+    .nutritracker-detail-back {
+      margin-top: 20px;
+    }
+  
+    .nutritracker-detail-hero {
+      padding: 45px 0 65px;
+    }
+  
+    .nutritracker-detail-title-area h1 {
+      font-size: clamp(2.45rem, 13vw, 4rem);
+    }
+  
+    .nutritracker-detail-eyebrow {
+      margin-bottom: 15px;
+    }
+  
+    .nutritracker-detail-intro {
+      margin-top: 40px;
+      gap: 28px;
+    }
+  
+    .nutritracker-detail-intro > p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+  
+    .nutritracker-detail-section {
+      padding: 65px 0;
+    }
+  
+    .nutritracker-detail-section-grid {
+      gap: 32px;
+    }
+  
+    .nutritracker-detail-content h2 {
+      font-size: clamp(2.25rem, 12vw, 3.5rem);
+    }
+  
+    .nutritracker-detail-content > p {
+      font-size: 0.86rem;
+    }
+  
+    /*
+      Keep screenshots 2 x 2 even on small phones.
+    */
+    .nutritracker-snapshot-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+  
+    .nutritracker-snapshot-item figcaption {
+      margin-top: 8px;
+    }
+  
+    .nutritracker-detail-stack {
+      gap: 7px;
+    }
+  
+    .nutritracker-detail-stack span {
+      min-height: 34px;
+      padding: 0 11px;
+  
+      font-size: 0.52rem;
+    }
+  
+    .nutritracker-detail-links-section {
+      padding: 60px 0;
+    }
+  
+    .nutritracker-detail-links a {
+      padding: 23px 20px;
+    }
+  
+    .nutritracker-detail-nav-link {
+      padding: 32px 0 40px;
+    }
+  
+    .nutritracker-detail-nav-link strong {
+      font-size: 0.72rem;
+    }
+  
+    .nutritracker-detail-nav-label {
+      font-size: 0.52rem;
+    }
+  
+    /* Lightbox */
+  
+    .nutritracker-lightbox {
+      padding: 12px;
+    }
+  
+    .nutritracker-lightbox-close {
+      top: 12px;
+      right: 12px;
+    }
+  }
