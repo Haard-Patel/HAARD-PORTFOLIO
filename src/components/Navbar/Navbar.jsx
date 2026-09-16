@@ -60,15 +60,15 @@ function Navbar() {
   
     closeMenu();
   
-    if (location.pathname !== "/") {
-      navigate("/");
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
       return;
     }
   
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    navigate("/");
   };
   const time = currentDateTime.toLocaleTimeString([], {
     hour: "2-digit",
