@@ -1,155 +1,241 @@
 import { ArrowUp } from "lucide-react";
 import "./Footer.css";
 
-function Footer() {
-  const scrollToTop = (event) => {
-    event.preventDefault();
+const footerLinks = [
+  {
+    number: "01",
+    label: "About",
+    href: "#about",
+  },
+  {
+    number: "02",
+    label: "Work",
+    href: "#projects",
+  },
+  {
+    number: "03",
+    label: "Toolkit",
+    href: "#skills",
+  },
+  {
+    number: "04",
+    label: "Experience",
+    href: "/experience",
+  },
+  {
+    number: "05",
+    label: "Contact",
+    href: "#contact",
+  },
+];
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
+function GithubMark() {
   return (
-    <footer className="footer">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="footer-brand-icon"
+    >
+      <path
+        fill="currentColor"
+        d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6-.01c2.3-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"
+      />
+    </svg>
+  );
+}
+
+function InstagramMark() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="footer-brand-icon"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="4.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      />
+      <circle
+        cx="17.4"
+        cy="6.7"
+        r="1.1"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function LinkedinMark() {
+  return (
+    <span
+      className="footer-linkedin-mark"
+      aria-hidden="true"
+    >
+      in
+    </span>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="site-footer">
       <div className="footer-container">
 
-        {/* Top footer */}
-        <div className="footer-top">
-          <div className="footer-brand">
-            <span className="footer-mark">HP</span>
-            <span className="footer-brand-text">
-              Software · Data · AI
-            </span>
+        <div className="footer-top-line" />
+
+        <div className="footer-grid">
+
+          {/* Identity */}
+          <div className="footer-identity">
+
+            <div className="footer-name">
+              Haard Patel<span>.</span>
+            </div>
+
+            <div className="footer-meta">
+              <span>REGINA, SK</span>
+              <span className="footer-meta-divider">/</span>
+              <span>SOFTWARE · DATA · AI</span>
+            </div>
+
+            <div className="footer-socials">
+
+              <a
+                href="https://github.com/Haard-Patel"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <GithubMark />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/haard-patel2010/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <LinkedinMark />
+              </a>
+
+              <a
+                href="mailto:haardp9@gmail.com"
+                aria-label="Email"
+              >
+                <span className="footer-email-mark">
+                  @
+                </span>
+              </a>
+
+              {/* Add your real Instagram URL here */}
+              <a
+                href="#contact"
+                aria-label="Instagram"
+              >
+                <InstagramMark />
+              </a>
+
+            </div>
+
           </div>
 
-          <a
-            href="#top"
-            className="footer-back-top"
-            onClick={scrollToTop}
-          >
-            BACK TO TOP
-            <ArrowUp size={13} strokeWidth={1.5} />
-          </a>
+          {/* Index */}
+          <div className="footer-index">
+
+            <span className="footer-heading">
+              INDEX
+            </span>
+
+            <nav aria-label="Footer navigation">
+
+              {footerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                >
+                  <span className="footer-link-number">
+                    {link.number}
+                  </span>
+
+                  <span className="footer-link-name">
+                    {link.label}
+                  </span>
+                </a>
+              ))}
+
+            </nav>
+
+          </div>
+
+          {/* Colophon */}
+          <div className="footer-colophon">
+
+            <span className="footer-heading">
+              COLOPHON
+            </span>
+
+            <p>
+              Built with <strong>React, Vite, Tailwind CSS</strong>.
+            </p>
+
+            <p>
+              Designed to be simple, useful, and a little
+              different from the usual developer portfolio.
+            </p>
+
+            <div className="footer-stack">
+              <span>REACT</span>
+              <span>VITE</span>
+              <span>TAILWIND CSS</span>
+            </div>
+
+          </div>
+
         </div>
 
-        {/* Index */}
-        <div className="footer-index">
-          <span className="footer-index-label">INDEX</span>
+        {/* End note */}
+        <div className="footer-end-note">
 
-          <nav className="footer-index-links" aria-label="Footer navigation">
-            <a href="#about">
-              <span className="footer-index-number">01</span>
-              ABOUT
-            </a>
-
-            <a href="#projects">
-              <span className="footer-index-number">02</span>
-              WORK
-            </a>
-
-            <a href="#skills">
-              <span className="footer-index-number">03</span>
-              TOOLKIT
-            </a>
-
-            <a href="#contact">
-              <span className="footer-index-number">04</span>
-              CONTACT
-            </a>
-          </nav>
-        </div>
-
-        {/* Social / contact icons */}
-        <div className="footer-social-row">
-
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="footer-social"
-            aria-label="GitHub"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              className="footer-social-icon"
-            >
-              <path
-                fill="currentColor"
-                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.85 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.35-3.87-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
-              />
-            </svg>
-            <span>GitHub</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="footer-social"
-            aria-label="LinkedIn"
-          >
-            <span className="footer-linkedin-mark">in</span>
-            <span>LinkedIn</span>
-          </a>
-
-          <a
-            href="mailto:your-email@example.com"
-            className="footer-social"
-            aria-label="Email"
-          >
-            <span className="footer-email-mark">@</span>
-            <span>Email</span>
-          </a>
-
-          <a
-            href="https://www.instagram.com/haard20_/"
-            target="_blank"
-            rel="noreferrer"
-            className="footer-social"
-            aria-label="Instagram"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              className="footer-social-icon"
-            >
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              />
-              <circle
-                cx="17.4"
-                cy="6.6"
-                r="1"
-                fill="currentColor"
-              />
-            </svg>
-            <span>Instagram</span>
-          </a>
-
+          <div className="footer-end-line" />
         </div>
 
         {/* Bottom */}
         <div className="footer-bottom">
-          <span>© 2026 HAARD PATEL</span>
-          <span>BUILT WITH CURIOSITY</span>
+
+          <span>
+            © 2026 HAARD PATEL
+          </span>
+
+          <span className="footer-bottom-center">
+            BUILT IN SASKATCHEWAN
+          </span>
+
+          <a
+            href="#top"
+            className="footer-back-top"
+          >
+            <strong>BACK TO TOP</strong>
+
+            <ArrowUp
+              size={15}
+              strokeWidth={1.4}
+            />
+          </a>
+
         </div>
 
       </div>
