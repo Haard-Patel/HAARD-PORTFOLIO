@@ -127,7 +127,7 @@ function Hero() {
               </span>
             </a>
 
-            <a href="/experience" className="hero-link">
+            <a href="/experience" className="hero-link primary">
               <span className="hero-link-label">Experience</span>
               <span className="hero-link-arrow" aria-hidden="true">
                 →

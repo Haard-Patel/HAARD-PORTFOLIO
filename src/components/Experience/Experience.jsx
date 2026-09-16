@@ -101,7 +101,7 @@ const experiences = [
 
   {
     number: "03",
-    title: "Technical Support Engineer",
+    title: "Technical Support Specialist",
     company: "Prince Technology",
     location: "Regina, SK",
 
