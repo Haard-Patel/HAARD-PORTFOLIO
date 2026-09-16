@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const projects = [
@@ -22,6 +23,7 @@ const projects = [
     status: "Currently building",
     type: "Full Stack · Data · AI",
     statusType: "building",
+    detailUrl: "/projects/ecommerce-analytics",
   },
 
   {
@@ -139,17 +141,18 @@ function Projects() {
                   </h3>
 
                   {project.detailUrl ? (
-                    <a
-                      href={project.detailUrl}
-                      className="project-arrow"
-                      aria-label={`View ${project.title} project`}
-                    >
-                      <ArrowUpRight
-                        size={22}
-                        strokeWidth={1.5}
-                      />
-                    </a>
-                  ) : (
+  <Link
+    to={project.detailUrl}
+    className="project-arrow"
+    aria-label={`View ${project.title} project`}
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    <ArrowUpRight
+      size={22}
+      strokeWidth={1.5}
+    />
+  </Link>
+) : (
                     <div
                       className="project-arrow project-arrow-static"
                       aria-hidden="true"

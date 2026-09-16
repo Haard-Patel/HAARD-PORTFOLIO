@@ -1,21 +1,22 @@
 import { ArrowUp } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Footer.css";
 
 const footerLinks = [
   {
     number: "01",
     label: "About",
-    href: "#about",
+    href: "/#about",
   },
   {
     number: "02",
     label: "Work",
-    href: "#projects",
+    href: "/#projects",
   },
   {
     number: "03",
     label: "Toolkit",
-    href: "#skills",
+    href: "/#skills",
   },
   {
     number: "04",
@@ -25,7 +26,12 @@ const footerLinks = [
   {
     number: "05",
     label: "Contact",
-    href: "#contact",
+    href: "/#contact",
+  },
+  {
+    number: "06",
+    label: "Add-ons",
+    href: "/Add-ons",
   },
 ];
 
@@ -91,6 +97,84 @@ function LinkedinMark() {
 }
 
 function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleFooterLink = (href) => {
+    // Homepage section links
+    if (href.startsWith("/#")) {
+      const sectionId = href.substring(2);
+
+      // Already on homepage
+      if (location.pathname === "/") {
+        const element = document.getElementById(sectionId);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+
+        return;
+      }
+
+      // Coming from another page:
+      // navigate to homepage and tell it which section to scroll to.
+      navigate("/", {
+        state: {
+          scrollTo: sectionId,
+        },
+      });
+
+      return;
+    }
+
+    // Experience page
+    if (href === "/experience") {
+      navigate("/experience");
+
+      // Make sure Experience starts at the top
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      return;
+    }
+
+    // Add-ons page
+    if (href === "/Add-ons") {
+      navigate("/Add-ons");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      return;
+    }
+  };
+
+  const handleBackToTop = () => {
+    // If already on homepage, scroll to top.
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      return;
+    }
+
+    // If on another page, go to homepage top.
+    navigate("/");
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="site-footer">
       <div className="footer-container">
@@ -141,9 +225,8 @@ function Footer() {
                 </span>
               </a>
 
-              {/* Add your real Instagram URL here */}
               <a
-                href="#contact"
+                href="https://www.instagram.com/haard20_?stkn=MWFicm1sc3g1Z2MxZw%3D%3D&utm_source=qr"
                 aria-label="Instagram"
               >
                 <InstagramMark />
@@ -163,9 +246,13 @@ function Footer() {
             <nav aria-label="Footer navigation">
 
               {footerLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleFooterLink(link.href);
+                  }}
                 >
                   <span className="footer-link-number">
                     {link.number}
@@ -174,7 +261,7 @@ function Footer() {
                   <span className="footer-link-name">
                     {link.label}
                   </span>
-                </a>
+                </Link>
               ))}
 
             </nav>
@@ -209,7 +296,6 @@ function Footer() {
 
         {/* End note */}
         <div className="footer-end-note">
-
           <div className="footer-end-line" />
         </div>
 
@@ -224,9 +310,10 @@ function Footer() {
             BUILT IN SASKATCHEWAN
           </span>
 
-          <a
-            href="#top"
+          <button
+            type="button"
             className="footer-back-top"
+            onClick={handleBackToTop}
           >
             <strong>BACK TO TOP</strong>
 
@@ -234,7 +321,7 @@ function Footer() {
               size={15}
               strokeWidth={1.4}
             />
-          </a>
+          </button>
 
         </div>
 
