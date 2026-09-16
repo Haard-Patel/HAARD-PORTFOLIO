@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import "./Navbar.css";
 
@@ -165,9 +165,9 @@ function Navbar() {
             Contact
           </a>
 
-          <a href="/experience" onClick={closeMenu}>
-            Experience
-          </a>
+          <Link to="/experience" onClick={closeMenu}>
+  Experience
+</Link>
         </div>
       )}
     </header>
