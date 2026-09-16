@@ -68,7 +68,7 @@ function Navbar() {
       return;
     }
   
-    navigate("/");
+    navigate("/", { state: { scrollToTop: true } });
   };
   const time = currentDateTime.toLocaleTimeString([], {
     hour: "2-digit",

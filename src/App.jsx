@@ -9,8 +9,23 @@ import Contact from "./components/Contact/Contact";
 import Cursor from "./components/Cursor/Cursor";
 import Footer from "./components/Footer/Footer";
 import ExperiencePage from "./Pages/ExperiencePage";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function HomePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+  
   return (
     <div id="top">
       <Cursor />
