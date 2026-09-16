@@ -342,10 +342,6 @@
   }
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 700px) {
   .hero {
     padding: 145px 0 60px;
@@ -357,38 +353,29 @@
   }
 
   /*
-    IMPORTANT:
-    Mobile metadata becomes a true two-column layout.
-
-    Left:
-    Based in
-    Regina, SK
-
-    Right:
-    Focus
-    Software · Data · AI
+    MOBILE:
+    Hide the About / Toolkit navigation.
+    Use that central header space for Focus.
   */
 
   .hero-meta {
     top: 105px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     align-items: start;
     gap: 0 20px;
-
-    width: calc(100% - 32px);
   }
 
   .hero-location {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-
-    min-width: 0;
-
     text-align: left;
+  }
+
+  .hero-navigation {
+    display: none;
   }
 
   .hero-focus {
@@ -396,42 +383,29 @@
     align-items: flex-end;
     justify-content: flex-start;
 
-    min-width: 0;
     width: 100%;
+    min-width: 0;
 
     text-align: right;
-
     white-space: normal;
   }
-
-  /*
-    Force the Focus value to remain visible.
-    Do NOT hide this on mobile.
-  */
 
   .hero-focus span:last-child {
     display: block;
 
     width: 100%;
-    max-width: 150px;
 
     color: var(--text-secondary);
 
     font-family: "JetBrains Mono", monospace;
-    font-size: 0.55rem;
+    font-size: 0.56rem;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.025em;
 
     white-space: normal;
-    overflow: visible;
     visibility: visible;
     opacity: 1;
-  }
-
-  .hero-navigation {
-    justify-content: flex-start;
-    gap: 26px;
   }
 
   .hero-main {
@@ -490,6 +464,65 @@
   .hero-meta-line {
     top: 156px;
     width: calc(100% - 36px);
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding: 135px 0 52px;
+  }
+
+  .hero-main,
+  .hero-meta {
+    width: calc(100% - 26px);
+  }
+
+  .hero-meta {
+    top: 95px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 14px;
+  }
+
+  .hero-location,
+  .hero-focus {
+    font-size: 0.55rem;
+  }
+
+  .hero-focus span:last-child {
+    display: block;
+    width: 100%;
+    font-size: 0.52rem;
+    line-height: 1.45;
+
+    white-space: normal;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.65rem, 19vw, 5rem);
+  }
+
+  .hero-statement {
+    margin-top: 28px;
+  }
+
+  .hero-statement p {
+    font-size: 1.08rem;
+    line-height: 1.45;
+  }
+
+  .hero-bottom {
+    margin-top: 30px;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+  }
+
+  .hero-meta-line {
+    top: 146px;
+    width: calc(100% - 30px);
   }
 }
 

@@ -4,10 +4,10 @@ import "./HeroActions.css";
 
 const heroStatements = [
   {
-    first: "I build the ",
-    accent: "systems",
-    middle: ", and ",
-    emphasis: "draw the rest by hand.",
+    first: "I like understanding ",
+    accent: "how things work",
+    middle: ", then ",
+    emphasis: "making them work better.",
   },
   {
     first: "I turn ",
@@ -16,29 +16,23 @@ const heroStatements = [
     emphasis: "simple, working software.",
   },
   {
+    first: "I build things that ",
+    accent: "people can actually use",
+    middle: ", ",
+    emphasis: "not just things that look good.",
+  },
+  {
     first: "I learn by ",
     accent: "building",
     middle: ", ",
     emphasis: "breaking, and trying again.",
   },
   {
-    first: "I like understanding how things work, then ",
-    accent: "making them work better.",
-    middle: "",
-    emphasis: "",
+    first: "Curious by nature, ",
+    accent: "technical by habit",
+    middle: ", and ",
+    emphasis: "always learning.",
   },
-  {
-    first: "From ideas to interfaces, I build things that ",
-    accent: "people can actually use.",
-    middle: "",
-    emphasis: "",
-  },
-    {
-      first: "Curious by nature, ",
-      accent: "technical by skill",
-      middle: ", and ",
-      emphasis: "learner by habit.",
-    },
 ];
 
 function Hero() {
@@ -66,10 +60,7 @@ function Hero() {
           <span>Regina, SK</span>
         </div>
 
-        <nav
-          className="hero-navigation"
-          aria-label="Main navigation"
-        >
+        <nav className="hero-navigation" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#skills">Toolkit</a>
         </nav>
@@ -79,11 +70,12 @@ function Hero() {
           <span>Software · Data · AI</span>
         </div>
       </div>
+
       <div className="hero-meta-line" aria-hidden="true" />
 
       <div className="hero-main">
         <p className="hero-intro">
-          CS Gradute · Software Development · Application · Technology
+          CS Honours · Software Development
         </p>
 
         <h1>
@@ -99,13 +91,10 @@ function Hero() {
         >
           <p>
             {statement.first}
-
             <span className="hero-statement-accent">
               {statement.accent}
             </span>
-
             {statement.middle}
-
             {statement.emphasis && (
               <em>{statement.emphasis}</em>
             )}
@@ -115,10 +104,9 @@ function Hero() {
         <div className="hero-bottom">
           <div className="hero-copy">
             <p className="hero-description">
-              Software developer and technology enthusiast
-              focused on building practical software, solving
-              technical problems, and exploring the
-              intersection of software, data, and AI.
+              Software developer and technology enthusiast focused on
+              building practical software, solving technical problems,
+              and exploring the intersection of software, data, and AI.
             </p>
 
             <a
@@ -127,40 +115,21 @@ function Hero() {
               rel="noreferrer"
               className="hero-resume"
             >
-              RESUME
-              <span>↗</span>
+              RESUME <span>↗</span>
             </a>
           </div>
 
           <div className="hero-actions">
-            <a
-              href="#projects"
-              className="hero-link primary"
-            >
-              <span className="hero-link-label">
-                View work
-              </span>
-
-              <span
-                className="hero-link-arrow"
-                aria-hidden="true"
-              >
+            <a href="#projects" className="hero-link primary">
+              <span className="hero-link-label">View work</span>
+              <span className="hero-link-arrow" aria-hidden="true">
                 ↓
               </span>
             </a>
 
-            <a
-              href="/experience"
-              className="hero-link"
-            >
-              <span className="hero-link-label">
-                Experience
-              </span>
-
-              <span
-                className="hero-link-arrow"
-                aria-hidden="true"
-              >
+            <a href="/experience" className="hero-link">
+              <span className="hero-link-label">Experience</span>
+              <span className="hero-link-arrow" aria-hidden="true">
                 →
               </span>
             </a>
