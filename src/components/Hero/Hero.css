@@ -13,8 +13,8 @@
 }
 
 /* =========================
-   TOP META / HERO HEADER
-   ========================= */
+   HERO META
+========================= */
 
 .hero-meta {
   position: absolute;
@@ -28,7 +28,6 @@
   gap: 32px;
 
   padding: 0 2px;
-
   z-index: 5;
 }
 
@@ -44,6 +43,7 @@
   font-size: 0.59rem;
   font-weight: 500;
   letter-spacing: 0.03em;
+  line-height: 1.4;
 
   white-space: nowrap;
 }
@@ -60,10 +60,8 @@
 
 .hero-label {
   color: var(--text-muted);
-
   font-size: 0.52rem;
   letter-spacing: 0.1em;
-
   text-transform: uppercase;
 }
 
@@ -105,8 +103,7 @@
   transform: scaleX(0);
   transform-origin: right;
 
-  transition:
-    transform 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .hero-navigation a:hover {
@@ -119,8 +116,8 @@
 }
 
 /* =========================
-   HERO CONTENT
-   ========================= */
+   HERO MAIN
+========================= */
 
 .hero-main {
   padding-top: 32px;
@@ -157,7 +154,7 @@
 
 /* =========================
    ROTATING STATEMENT
-   ========================= */
+========================= */
 
 .hero-statement {
   min-height: 54px;
@@ -166,10 +163,7 @@
   display: flex;
   align-items: center;
 
-  animation:
-    heroStatementIn
-    650ms
-    cubic-bezier(0.2, 0.7, 0.2, 1);
+  animation: heroStatementIn 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .hero-statement p {
@@ -215,13 +209,12 @@
 }
 
 /* =========================
-   HERO LOWER CONTENT
-   ========================= */
+   HERO BOTTOM
+========================= */
 
 .hero-bottom {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-
   align-items: end;
   gap: 65px;
 
@@ -270,8 +263,7 @@
 .hero-resume span {
   font-size: 0.8rem;
 
-  transition:
-    transform 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .hero-resume:hover {
@@ -283,8 +275,8 @@
 }
 
 /* =========================
-   META LINE
-   ========================= */
+   DIVIDER
+========================= */
 
 .hero-meta-line {
   position: absolute;
@@ -302,6 +294,10 @@
   z-index: 4;
 }
 
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 1100px) {
   .hero-meta-line {
     top: 156px;
@@ -309,8 +305,8 @@
 }
 
 /* =========================
-   TABLET
-   ========================= */
+   SMALL LAPTOP / TABLET
+========================= */
 
 @media (max-width: 900px) {
   .hero {
@@ -337,7 +333,6 @@
 
   .hero-statement p {
     max-width: 720px;
-
     font-size: clamp(1.2rem, 2.8vw, 1.65rem);
   }
 
@@ -349,7 +344,7 @@
 
 /* =========================
    MOBILE
-   ========================= */
+========================= */
 
 @media (max-width: 700px) {
   .hero {
@@ -361,33 +356,77 @@
     width: calc(100% - 32px);
   }
 
+  /*
+    IMPORTANT:
+    Mobile metadata becomes a true two-column layout.
+
+    Left:
+    Based in
+    Regina, SK
+
+    Right:
+    Focus
+    Software · Data · AI
+  */
+
   .hero-meta {
     top: 105px;
 
+    display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-    gap: 20px;
+    align-items: start;
+    gap: 0 20px;
+
+    width: calc(100% - 32px);
   }
 
   .hero-location {
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    min-width: 0;
+
+    text-align: left;
   }
 
   .hero-focus {
+    display: flex;
     align-items: flex-end;
+    justify-content: flex-start;
+
+    min-width: 0;
+    width: 100%;
+
     text-align: right;
 
     white-space: normal;
-
-    min-width: 0;
   }
+
+  /*
+    Force the Focus value to remain visible.
+    Do NOT hide this on mobile.
+  */
 
   .hero-focus span:last-child {
     display: block;
 
-    max-width: 130px;
+    width: 100%;
+    max-width: 150px;
 
+    color: var(--text-secondary);
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.55rem;
+    font-weight: 500;
     line-height: 1.5;
+    letter-spacing: 0.025em;
+
+    white-space: normal;
+    overflow: visible;
+    visibility: visible;
+    opacity: 1;
   }
 
   .hero-navigation {
@@ -416,7 +455,6 @@
 
   .hero-statement p {
     max-width: 100%;
-
     font-size: clamp(1.18rem, 5.2vw, 1.45rem);
     line-height: 1.42;
   }
@@ -429,7 +467,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     gap: 30px;
 
     margin-top: 34px;
@@ -442,7 +479,6 @@
 
   .hero-description {
     max-width: 100%;
-
     font-size: 0.96rem;
     line-height: 1.68;
   }
@@ -458,8 +494,8 @@
 }
 
 /* =========================
-   SMALL MOBILE
-   ========================= */
+   SMALL PHONES
+========================= */
 
 @media (max-width: 420px) {
   .hero {
@@ -474,7 +510,9 @@
   .hero-meta {
     top: 95px;
 
-    gap: 14px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 0 14px;
   }
 
   .hero-location,
@@ -483,8 +521,18 @@
   }
 
   .hero-focus span:last-child {
-    max-width: 110px;
+    display: block;
+
+    width: 100%;
+    max-width: 125px;
+
+    font-size: 0.52rem;
     line-height: 1.45;
+
+    white-space: normal;
+    overflow: visible;
+    visibility: visible;
+    opacity: 1;
   }
 
   .hero-navigation {
@@ -524,7 +572,7 @@
 
 /* =========================
    REDUCED MOTION
-   ========================= */
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
   .hero-statement {
