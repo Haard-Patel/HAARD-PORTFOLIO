@@ -157,20 +157,11 @@ function Footer() {
   };
 
   const handleBackToTop = () => {
-    // If already on homepage, scroll to top.
-    if (location.pathname === "/") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
-      return;
-    }
-
-    // If on another page, go to homepage top.
-    navigate("/");
+    // Always scroll to the top of the CURRENT page.
+    // Do not navigate anywhere.
     window.scrollTo({
       top: 0,
+      left: 0,
       behavior: "smooth",
     });
   };

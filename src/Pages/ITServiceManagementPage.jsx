@@ -1,7 +1,6 @@
-
-import { ArrowLeft, ArrowRight} from "lucide-react";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import Cursor from "../components/Cursor/Cursor";
 import Footer from "../components/Footer/Footer";
@@ -10,15 +9,15 @@ import Navbar from "../components/Navbar/Navbar";
 import "./ITServiceManagementPage.css";
 
 function ITServiceManagementPage() {
-    useEffect(() => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "instant",
-      });
-    }, []);
-  
-    return (
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
+
+  return (
     <div className="itsm-detail-page">
       <Cursor />
       <Navbar />
@@ -27,14 +26,15 @@ function ITServiceManagementPage() {
 
         {/* Back to Selected Work */}
         <div className="itsm-detail-container">
-        <Link
-  to="/"
-  state={{ scrollTo: "projects" }}
-  className="itsm-detail-back"
->
-  <ArrowLeft size={15} strokeWidth={1.4} />
-  <span>Selected Work</span>
-</Link>        </div>
+          <Link
+            to="/"
+            state={{ scrollTo: "projects" }}
+            className="itsm-detail-back"
+          >
+            <ArrowLeft size={15} strokeWidth={1.4} />
+            <span>Selected Work</span>
+          </Link>
+        </div>
 
         {/* Hero */}
         <section className="itsm-detail-hero">
@@ -84,7 +84,6 @@ function ITServiceManagementPage() {
         {/* Overview */}
         <section className="itsm-detail-section">
           <div className="itsm-detail-container">
-
             <div className="itsm-detail-section-grid">
 
               <div className="itsm-detail-section-label">
@@ -113,14 +112,12 @@ function ITServiceManagementPage() {
               </div>
 
             </div>
-
           </div>
         </section>
 
         {/* Capabilities */}
         <section className="itsm-detail-section itsm-detail-section-alt">
           <div className="itsm-detail-container">
-
             <div className="itsm-detail-section-grid">
 
               <div className="itsm-detail-section-label">
@@ -175,18 +172,15 @@ function ITServiceManagementPage() {
                   </div>
 
                 </div>
-
               </div>
 
             </div>
-
           </div>
         </section>
 
         {/* Architecture / Stack */}
         <section className="itsm-detail-section">
           <div className="itsm-detail-container">
-
             <div className="itsm-detail-section-grid">
 
               <div className="itsm-detail-section-label">
@@ -217,78 +211,102 @@ function ITServiceManagementPage() {
               </div>
 
             </div>
-
           </div>
         </section>
 
-{/* Project Snapshot */}
-<section className="itsm-detail-section itsm-detail-preview-section">
-  <div className="itsm-detail-container">
+        {/* Project Snapshot */}
+        <section className="itsm-detail-section itsm-detail-preview-section">
+          <div className="itsm-detail-container">
+            <div className="itsm-detail-section-grid">
 
-    <div className="itsm-detail-section-grid">
+              <div className="itsm-detail-section-label">
+                <span>04</span>
+                <span>Snapshot</span>
+              </div>
 
-      <div className="itsm-detail-section-label">
-        <span>04</span>
-        <span>Snapshot</span>
-      </div>
+              <div className="itsm-detail-content">
 
-      <div className="itsm-detail-content">
+                <div className="itsm-snapshot-grid">
 
-        <div className="itsm-snapshot-grid">
+                  <figure className="itsm-snapshot-item">
+                    <a
+                      href="/projects/itsm/fig01.png"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="itsm-snapshot-link"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig01.png"
+                          alt="IT Service Management dashboard"
+                        />
+                      </div>
+                    </a>
 
-          <figure className="itsm-snapshot-item">
-            <div className="itsm-snapshot-image">
-              <img
-                src="/projects/itsm/fig01.png"
-                alt="IT Service Management dashboard"
-              />
+                    <figcaption>Fig. 01</figcaption>
+                  </figure>
+
+                  <figure className="itsm-snapshot-item">
+                    <a
+                      href="/projects/itsm/fig02.png"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="itsm-snapshot-link"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig02.png"
+                          alt="IT Service Management ticket interface"
+                        />
+                      </div>
+                    </a>
+
+                    <figcaption>Fig. 02</figcaption>
+                  </figure>
+
+                  <figure className="itsm-snapshot-item">
+                    <a
+                      href="/projects/itsm/fig03.png"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="itsm-snapshot-link"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig03.png"
+                          alt="IT Service Management user interface"
+                        />
+                      </div>
+                    </a>
+
+                    <figcaption>Fig. 03</figcaption>
+                  </figure>
+
+                  <figure className="itsm-snapshot-item">
+                    <a
+                      href="/projects/itsm/fig04.png"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="itsm-snapshot-link"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig04.png"
+                          alt="IT Service Management analytics interface"
+                        />
+                      </div>
+                    </a>
+
+                    <figcaption>Fig. 04</figcaption>
+                  </figure>
+
+                </div>
+
+              </div>
+
             </div>
-
-            <figcaption>Fig. 01</figcaption>
-          </figure>
-
-          <figure className="itsm-snapshot-item">
-            <div className="itsm-snapshot-image">
-              <img
-                src="/projects/itsm/fig02.png"
-                alt="IT Service Management ticket interface"
-              />
-            </div>
-
-            <figcaption>Fig. 02</figcaption>
-          </figure>
-
-          <figure className="itsm-snapshot-item">
-            <div className="itsm-snapshot-image">
-              <img
-                src="/projects/itsm/fig03.png"
-                alt="IT Service Management user interface"
-              />
-            </div>
-
-            <figcaption>Fig. 03</figcaption>
-          </figure>
-
-          <figure className="itsm-snapshot-item">
-            <div className="itsm-snapshot-image">
-              <img
-                src="/projects/itsm/fig04.png"
-                alt="IT Service Management analytics interface"
-              />
-            </div>
-
-            <figcaption>Fig. 04</figcaption>
-          </figure>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
+          </div>
+        </section>
 
         {/* Project Links */}
         <section className="itsm-detail-links-section">
