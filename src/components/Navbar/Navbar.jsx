@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import "./Navbar.css";
 
@@ -16,6 +17,8 @@ function getInitialTheme() {
 }
 
 function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [theme, setTheme] = useState(getInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -52,17 +55,21 @@ function Navbar() {
     setMenuOpen(false);
   };
 
-  const scrollToTop = (event) => {
+  const handleLogoClick = (event) => {
     event.preventDefault();
-
+  
     closeMenu();
-
+  
+    if (location.pathname !== "/") {
+      navigate("/");
+      return;
+    }
+  
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-
   const time = currentDateTime.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
@@ -90,11 +97,11 @@ function Navbar() {
         </div>
 
         <a
-          href="#top"
-          className="navbar-logo"
-          onClick={scrollToTop}
-          aria-label="Back to top"
-        >
+  href="/"
+  className="navbar-logo"
+  onClick={handleLogoClick}
+  aria-label="Back to top"
+>
           <span className="hp-mark">
             <span className="hp-h">H</span>
             <span className="hp-p">P</span>

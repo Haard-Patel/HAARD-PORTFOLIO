@@ -9,16 +9,16 @@ const experiences = [
 
     metrics: [
       {
-        value: "—",
-        label: "METRIC",
+        value: "25+",
+        label: "Team Members Managed",
       },
       {
-        value: "—",
-        label: "METRIC",
+        value: "200+",
+        label: "Resolved Customer Escalations",
       },
       {
-        value: "—",
-        label: "METRIC",
+        value: "25%",
+        label: "Improved Operational Excellence",
       },
     ],
 
@@ -27,7 +27,7 @@ const experiences = [
         number: "01",
         title: "Theatre operations & service",
         description:
-          "Managed day-to-day theatre operations while maintaining a strong focus on customer service, team coordination, and efficient execution.",
+          "Managed day-to-day theatre operations while maintaining a strong focus on customer service, team coordination, and efficient execution leading to high customer satisfaction and operational excellence.",
       },
       {
         number: "02",
@@ -58,16 +58,16 @@ const experiences = [
 
     metrics: [
       {
-        value: "—",
-        label: "METRIC",
+        value: "25+",
+        label: "Students Mentored",
       },
       {
-        value: "—",
-        label: "METRIC",
+        value: "100+",
+        label: "Codebaes Reviewed",
       },
       {
-        value: "—",
-        label: "METRIC",
+        value: "7",
+        label: "Git Repositories Managed",
       },
     ],
 
@@ -82,13 +82,13 @@ const experiences = [
         number: "02",
         title: "Git & development workflows",
         description:
-          "Guided students through Git branching, merging, conflict resolution, and practical software development workflows.",
+          "Guided students through Git branching, merging, conflict resolution, deployment and practical software development workflows.",
       },
       {
         number: "03",
         title: "Code review & problem solving",
         description:
-          "Reviewed Python, Java, and C++ implementations and helped students reason through technical problems and improve their solutions.",
+          "Reviewed Python, Java, and C++ implementations and helped students reason through technical problems and improve their solutions for efficiency, correctness, robustness and maintainability.",
       },
       {
         number: "04",
@@ -107,16 +107,16 @@ const experiences = [
 
     metrics: [
       {
-        value: "—",
-        label: "METRIC",
+        value: "92%",
+        label: "First Contact Resolution Rate",
       },
       {
-        value: "—",
-        label: "METRIC",
+        value: "80+",
+        label: "Troubleshooting Steps Documented",
       },
       {
-        value: "—",
-        label: "METRIC",
+        value: "75+",
+        label: "Incident Supported",
       },
     ],
 
@@ -231,13 +231,9 @@ function Experience() {
           <div className="experience-closing">
             <p>
               <strong>
-                Great software gets built where engineering rigour
-                meets
+              Great software is built where thoughtful systems meet 
               </strong>{" "}
-              <em>genuine care</em>{" "}
-              <strong>
-                for whoever has to use it.
-              </strong>
+              <em>meaningful experiences.</em>{" "}
             </p>
           </div>
         </div>

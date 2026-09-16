@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -6,8 +8,9 @@ import Toolkit from "./components/Toolkit/Toolkit";
 import Contact from "./components/Contact/Contact";
 import Cursor from "./components/Cursor/Cursor";
 import Footer from "./components/Footer/Footer";
+import ExperiencePage from "./Pages/ExperiencePage";
 
-function App() {
+function HomePage() {
   return (
     <div id="top">
       <Cursor />
@@ -31,9 +34,17 @@ function App() {
         <Contact />
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/experience" element={<ExperiencePage />} />
+    </Routes>
   );
 }
 
