@@ -1,9 +1,11 @@
 import { useEffect } from "react";
-import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
 import Navbar from "../components/Navbar/Navbar";
 import Cursor from "../components/Cursor/Cursor";
 import Footer from "../components/Footer/Footer";
+
 import "./AddOnsPage.css";
 
 function AddOnsPage() {
@@ -23,15 +25,16 @@ function AddOnsPage() {
       <main className="addons-main">
         <div className="addons-container">
 
+          {/* BACK TO HOME */}
           <Link
             to="/"
-            state={{ scrollTo: "top" }}
             className="addons-back"
           >
             <ArrowLeft size={15} strokeWidth={1.4} />
             <span>Back to Home</span>
           </Link>
 
+          {/* HERO */}
           <section className="addons-hero">
             <div className="addons-eyebrow">
               <span>06 / ADD-ONS</span>
@@ -41,73 +44,147 @@ function AddOnsPage() {
             <h1>
               Certifications
               <br />
-              & Credentials.
+              &amp; Credentials.
             </h1>
 
             <p>
-              Additional certifications and credentials that complement
-              my technical background and professional experience.
+              Professional certifications and ongoing learning that
+              complement my technical background and continue to expand
+              my knowledge across technology, IT, business, and support.
             </p>
           </section>
 
+          {/* CERTIFICATIONS */}
           <section className="addons-section">
-            <div className="addons-section-heading">
-              <span>01</span>
-              <h2>Certifications</h2>
-            </div>
+            <div className="certification-list">
 
-            <div className="addons-grid">
-
-              <a
-                href="#"
-                className="addon-card"
-                onClick={(event) => event.preventDefault()}
-              >
-                <div className="addon-card-top">
-                  <span className="addon-number">01</span>
-                  <ExternalLink
-                    size={17}
-                    strokeWidth={1.4}
-                  />
+              {/* 01 */}
+              <article className="certification-item">
+                <div className="certification-number">
+                  01
                 </div>
 
-                <div className="addon-card-content">
-                  <span className="addon-label">
-                    APPLE CERTIFICATION
+                <div className="certification-content">
+                  <h2>ITIL</h2>
+
+                  <span className="certification-status">
+                    COMPLETED · UDEMY
                   </span>
 
-                  <h3>
-                    Apple Certified IT Professional
-                  </h3>
-
                   <p>
-                    Professional certification demonstrating
-                    foundational IT support and Apple technology
-                    knowledge.
+                    IT service management fundamentals covering
+                    service management concepts, processes, and
+                    IT service delivery practices.
                   </p>
                 </div>
+              </article>
 
-                <div className="addon-card-footer">
-                  <span>ACIT</span>
-                  <span>VIEW CREDENTIAL ↗</span>
+              {/* 02 */}
+              <article className="certification-item">
+                <div className="certification-number">
+                  02
                 </div>
-              </a>
 
-            </div>
-          </section>
+                <div className="certification-content">
+                  <h2>Digital Marketing</h2>
 
-          <section className="addons-note">
-            <span>02</span>
+                  <span className="certification-status">
+                    COMPLETED · GOOGLE
+                  </span>
 
-            <div>
-              <span className="addons-note-label">
-                MORE TO COME
-              </span>
+                  <p>
+                    Digital marketing fundamentals covering online
+                    marketing concepts, digital channels, and
+                    strategies for reaching and engaging audiences.
+                  </p>
+                </div>
+              </article>
 
-              <p>
-                Additional certifications and professional
-                credentials will be added as they are completed.
-              </p>
+              {/* 03 */}
+              <article className="certification-item">
+                <div className="certification-number">
+                  03
+                </div>
+
+                <div className="certification-content">
+                  <h2>Apple Certified IT Professional</h2>
+
+                  <span className="certification-status">
+                    CURRENTLY DOING · APPLE · ACIT
+                  </span>
+
+                  <p>
+                    Currently completing Apple’s IT professional
+                    certification focused on technical support,
+                    troubleshooting, and Apple technology.
+                  </p>
+                </div>
+              </article>
+
+              {/* 04 */}
+              <article className="certification-item">
+                <div className="certification-number">
+                  04
+                </div>
+
+                <div className="certification-content">
+                  <h2>CompTIA A+</h2>
+
+                  <span className="certification-status">
+                    CURRENTLY DOING · COMPTIA
+                  </span>
+
+                  <p>
+                    Currently working toward the CompTIA A+
+                    certification to strengthen foundational
+                    IT support, hardware, software, and
+                    troubleshooting knowledge.
+                  </p>
+                </div>
+              </article>
+
+              {/* 05 */}
+              <article className="certification-item">
+                <div className="certification-number">
+                  05
+                </div>
+
+                <div className="certification-content">
+                  <h2>Technical Support</h2>
+
+                  <span className="certification-status">
+                    IN THE QUEUE · GOOGLE · COURSERA
+                  </span>
+
+                  <p>
+                    Planned certification focused on technical
+                    support fundamentals, troubleshooting, and
+                    IT support practices.
+                  </p>
+                </div>
+              </article>
+
+              {/* 06 */}
+              <article className="certification-item">
+                <div className="certification-number">
+                  06
+                </div>
+
+                <div className="certification-content">
+                  <h2>ECBA</h2>
+
+                  <span className="certification-status">
+                    IN THE QUEUE · IIBA
+                  </span>
+
+                  <p>
+                    Planned entry-level certification focused on
+                    business analysis fundamentals, requirements,
+                    stakeholders, and business analysis practices.
+                  </p>
+                </div>
+              </article>
+
             </div>
           </section>
 
