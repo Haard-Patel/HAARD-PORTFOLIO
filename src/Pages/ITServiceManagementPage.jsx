@@ -10,6 +10,7 @@ import "./ITServiceManagementPage.css";
 
 function ITServiceManagementPage() {
   const [selectedImage, setSelectedImage] = useState(null);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -23,17 +24,17 @@ function ITServiceManagementPage() {
       document.body.style.overflow = "";
       return;
     }
-  
+
     document.body.style.overflow = "hidden";
-  
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setSelectedImage(null);
       }
     };
-  
+
     window.addEventListener("keydown", handleKeyDown);
-  
+
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
@@ -238,126 +239,126 @@ function ITServiceManagementPage() {
         </section>
 
         {/* Project Snapshot */}
-{/* Project Snapshot */}
-<section className="itsm-detail-section itsm-detail-preview-section">
-  <div className="itsm-detail-container">
-    <div className="itsm-detail-section-grid">
+        <section className="itsm-detail-section itsm-detail-preview-section">
+          <div className="itsm-detail-container">
+            <div className="itsm-detail-section-grid">
 
-      <div className="itsm-detail-section-label">
-        <span>04</span>
-        <span>Snapshot</span>
-      </div>
-
-      <div className="itsm-detail-content">
-
-        <div className="itsm-snapshot-grid">
-
-          <figure className="itsm-snapshot-item">
-            <button
-              type="button"
-              className="itsm-snapshot-button"
-              onClick={() =>
-                setSelectedImage({
-                  src: "/projects/itsm/fig01.png",
-                  alt: "IT Service Management dashboard",
-                  label: "Fig. 01",
-                })
-              }
-              aria-label="Open IT Service Management dashboard"
-            >
-              <div className="itsm-snapshot-image">
-                <img
-                  src="/projects/itsm/fig01.png"
-                  alt="IT Service Management dashboard"
-                />
+              <div className="itsm-detail-section-label">
+                <span>04</span>
+                <span>Snapshot</span>
               </div>
-            </button>
 
-            <figcaption>Fig. 01</figcaption>
-          </figure>
+              <div className="itsm-detail-content">
 
+                <div className="itsm-snapshot-grid">
 
-          <figure className="itsm-snapshot-item">
-            <button
-              type="button"
-              className="itsm-snapshot-button"
-              onClick={() =>
-                setSelectedImage({
-                  src: "/projects/itsm/fig02.png",
-                  alt: "IT Service Management ticket interface",
-                  label: "Fig. 02",
-                })
-              }
-              aria-label="Open IT Service Management ticket interface"
-            >
-              <div className="itsm-snapshot-image">
-                <img
-                  src="/projects/itsm/fig02.png"
-                  alt="IT Service Management ticket interface"
-                />
+                  {/* FIG 01 */}
+                  <figure className="itsm-snapshot-item">
+                    <button
+                      type="button"
+                      className="itsm-snapshot-button"
+                      onClick={() =>
+                        setSelectedImage({
+                          src: "/projects/itsm/fig01.png",
+                          alt: "IT Service Management dashboard",
+                          label: "Fig. 01",
+                        })
+                      }
+                      aria-label="Open IT Service Management dashboard"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig01.png"
+                          alt="IT Service Management dashboard"
+                        />
+                      </div>
+                    </button>
+
+                    <figcaption>Fig. 01</figcaption>
+                  </figure>
+
+                  {/* FIG 02 */}
+                  <figure className="itsm-snapshot-item">
+                    <button
+                      type="button"
+                      className="itsm-snapshot-button"
+                      onClick={() =>
+                        setSelectedImage({
+                          src: "/projects/itsm/fig02.png",
+                          alt: "IT Service Management ticket interface",
+                          label: "Fig. 02",
+                        })
+                      }
+                      aria-label="Open IT Service Management ticket interface"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig02.png"
+                          alt="IT Service Management ticket interface"
+                        />
+                      </div>
+                    </button>
+
+                    <figcaption>Fig. 02</figcaption>
+                  </figure>
+
+                  {/* FIG 03 */}
+                  <figure className="itsm-snapshot-item">
+                    <button
+                      type="button"
+                      className="itsm-snapshot-button"
+                      onClick={() =>
+                        setSelectedImage({
+                          src: "/projects/itsm/fig03.png",
+                          alt: "IT Service Management user interface",
+                          label: "Fig. 03",
+                        })
+                      }
+                      aria-label="Open IT Service Management user interface"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig03.png"
+                          alt="IT Service Management user interface"
+                        />
+                      </div>
+                    </button>
+
+                    <figcaption>Fig. 03</figcaption>
+                  </figure>
+
+                  {/* FIG 04 */}
+                  <figure className="itsm-snapshot-item">
+                    <button
+                      type="button"
+                      className="itsm-snapshot-button"
+                      onClick={() =>
+                        setSelectedImage({
+                          src: "/projects/itsm/fig04.png",
+                          alt: "IT Service Management analytics interface",
+                          label: "Fig. 04",
+                        })
+                      }
+                      aria-label="Open IT Service Management analytics interface"
+                    >
+                      <div className="itsm-snapshot-image">
+                        <img
+                          src="/projects/itsm/fig04.png"
+                          alt="IT Service Management analytics interface"
+                        />
+                      </div>
+                    </button>
+
+                    <figcaption>Fig. 04</figcaption>
+                  </figure>
+
+                </div>
+
               </div>
-            </button>
 
-            <figcaption>Fig. 02</figcaption>
-          </figure>
-
-
-          <figure className="itsm-snapshot-item">
-            <button
-              type="button"
-              className="itsm-snapshot-button"
-              onClick={() =>
-                setSelectedImage({
-                  src: "/projects/itsm/fig03.png",
-                  alt: "IT Service Management user interface",
-                  label: "Fig. 03",
-                })
-              }
-              aria-label="Open IT Service Management user interface"
-            >
-              <div className="itsm-snapshot-image">
-                <img
-                  src="/projects/itsm/fig03.png"
-                  alt="IT Service Management user interface"
-                />
-              </div>
-            </button>
-
-            <figcaption>Fig. 03</figcaption>
-          </figure>
-
-
-          <figure className="itsm-snapshot-item">
-            <button
-              type="button"
-              className="itsm-snapshot-button"
-              onClick={() =>
-                setSelectedImage({
-                  src: "/projects/itsm/fig04.png",
-                  alt: "IT Service Management analytics interface",
-                  label: "Fig. 04",
-                })
-              }
-              aria-label="Open IT Service Management analytics interface"
-            >
-              <div className="itsm-snapshot-image">
-                <img
-                  src="/projects/itsm/fig04.png"
-                  alt="IT Service Management analytics interface"
-                />
-              </div>
-            </button>
-
-            <figcaption>Fig. 04</figcaption>
-          </figure>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
+            </div>
+          </div>
+        </section>
 
         {/* Project Links */}
         <section className="itsm-detail-links-section">
@@ -431,45 +432,53 @@ function ITServiceManagementPage() {
 
       <Footer />
 
-{/* Image Lightbox */}
-{selectedImage && (
-  <div
-    className="itsm-lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Image preview"
-    onMouseDown={(event) => {
-      if (event.target === event.currentTarget) {
-        setSelectedImage(null);
-      }
-    }}
-  >
-    <button
-      type="button"
-      className="itsm-lightbox-close"
-      onClick={() => setSelectedImage(null)}
-      aria-label="Close image preview"
-    >
-      <X
-        size={25}
-        strokeWidth={1.4}
-      />
-    </button>
+      {/* =====================================================
+          IMAGE LIGHTBOX
+      ===================================================== */}
 
-    <div className="itsm-lightbox-content">
-      <img
-        src={selectedImage.src}
-        alt={selectedImage.alt}
-      />
+      {selectedImage && (
+        <div
+          className="itsm-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setSelectedImage(null);
+            }
+          }}
+        >
+          <div className="itsm-lightbox-content">
 
-      <span className="itsm-lightbox-caption">
-        {selectedImage.label}
-      </span>
+            {/* CLOSE BUTTON — OUTSIDE PHOTO */}
+            <button
+              type="button"
+              className="itsm-lightbox-close"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close image preview"
+            >
+              <X
+                size={25}
+                strokeWidth={1.4}
+              />
+            </button>
+
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+            />
+
+            <span className="itsm-lightbox-caption">
+              {selectedImage.label}
+            </span>
+
+          </div>
+        </div>
+      )}
+
     </div>
-  </div>
-)}
-</div>
   );
 }
 
 export default ITServiceManagementPage;
+

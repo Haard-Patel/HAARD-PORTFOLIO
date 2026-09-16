@@ -15,6 +15,8 @@
   
     background: var(--nt-bg);
     color: var(--nt-text);
+  
+    overflow-x: hidden;
   }
   
   /* =========================================================
@@ -29,6 +31,8 @@
   .nutritracker-detail-container {
     width: min(1180px, calc(100% - 80px));
     margin: 0 auto;
+  
+    min-width: 0;
   }
   
   /* =========================================================
@@ -91,6 +95,8 @@
     gap: 40px;
   
     padding-top: 45px;
+  
+    min-width: 0;
   }
   
   .nutritracker-detail-eyebrow {
@@ -137,6 +143,8 @@
   .nutritracker-detail-status-dot {
     width: 7px;
     height: 7px;
+  
+    flex-shrink: 0;
   
     border-radius: 50%;
     background: var(--accent);
@@ -202,6 +210,8 @@
     display: grid;
     grid-template-columns: 190px minmax(0, 1fr);
     gap: 70px;
+  
+    min-width: 0;
   }
   
   .nutritracker-detail-section-label {
@@ -222,6 +232,7 @@
   
   .nutritracker-detail-content {
     min-width: 0;
+    max-width: 100%;
   }
   
   .nutritracker-detail-content h2 {
@@ -261,10 +272,14 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   
+    min-width: 0;
+  
     border-top: 1px solid var(--nt-border);
   }
   
   .nutritracker-detail-feature {
+    min-width: 0;
+  
     padding: 30px 35px 35px 0;
   
     border-bottom: 1px solid var(--nt-border);
@@ -317,6 +332,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+  
+    max-width: 100%;
   }
   
   .nutritracker-detail-stack span {
@@ -351,17 +368,30 @@
     padding-bottom: 125px;
   }
   
+  /*
+    IMPORTANT:
+    The gallery stays 2 × 2 on desktop,
+    tablet, and mobile.
+  */
+  
   .nutritracker-snapshot-grid {
     display: grid;
+  
     grid-template-columns: repeat(2, minmax(0, 1fr));
   
     gap: 28px;
   
-    width: 125%;
+    width: 100%;
+    max-width: 100%;
+  
+    min-width: 0;
   }
   
   .nutritracker-snapshot-item {
+    width: 100%;
     min-width: 0;
+    max-width: 100%;
+  
     margin: 0;
   }
   
@@ -369,6 +399,10 @@
     display: block;
   
     width: 100%;
+    max-width: 100%;
+  
+    min-width: 0;
+  
     padding: 0;
   
     border: 0;
@@ -382,17 +416,24 @@
   
   .nutritracker-snapshot-image {
     width: 100%;
+    max-width: 100%;
+  
+    min-width: 0;
+  
     overflow: hidden;
   
     border: 1px solid var(--nt-border);
   
     background: var(--nt-surface);
+  
+    box-sizing: border-box;
   }
   
   .nutritracker-snapshot-image img {
     display: block;
   
     width: 100%;
+    max-width: 100%;
     height: auto;
   
     object-fit: contain;
@@ -479,12 +520,16 @@
   .nutritracker-detail-nav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+    min-width: 0;
   }
   
   .nutritracker-detail-nav-link {
     display: flex;
     flex-direction: column;
     gap: 14px;
+  
+    min-width: 0;
   
     padding: 55px 0 65px;
   
@@ -536,11 +581,16 @@
     align-items: center;
     justify-content: center;
   
-    padding: 40px;
+    padding: 70px 30px 40px;
   
     background: rgba(0, 0, 0, 0.9);
   
     cursor: zoom-out;
+  
+    overflow-y: auto;
+    overflow-x: hidden;
+  
+    box-sizing: border-box;
   }
   
   .nutritracker-lightbox-content {
@@ -552,7 +602,10 @@
     justify-content: center;
   
     width: min(1400px, 94vw);
+    max-width: 100%;
     max-height: 92vh;
+  
+    min-width: 0;
   }
   
   .nutritracker-lightbox-content img {
@@ -568,23 +621,16 @@
     cursor: default;
   }
   
-  .nutritracker-lightbox-caption {
-    margin-top: 12px;
-  
-    color: #ffffff;
-  
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  
-    opacity: 0.65;
-  }
+  /* =========================================================
+     LIGHTBOX CLOSE
+     OUTSIDE THE PHOTO
+  ========================================================= */
   
   .nutritracker-lightbox-close {
     position: absolute;
   
-    top: 25px;
-    right: 28px;
+    top: -52px;
+    right: 0;
   
     z-index: 2;
   
@@ -592,8 +638,9 @@
     align-items: center;
     justify-content: center;
   
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
+  
     padding: 0;
   
     border: 1px solid rgba(255, 255, 255, 0.35);
@@ -606,12 +653,26 @@
   
     transition:
       background 0.25s ease,
-      border-color 0.25s ease;
+      border-color 0.25s ease,
+      transform 0.25s ease;
   }
   
   .nutritracker-lightbox-close:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.75);
+    transform: translateY(-1px);
+  }
+  
+  .nutritracker-lightbox-caption {
+    margin-top: 12px;
+  
+    color: #ffffff;
+  
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  
+    opacity: 0.65;
   }
   
   /* =========================================================
@@ -680,38 +741,68 @@
       border-right: 0 !important;
     }
   
-    /*
-      IMPORTANT:
-      Keep the screenshot grid 2 x 2.
-    */
+    /* =======================================================
+       SNAPSHOTS
+       KEEP 2 × 2
+    ======================================================= */
+  
     .nutritracker-snapshot-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+  
+      gap: 14px;
+  
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .nutritracker-snapshot-item {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+  
+    .nutritracker-snapshot-button {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .nutritracker-snapshot-image {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .nutritracker-snapshot-image img {
+      width: 100%;
+      max-width: 100%;
     }
   
     .nutritracker-detail-nav-link {
       padding: 40px 0 50px;
     }
   
-    /* Lightbox */
+    /* =======================================================
+       LIGHTBOX
+    ======================================================= */
   
     .nutritracker-lightbox {
-      padding: 20px;
+      padding: 70px 16px 30px;
     }
   
     .nutritracker-lightbox-content {
-      width: 96vw;
+      width: 100%;
+      max-width: 100%;
       max-height: 90vh;
     }
   
     .nutritracker-lightbox-content img {
-      max-width: 96vw;
+      width: auto;
+      max-width: 100%;
       max-height: 82vh;
     }
   
     .nutritracker-lightbox-close {
-      top: 16px;
-      right: 16px;
+      top: -50px;
+      right: 0;
   
       width: 40px;
       height: 40px;
@@ -773,12 +864,48 @@
       font-size: 0.86rem;
     }
   
-    /*
-      Keep screenshots 2 x 2 even on small phones.
-    */
+    /* =======================================================
+       SNAPSHOTS
+       ALWAYS 2 × 2
+    ======================================================= */
+  
     .nutritracker-snapshot-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+  
+      gap: 8px;
+  
+      width: 100%;
+      max-width: 100%;
+  
+      min-width: 0;
+    }
+  
+    .nutritracker-snapshot-item {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+  
+    .nutritracker-snapshot-button {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+  
+    .nutritracker-snapshot-image {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+  
+      box-sizing: border-box;
+    }
+  
+    .nutritracker-snapshot-image img {
+      display: block;
+  
+      width: 100%;
+      max-width: 100%;
+      height: auto;
     }
   
     .nutritracker-snapshot-item figcaption {
@@ -816,14 +943,30 @@
       font-size: 0.52rem;
     }
   
-    /* Lightbox */
+    /* =======================================================
+       LIGHTBOX
+    ======================================================= */
   
     .nutritracker-lightbox {
-      padding: 12px;
+      padding: 65px 12px 25px;
+    }
+  
+    .nutritracker-lightbox-content {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .nutritracker-lightbox-content img {
+      width: auto;
+      max-width: 100%;
+      max-height: 80vh;
     }
   
     .nutritracker-lightbox-close {
-      top: 12px;
-      right: 12px;
+      top: -50px;
+      right: 0;
+  
+      width: 38px;
+      height: 38px;
     }
   }
