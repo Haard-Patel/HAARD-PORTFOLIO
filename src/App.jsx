@@ -18,6 +18,7 @@ import ExperiencePage from "./Pages/ExperiencePage";
 import EcommerceAnalyticsPage from "./Pages/EcommerceAnalyticsPage";
 import ITServiceManagementPage from "./Pages/ITServiceManagementPage";
 import NutriTrackerPage from "./Pages/NutriTrackerPage";
+import AddOnsPage from "./Pages/AddOnsPage";
 
 function HomePage() {
   const location = useLocation();
@@ -93,6 +94,11 @@ function App() {
         path="/projects/nutritracker"
         element={<NutriTrackerPage />}
       />
+
+<Route
+  path="/Add-ons"
+  element={<AddOnsPage />}
+/>
 
     </Routes>
 

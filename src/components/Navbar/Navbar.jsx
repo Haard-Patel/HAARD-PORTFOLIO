@@ -59,8 +59,6 @@ function Navbar() {
 
   /* =========================================================
      LOGO
-     Homepage → scroll to top
-     Any other page → homepage top
   ========================================================= */
 
   const handleLogoClick = (event) => {
@@ -86,17 +84,11 @@ function Navbar() {
 
   /* =========================================================
      HOMEPAGE SECTION NAVIGATION
-     Works from EVERY page.
-     
-     If already on homepage:
-       → scroll directly to section
-
-     If on another page:
-       → navigate to homepage
-       → HomePage scrolls to the requested section
   ========================================================= */
 
-  const handleSectionNavigation = (sectionId) => {
+  const handleSectionNavigation = (event, sectionId) => {
+    event.preventDefault();
+
     closeMenu();
 
     if (location.pathname === "/") {
@@ -200,64 +192,77 @@ function Navbar() {
         </div>
       </div>
 
+      {/* =====================================================
+          MOBILE NAVIGATION
+      ===================================================== */}
+
       {menuOpen && (
-        <div className="mobile-navigation">
-          {/* ABOUT */}
-          <button
-            type="button"
-            onClick={() =>
-              handleSectionNavigation("about")
+        <nav
+          className="mobile-navigation"
+          aria-label="Mobile navigation"
+        >
+          {/* 01 — ABOUT */}
+          <Link
+            to="/"
+            onClick={(event) =>
+              handleSectionNavigation(event, "about")
             }
           >
-            About
-          </button>
+            <span>01</span>
+            <span>About</span>
+          </Link>
 
-          {/* WORK */}
-          <button
-            type="button"
-            onClick={() =>
-              handleSectionNavigation("projects")
+          {/* 02 — SKILLS */}
+          <Link
+            to="/"
+            onClick={(event) =>
+              handleSectionNavigation(event, "skills")
             }
           >
-            Work
-          </button>
+            <span>02</span>
+            <span>Skills</span>
+          </Link>
 
-          {/* SKILLS */}
-          <button
-            type="button"
-            onClick={() =>
-              handleSectionNavigation("skills")
+          {/* 03 — WORK */}
+          <Link
+            to="/"
+            onClick={(event) =>
+              handleSectionNavigation(event, "projects")
             }
           >
-            Skills
-          </button>
+            <span>03</span>
+            <span>Work</span>
+          </Link>
 
-          {/* CONTACT */}
-          <button
-            type="button"
-            onClick={() =>
-              handleSectionNavigation("contact")
-            }
-          >
-            Contact
-          </button>
-
-          {/* EXPERIENCE */}
+          {/* 04 — EXPERIENCE */}
           <Link
             to="/experience"
             onClick={closeMenu}
           >
-            Experience
+            <span>04</span>
+            <span>Experience</span>
           </Link>
 
-          {/* ADD-ONS */}
+          {/* 05 — CONTACT */}
+          <Link
+            to="/"
+            onClick={(event) =>
+              handleSectionNavigation(event, "contact")
+            }
+          >
+            <span>05</span>
+            <span>Contact</span>
+          </Link>
+
+          {/* 06 — ADD-ONS */}
           <Link
             to="/Add-ons"
             onClick={closeMenu}
           >
-            Add-ons
+            <span>06</span>
+            <span>Add-ons</span>
           </Link>
-        </div>
+        </nav>
       )}
     </header>
   );

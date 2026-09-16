@@ -1,0 +1,337 @@
+.addons-page {
+  --addons-bg: var(--background);
+  --addons-text: var(--text-primary);
+  --addons-secondary: var(--text-secondary);
+  --addons-muted: var(--text-muted);
+  --addons-border: var(--border);
+  --addons-surface: var(--surface);
+
+  min-height: 100vh;
+  background: var(--addons-bg);
+  color: var(--addons-text);
+}
+
+.addons-main {
+  width: 100%;
+  padding: 115px 0 0;
+}
+
+.addons-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Back */
+
+.addons-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 80px;
+
+  color: var(--addons-muted);
+  text-decoration: none;
+
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.addons-back:hover {
+  color: var(--addons-text);
+  transform: translateX(-3px);
+}
+
+/* Hero */
+
+.addons-hero {
+  max-width: 850px;
+  padding-bottom: 110px;
+}
+
+.addons-eyebrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--addons-border);
+
+  color: var(--addons-muted);
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.addons-hero h1 {
+  margin: 42px 0 28px;
+
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.addons-hero p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--addons-secondary);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Section */
+
+.addons-section {
+  padding: 80px 0 110px;
+  border-top: 1px solid var(--addons-border);
+}
+
+.addons-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+
+  margin-bottom: 45px;
+}
+
+.addons-section-heading span {
+  color: var(--addons-muted);
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.addons-section-heading h2 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+/* Cards */
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.addon-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 330px;
+  padding: 28px;
+
+  border: 1px solid var(--addons-border);
+  background: var(--addons-surface);
+
+  color: var(--addons-text);
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.addon-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--addons-text);
+}
+
+.addon-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--addons-muted);
+}
+
+.addon-number {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.addon-card-content {
+  margin-top: auto;
+  margin-bottom: 45px;
+}
+
+.addon-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--addons-muted);
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.addon-card h3 {
+  margin: 0 0 16px;
+
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.addon-card p {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: var(--addons-secondary);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.addon-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 18px;
+  border-top: 1px solid var(--addons-border);
+
+  color: var(--addons-muted);
+
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+/* Note */
+
+.addons-note {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px;
+
+  padding: 45px 0 110px;
+  border-top: 1px solid var(--addons-border);
+}
+
+.addons-note > span {
+  color: var(--addons-muted);
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.addons-note-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--addons-muted);
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.addons-note p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--addons-secondary);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+  .addons-container {
+    width: min(100% - 36px, 700px);
+  }
+
+  .addons-main {
+    padding-top: 105px;
+  }
+
+  .addons-back {
+    margin-bottom: 60px;
+  }
+
+  .addons-hero {
+    padding-bottom: 80px;
+  }
+
+  .addons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+  .addons-container {
+    width: calc(100% - 28px);
+  }
+
+  .addons-main {
+    padding-top: 95px;
+  }
+
+  .addons-back {
+    margin-bottom: 50px;
+  }
+
+  .addons-hero {
+    padding-bottom: 70px;
+  }
+
+  .addons-eyebrow {
+    font-size: 9px;
+  }
+
+  .addons-hero h1 {
+    margin-top: 32px;
+
+    font-size: clamp(44px, 14vw, 64px);
+  }
+
+  .addons-hero p {
+    font-size: 14px;
+  }
+
+  .addons-section {
+    padding: 65px 0 80px;
+  }
+
+  .addons-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .addons-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .addon-card {
+    min-height: 300px;
+    padding: 22px;
+  }
+
+  .addon-card h3 {
+    font-size: 26px;
+  }
+
+  .addons-note {
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,56 @@
+
+.experience-page-main {
+  width: 100%;
+  padding-top: 115px;
+}
+
+.experience-page-back-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding-top: 10px;
+}
+
+.experience-page-back {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--text-muted);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.experience-page-back:hover {
+  color: var(--text-primary);
+  transform: translateX(-3px);
+}
+
+@media (max-width: 800px) {
+  .experience-page-main {
+    padding-top: 105px;
+  }
+
+  .experience-page-back-container {
+    width: calc(100% - 36px);
+  }
+}
+
+@media (max-width: 520px) {
+  .experience-page-main {
+    padding-top: 95px;
+  }
+
+  .experience-page-back-container {
+    width: calc(100% - 28px);
+  }
+}

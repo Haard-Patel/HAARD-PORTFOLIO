@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 import "./HeroActions.css";
 
@@ -60,9 +62,15 @@ function Hero() {
           <span>Regina, SK</span>
         </div>
 
-        <nav className="hero-navigation" aria-label="Main navigation">
+        <nav
+          className="hero-navigation"
+          aria-label="Main navigation"
+        >
           <a href="#about">About</a>
+
           <a href="#skills">Toolkit</a>
+
+          <Link to="/Add-ons">Add-ons</Link>
         </nav>
 
         <div className="hero-focus">
@@ -91,10 +99,13 @@ function Hero() {
         >
           <p>
             {statement.first}
+
             <span className="hero-statement-accent">
               {statement.accent}
             </span>
+
             {statement.middle}
+
             {statement.emphasis && (
               <em>{statement.emphasis}</em>
             )}
@@ -122,14 +133,22 @@ function Hero() {
           <div className="hero-actions">
             <a href="#projects" className="hero-link primary">
               <span className="hero-link-label">View work</span>
-              <span className="hero-link-arrow" aria-hidden="true">
+
+              <span
+                className="hero-link-arrow"
+                aria-hidden="true"
+              >
                 ↓
               </span>
             </a>
 
             <a href="/experience" className="hero-link primary">
               <span className="hero-link-label">Experience</span>
-              <span className="hero-link-arrow" aria-hidden="true">
+
+              <span
+                className="hero-link-arrow"
+                aria-hidden="true"
+              >
                 →
               </span>
             </a>
