@@ -242,21 +242,16 @@
 }
 
 .hero-resume {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
-
-  margin-top: 23px;
-
+  gap: 1px;
+  margin-top: 0;
   color: var(--text-muted);
-
   font-family: "JetBrains Mono", monospace;
   font-size: 0.58rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-
   text-decoration: none;
-
   transition: color 200ms ease;
 }
 
@@ -622,4 +617,45 @@
   .hero-resume:hover span {
     transform: none;
   }
+  .hero-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Resume + GitHub links */
+.hero-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  width: fit-content;
+}
+
+.hero-links .hero-resume {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.hero-links .hero-resume strong {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-links .hero-resume span {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
 }

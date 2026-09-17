@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
@@ -120,14 +119,26 @@ function Hero() {
               and exploring the intersection of software, data, and AI.
             </p>
 
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:2e2a7792-15d9-4b96-81bc-7498cf67c744"
-              target="_blank"
-              rel="noreferrer"
-              className="hero-resume"
-            >
-              RESUME <span>↗</span>
-            </a>
+            <div className="hero-links">
+  <a
+    href="/ResumeCS.pdf"
+    target="_blank"
+    rel="noreferrer"
+    className="hero-resume"
+  >
+    <span className="hero-resume-text">RESUME↗</span>
+  </a>
+
+  <a
+    href="https://github.com/Haard-Patel/HAARD-PORTFOLIO"
+    target="_blank"
+    rel="noreferrer"
+    className="hero-resume"
+  >
+    <span className="hero-resume-text">GITHUB↗</span>
+
+  </a>
+</div>
           </div>
 
           <div className="hero-actions">
