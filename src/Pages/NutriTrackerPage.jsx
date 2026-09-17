@@ -394,40 +394,40 @@ function NutriTrackerPage() {
 
       <Footer />
 
-      {/* Image Lightbox */}
-      {selectedImage && (
-        <div
-          className="nutritracker-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image preview"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) {
-              closeImage();
-            }
-          }}
-        >
-          <button
-            type="button"
-            className="nutritracker-lightbox-close"
-            onClick={closeImage}
-            aria-label="Close image preview"
-          >
-            <X size={25} strokeWidth={1.4} />
-          </button>
+{/* Image Lightbox */}
+{selectedImage && (
+  <div
+    className="nutritracker-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+    onMouseDown={(event) => {
+      if (event.target === event.currentTarget) {
+        closeImage();
+      }
+    }}
+  >
+    <div className="nutritracker-lightbox-content">
+      <button
+        type="button"
+        className="nutritracker-lightbox-close"
+        onClick={closeImage}
+        aria-label="Close image preview"
+      >
+        <X size={25} strokeWidth={1.4} />
+      </button>
 
-          <div className="nutritracker-lightbox-content">
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-            />
+      <img
+        src={selectedImage.src}
+        alt={selectedImage.alt}
+      />
 
-            <span className="nutritracker-lightbox-caption">
-              {selectedImage.label}
-            </span>
-          </div>
-        </div>
-      )}
+      <span className="nutritracker-lightbox-caption">
+        {selectedImage.label}
+      </span>
+    </div>
+  </div>
+)}
     </div>
   );
 }
