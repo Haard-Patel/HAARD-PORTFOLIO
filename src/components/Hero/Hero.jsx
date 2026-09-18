@@ -34,6 +34,18 @@ const heroStatements = [
     middle: ", and ",
     emphasis: "always learning.",
   },
+  {
+    first: "I combine ",
+    accent: "software, data, and analytical thinking",
+    middle: ", to build ",
+    emphasis: "things that work.",
+  },
+  {
+    first: "I collect data, ",
+    accent: "analyse them,",
+    emphasis: "and give meaningful insights.",
+  }
+  
 ];
 
 function Hero() {
@@ -82,7 +94,7 @@ function Hero() {
 
       <div className="hero-main">
         <p className="hero-intro">
-          CS Honours · Software Development
+          CS Graduate · Software Development · Technical Analysis
         </p>
 
         <h1>
@@ -115,7 +127,7 @@ function Hero() {
           <div className="hero-copy">
             <p className="hero-description">
               Software developer and technology enthusiast focused on
-              building practical software, solving technical problems,
+              building practical software, data and technical analysis, solving technical problems,
               and exploring the intersection of software, data, and AI.
             </p>
 
@@ -138,22 +150,7 @@ function Hero() {
     <span className="hero-resume-text">GITHUB↗</span>
 
   </a>
-  <a
-  href="https://haard-portfolio-seven.vercel.app/"
-  target="_blank"
-  rel="noreferrer"
-  className="portfolio-preview"
->
-  <img
-    src="/portfoliophoto.png"
-    alt="Haard Patel portfolio website preview"
-  />
 
-  <div className="portfolio-preview-label">
-    <span>PORTFOLIO WEBSITE</span>
-    <span>↗</span>
-  </div>
-</a>
 </div>
           </div>
 
