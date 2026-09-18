@@ -4,6 +4,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -72,37 +73,38 @@ function HomePage() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
 
-      <Route
-        path="/experience"
-        element={<ExperiencePage />}
-      />
+        <Route
+          path="/experience"
+          element={<ExperiencePage />}
+        />
 
-      <Route
-        path="/projects/ecommerce-analytics"
-        element={<EcommerceAnalyticsPage />}
-      />
+        <Route
+          path="/projects/ecommerce-analytics"
+          element={<EcommerceAnalyticsPage />}
+        />
 
-      <Route
-        path="/projects/it-service-management"
-        element={<ITServiceManagementPage />}
-      />
+        <Route
+          path="/projects/it-service-management"
+          element={<ITServiceManagementPage />}
+        />
 
-      <Route
-        path="/projects/nutritracker"
-        element={<NutriTrackerPage />}
-      />
+        <Route
+          path="/projects/nutritracker"
+          element={<NutriTrackerPage />}
+        />
 
-<Route
-  path="/Add-ons"
-  element={<AddOnsPage />}
-/>
+        <Route
+          path="/Add-ons"
+          element={<AddOnsPage />}
+        />
 
-    </Routes>
-
-
+      </Routes>
+      <Analytics />
+    </>
   );
 }
 
