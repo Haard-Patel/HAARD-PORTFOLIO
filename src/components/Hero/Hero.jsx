@@ -138,6 +138,22 @@ function Hero() {
     <span className="hero-resume-text">GITHUB↗</span>
 
   </a>
+  <a
+  href="https://haard-portfolio-seven.vercel.app/"
+  target="_blank"
+  rel="noreferrer"
+  className="portfolio-preview"
+>
+  <img
+    src="/portfoliophoto.png"
+    alt="Haard Patel portfolio website preview"
+  />
+
+  <div className="portfolio-preview-label">
+    <span>PORTFOLIO WEBSITE</span>
+    <span>↗</span>
+  </div>
+</a>
 </div>
           </div>
 
