@@ -12,7 +12,6 @@ const toolkitColumns = [
       "C++",
       "SQL",
       "HTML / CSS",
-      "TypeScript",
       "Scala",
     ],
   },
@@ -21,15 +20,14 @@ const toolkitColumns = [
     title: "Build",
     description: "Interfaces, services, and APIs.",
     items: [
-      "React.js",
+      "React.js (Vite)",
       "Node.js",
       "Express.js",
       "Flask",
       "REST APIs",
       "JWT",
-      "Responsive UI",
-      "PostgreSQL",
-      "MongoDB",
+      "UI/UX",
+      "Service Side Rendering"
     ],
   },
   {
@@ -37,13 +35,16 @@ const toolkitColumns = [
     title: "Data & AI",
     description: "Turning information into insight.",
     items: [
-      "MongoDB",
-      "MySQL",
       "TensorFlow",
       "Data Analytics",
       "Data Management",
       "API Integration",
+      "AI Integration",
       "Data Visualization",
+      "PostgreSQL",
+      "MongoDB/Mongoose - Atlas and Compass",
+      "Pandas",
+      "MySQL",
     ],
   },
   {
@@ -66,10 +67,13 @@ const toolkitColumns = [
 const additionalSkills = [
   "Incident Management",
   "Technical Documentation",
-  "ITIL",
-  "SDLC",
+  "SLA",
   "Network Troubleshooting",
   "Microsoft 365",
+  "Authentication & Authorization",
+  "Responsive Design",
+  "Root-cause analysis",
+  "Version Control"
 ];
 
 function Toolkit() {
@@ -88,10 +92,9 @@ function Toolkit() {
             </p>
 
             <h2>
-              I build with{" "}
-              <strong className="toolkit-accent">software</strong>,
-              think through{" "}
-              <strong className="toolkit-violet">data</strong>,
+              I build software that is{" "}
+              <strong className="toolkit-accent">thoughtful, useful and & grounded </strong>
+              in real world problems, {" "}
               and keep making{" "}
               <em>things work better.</em>
             </h2>

@@ -156,7 +156,7 @@ function Hero() {
 
           <div className="hero-actions">
             <a href="#projects" className="hero-link primary">
-              <span className="hero-link-label">View work</span>
+              <span className="hero-link-label">View Project work</span>
 
               <span
                 className="hero-link-arrow"

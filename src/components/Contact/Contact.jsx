@@ -64,13 +64,13 @@ function Contact() {
             </h2>
 
             <p className="contact-description">
-              Open to conversations about{" "}
-              <strong>turn what I’ve learned into real-world experience.</strong>
-              Open to opportunities across <strong>Technological support, Software, Application, Analysis  </strong> 
-              and always interested in meeting people, exchanging ideas, 
+              Ready to take what I have learned{" "}
+              <strong>beyond classroom and into the real world.</strong>
+              I am exploring opportunities across <strong>Technological support, Software, Application, Analysis  </strong> 
+              while always interested in meeting people, exchanging ideas, 
               and learning from the work others are doing. 
-              If you’re building something, solving a problem, or simply want to connect, 
-              <strong>let’s talk.</strong>
+              If you’re building something, solving a problem, or simply want to connect?
+              <strong> I'd lve to connnect.</strong>
             </p>
 
             <div className="contact-email-block">

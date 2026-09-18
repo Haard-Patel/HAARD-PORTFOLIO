@@ -200,7 +200,7 @@ function NutriTrackerPage() {
                     <h3>Meal Tracking</h3>
                     <p>
                       Track meals, calories, foods, and nutrition
-                      information through a centralized interface.
+                      information mainly macros through a centralized interface.
                     </p>
                   </div>
 
@@ -209,7 +209,7 @@ function NutriTrackerPage() {
                     <h3>AI Assistant</h3>
                     <p>
                       An AI-powered assistant designed to provide
-                      nutrition-related interaction and guidance.
+                      nutrition, workout, wellness, medication interaction and guidance with build in datasets.
                     </p>
                   </div>
 
@@ -218,7 +218,7 @@ function NutriTrackerPage() {
                     <h3>Smart Planning</h3>
                     <p>
                       Create personalized meal plans and organize
-                      nutrition goals around individual preferences.
+                      nutrition goals around individual style of diet and available ingredients.
                     </p>
                   </div>
 
@@ -227,7 +227,7 @@ function NutriTrackerPage() {
                     <h3>Reminders</h3>
                     <p>
                       Automated reminders help users stay consistent
-                      with their planned nutrition activities.
+                      with their planned nutritional activities from medication to hydration reminders.
                     </p>
                   </div>
 
@@ -260,10 +260,10 @@ function NutriTrackerPage() {
                 </h2>
 
                 <div className="nutritracker-detail-stack">
-                  <span>REACT</span>
+                  <span>REACT-VITE</span>
                   <span>JAVASCRIPT</span>
                   <span>EXPRESS.JS</span>
-                  <span>MONGODB</span>
+                  <span>MONGODB-ATLAS</span>
                   <span>FLASK</span>
                   <span>TENSORFLOW</span>
                   <span>TWILIO</span>

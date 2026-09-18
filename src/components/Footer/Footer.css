@@ -338,13 +338,19 @@
 
 .footer-back-top {
   justify-self: end;
-
   display: inline-flex;
   align-items: center;
   gap: 8px;
 
-  color: #9ca8b7;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+
+  color: #f5f7fa;
   text-decoration: none;
+  font-weight: 500;
 
   transition:
     color 180ms ease,

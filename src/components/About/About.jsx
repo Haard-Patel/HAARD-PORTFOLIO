@@ -142,7 +142,7 @@ function About() {
         <div className="about-copy">
           <div className="about-copy-primary">
             <p>
-              I&apos;m a Computer Science Honour Graduate from
+              A Computer Science Graduate from
               the University of Saskatchewan, with a strong
               interest in software development, mathematics,
               statistics, and solving practical problems with
@@ -151,18 +151,15 @@ function About() {
 
             <p>
               I&apos;m particularly interested in the intersection
-              of software and AI. I enjoy building
+              of software and AI with strong fundamentals. I enjoy building
               full-stack applications, working with APIs and
-              databases, analyzing data, and understanding how
+              databases, analyzing data, supporting and understanding how
               systems work from both a technical and analytical
               perspective.
             </p>
 
             <p>
-              Mathematics and statistics are another important
-              part of how I approach problems. I enjoy finding
-              patterns, breaking complex problems down, and using
-              data to make better decisions.
+            Mathematics and statistics are another important part of how I approach problems. I enjoy finding patterns, breaking complex problems into smaller, manageable pieces, and using data to make informed decisions
             </p>
 
             
@@ -171,20 +168,17 @@ function About() {
           <div className="about-copy-secondary">
 
           <p>
-              My journey has taken me from Ahmedabad, India to
-              Saskatoon, Canada. Moving across countries taught
-              me to adapt quickly, become more independent, and
-              stay comfortable learning in unfamiliar situations.
+          My journey of moving across countries from India to Canada, taught me to adapt quickly and become more independent. These experiences have also shaped me into someone who works well with others, stays calm under pressure, and remains focused on getting the task done
             </p>
             
             <p>
-              I&apos;m always learning, experimenting, and looking
-              for something new to build. That curiosity is what
+              Always willing to learn and grow my skills, experimenting, and looking
+              for something new to build as well as making a positive impact. That curiosity is what
               keeps me interested in technology.
             </p>
 
             <p>
-              I&apos;m a believer of "Music connects people.." that makes me love music. 
+            "Music connects people" is something I truly believe in as it creates a shared experience beyond words.
               I like to stay active and enjoy sports, fitness, and outdoor adventures.
               Reading keeps my brain sharp and helps me learn new things.
             </p>

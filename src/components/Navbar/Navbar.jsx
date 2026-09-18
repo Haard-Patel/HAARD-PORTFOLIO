@@ -220,7 +220,7 @@ function Navbar() {
             }
           >
             <span>02</span>
-            <span>Skills</span>
+            <span>Toolkit</span>
           </Link>
 
           {/* 03 — WORK */}
@@ -231,7 +231,7 @@ function Navbar() {
             }
           >
             <span>03</span>
-            <span>Work</span>
+            <span>Project Work</span>
           </Link>
 
           {/* 04 — EXPERIENCE */}

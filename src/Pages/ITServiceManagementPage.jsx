@@ -164,7 +164,7 @@ function ITServiceManagementPage() {
                     <h3>Incident Management</h3>
                     <p>
                       Create, track, update, assign, prioritize,
-                      and resolve support tickets.
+                      and resolve support tickets, with user-level as well team-level conversations.
                     </p>
                   </div>
 
@@ -173,7 +173,7 @@ function ITServiceManagementPage() {
                     <h3>User Management</h3>
                     <p>
                       Manage support users, departments, roles,
-                      assignments, and account status.
+                      assignments, and account status, with task specifiction as well as data protection.
                     </p>
                   </div>
 
