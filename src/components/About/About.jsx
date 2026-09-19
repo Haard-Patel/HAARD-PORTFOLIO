@@ -3,10 +3,10 @@ import "./About.css";
 const locations = [
   {
     country: "India",
-    city: "FIG.01/ Varanasi",
-    coordinates: "29°N · 78°E",
+    city: "FIG.01/ Ahmedabad",
+    coordinates: "23°N · 72.5°E",
     image: "/images/ahm.jpeg",
-    alt: "Ganga Ghat, India",
+    alt: "Ahmedabad, India",
   },
   {
     country: "Canada",
